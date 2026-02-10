@@ -34,10 +34,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. All core dependencies (httpx, feedparser, trafilatura, pydantic, tenacity, aiofiles) are installed from a pinned requirements.txt
   3. No browser dependencies (Selenium, Playwright) exist anywhere in the dependency tree
   4. Project has a clear directory structure with separate modules for sources, models, extraction, and output
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Project scaffolding and dependency setup
+- [ ] 01-01-PLAN.md -- Project scaffolding, pinned dependencies, and working entry point
 
 ### Phase 2: Data Models and Geographic Data
 **Goal**: All core data types are defined as Pydantic models and the complete geographic/language master data is available as structured data
