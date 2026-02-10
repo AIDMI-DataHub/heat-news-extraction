@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 4 of 10 (Google News RSS Source)
-Plan: 0 of 1 in current phase
-Status: Ready to plan
-Last activity: 2026-02-10 -- Phase 3 verified and complete
+Plan: 1 of 1 in current phase
+Status: Phase 4 complete
+Last activity: 2026-02-10 -- Phase 4 Plan 1 executed
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 3min
-- Total execution time: 0.27 hours
+- Total execution time: 0.32 hours
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [███░░░░░░░] 30%
 | 01-project-foundation | 1 | 2min | 2min |
 | 02-data-models-and-geographic-data | 2 | 6min | 3min |
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
+| 04-google-news-rss-source | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min), 02-01 (2min), 02-02 (4min), 03-01 (3min), 03-02 (5min)
+- Last 5 plans: 02-01 (2min), 02-02 (4min), 03-01 (3min), 03-02 (5min), 04-01 (3min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -64,6 +65,11 @@ Recent decisions affecting current work:
 - [03-02]: 564 total terms across 14 languages (high recall principle, all confidence levels included)
 - [03-02]: Borrowed English terms transliterated in native script for every regional language
 - [03-02]: Urdu terms exclusively in Nastaliq/Arabic script, never Devanagari
+- [04-01]: typing.Protocol (structural subtyping) over abc.ABC for source interface -- no inheritance required
+- [04-01]: ceid parameter uses base language code (IN:en not IN:en-IN) to avoid Google News 302 redirects
+- [04-01]: follow_redirects=True on httpx.AsyncClient for robustness against Google News URL normalization
+- [04-01]: Google News redirect URLs stored as-is in ArticleRef.url -- resolution deferred to Phase 7
+- [04-01]: Lazy httpx.AsyncClient creation with async context manager for clean lifecycle
 
 ### Pending Todos
 
@@ -77,5 +83,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Phase 3 verified and complete. Ready for Phase 4 planning.
+Stopped at: Completed 04-01-PLAN.md. Phase 4 complete. Ready for Phase 5 planning.
 Resume file: None
