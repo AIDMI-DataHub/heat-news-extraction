@@ -5,7 +5,8 @@ including Google News RSS, NewsData.io, and GNews APIs.
 """
 
 from ._protocol import NewsSource
+from .gnews import GNewsSource
 from .google_news import GoogleNewsSource
 from .newsdata import NewsDataSource
 
-__all__ = ["NewsSource", "GoogleNewsSource", "NewsDataSource"]
+__all__ = ["NewsSource", "GoogleNewsSource", "NewsDataSource", "GNewsSource"]
