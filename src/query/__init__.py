@@ -5,6 +5,7 @@ and a QueryGenerator that combines heat terms with geographic data to produce
 API-ready query strings for all three news sources.
 """
 
+from ._generator import GNEWS_SUPPORTED_LANGUAGES, QueryGenerator
 from ._models import (
     Query,
     QueryResult,
@@ -14,6 +15,7 @@ from ._models import (
 )
 
 __all__ = [
+    "GNEWS_SUPPORTED_LANGUAGES",
     "Query",
     "QueryGenerator",
     "QueryResult",
