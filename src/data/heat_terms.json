@@ -1,0 +1,203 @@
+{
+  "version": "1.0.0",
+  "languages": {
+    "en": {
+      "name": "English",
+      "categories": {
+        "heatwave": {
+          "terms": [
+            { "term": "heatwave", "register": "formal" },
+            { "term": "heat wave", "register": "formal" },
+            { "term": "severe heatwave", "register": "formal" },
+            { "term": "extreme heat", "register": "formal" },
+            { "term": "heat spell", "register": "formal" },
+            { "term": "scorching heat", "register": "journalistic" },
+            { "term": "blistering heat", "register": "journalistic" },
+            { "term": "sweltering heat", "register": "journalistic" },
+            { "term": "hot winds", "register": "journalistic" },
+            { "term": "loo", "register": "colloquial" },
+            { "term": "hot loo winds", "register": "colloquial" }
+          ]
+        },
+        "death_stroke": {
+          "terms": [
+            { "term": "heatstroke", "register": "formal" },
+            { "term": "heat stroke", "register": "formal" },
+            { "term": "sunstroke", "register": "colloquial" },
+            { "term": "heat-related death", "register": "formal" },
+            { "term": "heat casualty", "register": "formal" },
+            { "term": "heat exhaustion", "register": "formal" },
+            { "term": "suspected heat death", "register": "journalistic" }
+          ]
+        },
+        "water_crisis": {
+          "terms": [
+            { "term": "water crisis", "register": "formal" },
+            { "term": "water scarcity", "register": "formal" },
+            { "term": "acute water shortage", "register": "formal" },
+            { "term": "drought", "register": "formal" },
+            { "term": "water tanker", "register": "journalistic" },
+            { "term": "dried up", "register": "journalistic" },
+            { "term": "drying up", "register": "journalistic" }
+          ]
+        },
+        "power_cuts": {
+          "terms": [
+            { "term": "power cut", "register": "formal" },
+            { "term": "power outage", "register": "formal" },
+            { "term": "load shedding", "register": "colloquial" },
+            { "term": "blackout", "register": "formal" },
+            { "term": "electricity crisis", "register": "formal" },
+            { "term": "grid failure", "register": "formal" },
+            { "term": "power demand surge", "register": "journalistic" }
+          ]
+        },
+        "crop_damage": {
+          "terms": [
+            { "term": "crop damage", "register": "formal" },
+            { "term": "crop loss", "register": "formal" },
+            { "term": "crop failure", "register": "formal" },
+            { "term": "agricultural loss", "register": "formal" },
+            { "term": "wilting", "register": "journalistic" },
+            { "term": "parched fields", "register": "journalistic" }
+          ]
+        },
+        "human_impact": {
+          "terms": [
+            { "term": "dehydration", "register": "formal" },
+            { "term": "hospital admissions", "register": "formal" },
+            { "term": "school closure", "register": "formal" }
+          ]
+        },
+        "government_response": {
+          "terms": [
+            { "term": "heat advisory", "register": "formal" },
+            { "term": "heat action plan", "register": "formal" },
+            { "term": "red alert", "register": "formal" },
+            { "term": "orange alert", "register": "formal" },
+            { "term": "yellow alert", "register": "formal" },
+            { "term": "relief measures", "register": "formal" }
+          ]
+        },
+        "temperature": {
+          "terms": [
+            { "term": "mercury soars", "register": "journalistic" },
+            { "term": "mercury crosses", "register": "journalistic" },
+            { "term": "temperature soars", "register": "journalistic" },
+            { "term": "record temperature", "register": "formal" },
+            { "term": "all-time high", "register": "journalistic" },
+            { "term": "degrees Celsius", "register": "formal" }
+          ]
+        }
+      }
+    },
+    "hi": {
+      "name": "Hindi",
+      "categories": {
+        "heatwave": {
+          "terms": [
+            { "term": "लू", "register": "colloquial" },
+            { "term": "लू चलना", "register": "colloquial" },
+            { "term": "भीषण गर्मी", "register": "journalistic" },
+            { "term": "प्रचंड गर्मी", "register": "journalistic" },
+            { "term": "कड़ी धूप", "register": "colloquial" },
+            { "term": "तेज धूप", "register": "colloquial" },
+            { "term": "गर्म हवा", "register": "colloquial" },
+            { "term": "उष्ण लहर", "register": "formal" },
+            { "term": "ताप लहर", "register": "formal" },
+            { "term": "हीट वेव", "register": "borrowed" },
+            { "term": "झुलसाने वाली गर्मी", "register": "journalistic" },
+            { "term": "तपती गर्मी", "register": "journalistic" },
+            { "term": "भयंकर गर्मी", "register": "journalistic" },
+            { "term": "गर्मी का कहर", "register": "journalistic" },
+            { "term": "गर्मी का प्रकोप", "register": "journalistic" }
+          ]
+        },
+        "death_stroke": {
+          "terms": [
+            { "term": "सूर्याघात", "register": "formal" },
+            { "term": "तापाघात", "register": "formal" },
+            { "term": "लू लगना", "register": "colloquial" },
+            { "term": "लू से मौत", "register": "journalistic" },
+            { "term": "गर्मी से मौत", "register": "journalistic" },
+            { "term": "हीट स्ट्रोक", "register": "borrowed" },
+            { "term": "सन स्ट्रोक", "register": "borrowed" },
+            { "term": "लू से मरे", "register": "journalistic" }
+          ]
+        },
+        "water_crisis": {
+          "terms": [
+            { "term": "जल संकट", "register": "formal" },
+            { "term": "पानी की किल्लत", "register": "colloquial" },
+            { "term": "पानी का संकट", "register": "colloquial" },
+            { "term": "जल की कमी", "register": "formal" },
+            { "term": "पेयजल संकट", "register": "formal" },
+            { "term": "पानी की कमी", "register": "colloquial" },
+            { "term": "सूखा", "register": "formal" },
+            { "term": "टैंकर से पानी", "register": "journalistic" },
+            { "term": "नदी सूखी", "register": "journalistic" },
+            { "term": "बोरवेल सूखे", "register": "journalistic" }
+          ]
+        },
+        "power_cuts": {
+          "terms": [
+            { "term": "बिजली कटौती", "register": "colloquial" },
+            { "term": "बिजली संकट", "register": "formal" },
+            { "term": "लोड शेडिंग", "register": "borrowed" },
+            { "term": "बिजली गुल", "register": "colloquial" },
+            { "term": "बिजली कट", "register": "colloquial" },
+            { "term": "बिजली की किल्लत", "register": "journalistic" },
+            { "term": "बिजली की मांग", "register": "formal" },
+            { "term": "विद्युत संकट", "register": "formal" }
+          ]
+        },
+        "crop_damage": {
+          "terms": [
+            { "term": "फसल नुकसान", "register": "formal" },
+            { "term": "फसल बर्बाद", "register": "colloquial" },
+            { "term": "फसल तबाह", "register": "journalistic" },
+            { "term": "खेती को नुकसान", "register": "formal" },
+            { "term": "फसलें सूखीं", "register": "journalistic" },
+            { "term": "किसान परेशान", "register": "journalistic" },
+            { "term": "फसलें झुलसीं", "register": "journalistic" }
+          ]
+        },
+        "human_impact": {
+          "terms": [
+            { "term": "निर्जलीकरण", "register": "formal" },
+            { "term": "डिहाइड्रेशन", "register": "borrowed" },
+            { "term": "अस्पताल में भर्ती", "register": "formal" },
+            { "term": "स्कूल बंद", "register": "formal" },
+            { "term": "छुट्टी", "register": "colloquial" },
+            { "term": "मजदूरों की मौत", "register": "journalistic" },
+            { "term": "गर्मी से बेहाल", "register": "journalistic" },
+            { "term": "गर्मी से त्राहि-त्राहि", "register": "journalistic" }
+          ]
+        },
+        "government_response": {
+          "terms": [
+            { "term": "हीट एक्शन प्लान", "register": "borrowed" },
+            { "term": "गर्मी से राहत", "register": "journalistic" },
+            { "term": "चेतावनी", "register": "formal" },
+            { "term": "रेड अलर्ट", "register": "borrowed" },
+            { "term": "ऑरेंज अलर्ट", "register": "borrowed" },
+            { "term": "येलो अलर्ट", "register": "borrowed" },
+            { "term": "एडवाइजरी", "register": "borrowed" },
+            { "term": "राहत सामग्री", "register": "formal" }
+          ]
+        },
+        "temperature": {
+          "terms": [
+            { "term": "पारा चढ़ा", "register": "journalistic" },
+            { "term": "पारा पहुंचा", "register": "journalistic" },
+            { "term": "तापमान", "register": "formal" },
+            { "term": "तापमान बढ़ा", "register": "formal" },
+            { "term": "रिकॉर्ड तोड़ गर्मी", "register": "journalistic" },
+            { "term": "डिग्री सेल्सियस", "register": "formal" },
+            { "term": "पारा उबला", "register": "colloquial" }
+          ]
+        }
+      }
+    }
+  }
+}
