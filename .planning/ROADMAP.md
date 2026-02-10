@@ -64,11 +64,11 @@ Plans:
   3. Both formal/official terms (IMD terminology) and colloquial/journalistic terms (e.g., "loo" in Hindi) are included for each language
   4. Borrowed English terms (heat wave, heat stroke, load shedding, red alert) are included in every regional language's term set
   5. Terms are structured data (not free text) that can be programmatically combined with location names for query generation
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Heat terms dictionary structure and English/Hindi terms
-- [ ] 03-02: Remaining 12 language term sets
+- [ ] 03-01-PLAN.md -- JSON schema structure, Pydantic loader, and English/Hindi terms
+- [ ] 03-02-PLAN.md -- Remaining 12 language term sets and __init__.py re-exports
 
 ### Phase 4: Google News RSS Source
 **Goal**: The pipeline can search Google News RSS for heat-related articles and return structured results through a common source interface
