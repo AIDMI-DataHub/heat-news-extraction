@@ -79,10 +79,10 @@ Plans:
   2. Running a search for a known heat term + state combination returns actual Google News RSS results parsed into ArticleRef objects
   3. The source handles Google News RSS pagination and returns article title, URL, source name, and publication date
   4. The source handles HTTP errors, timeouts, and empty results gracefully without crashing
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: Common source interface and Google News RSS adapter
+- [ ] 04-01-PLAN.md -- NewsSource Protocol and GoogleNewsSource RSS adapter
 
 ### Phase 5: Secondary News Sources
 **Goal**: NewsData.io and GNews are available as additional search sources behind the same common interface
