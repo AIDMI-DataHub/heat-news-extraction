@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 5 of 10 (Secondary News Sources)
-Plan: 0 of 2 in current phase
-Status: Ready to plan
-Last activity: 2026-02-10 -- Phase 4 verified and complete
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-02-10 -- Plan 05-01 (NewsDataSource) complete
 
-Progress: [████░░░░░░] 40%
+Progress: [████░░░░░░] 45%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 3min
-- Total execution time: 0.32 hours
+- Total execution time: 0.35 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [████░░░░░░] 40%
 | 02-data-models-and-geographic-data | 2 | 6min | 3min |
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
 | 04-google-news-rss-source | 1 | 3min | 3min |
+| 05-secondary-news-sources | 1 | 2min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (2min), 02-02 (4min), 03-01 (3min), 03-02 (5min), 04-01 (3min)
+- Last 5 plans: 02-02 (4min), 03-01 (3min), 03-02 (5min), 04-01 (3min), 05-01 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -70,6 +71,11 @@ Recent decisions affecting current work:
 - [04-01]: follow_redirects=True on httpx.AsyncClient for robustness against Google News URL normalization
 - [04-01]: Google News redirect URLs stored as-is in ArticleRef.url -- resolution deferred to Phase 7
 - [04-01]: Lazy httpx.AsyncClient creation with async context manager for clean lifecycle
+- [05-01]: All 14 Indian language codes in NewsDataSource _SUPPORTED_LANGUAGES (high recall principle)
+- [05-01]: In-memory daily quota counter (200/day) -- no persistence needed for daily batch pipeline
+- [05-01]: No follow_redirects on NewsDataSource httpx client (REST API does not redirect)
+- [05-01]: Handle NewsData.io HTTP 200 error responses (status=error) alongside standard HTTP errors
+- [05-01]: _daily_count incremented after request but before parsing (counts API credit, not result)
 
 ### Pending Todos
 
@@ -83,5 +89,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Phase 4 verified and complete. Ready for Phase 5 planning.
+Stopped at: Completed 05-01-PLAN.md (NewsDataSource). Ready for 05-02-PLAN.md (GNewsSource).
 Resume file: None
