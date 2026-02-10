@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 3 of 10 (Heat Terms Dictionary)
-Plan: 0 of 2 in current phase
-Status: Ready to plan
-Last activity: 2026-02-10 -- Phase 2 verified and complete
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-02-10 -- Completed 03-01-PLAN.md
 
-Progress: [██░░░░░░░░] 20%
+Progress: [██▓░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 3min
-- Total execution time: 0.13 hours
+- Total execution time: 0.18 hours
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [██░░░░░░░░] 20%
 |-------|-------|-------|----------|
 | 01-project-foundation | 1 | 2min | 2min |
 | 02-data-models-and-geographic-data | 2 | 6min | 3min |
+| 03-heat-terms-dictionary | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min), 02-01 (2min), 02-02 (4min)
+- Last 5 plans: 01-01 (2min), 02-01 (2min), 02-02 (4min), 03-01 (3min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -57,6 +58,9 @@ Recent decisions affecting current work:
 - [02-02]: Replaced mni/lus with ["en", "hi"] for Manipur/Mizoram (unsupported language codes)
 - [02-02]: Frozen Pydantic models with lru_cache for single disk read per process
 - [02-02]: Path(__file__).parent for working-directory-independent file loading
+- [03-01]: 53 English terms and 71 Hindi terms extracted from research (high recall principle)
+- [03-01]: 10 borrowed English terms in Hindi Devanagari (heat wave, heat stroke, load shedding, alerts, etc.)
+- [03-01]: Suppressed Pydantic UserWarning for 'register' field name -- benign shadow of BaseModel method
 
 ### Pending Todos
 
@@ -70,5 +74,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Phase 2 verified and complete. Ready for Phase 3 planning.
+Stopped at: Completed 03-01-PLAN.md. Ready for 03-02-PLAN.md (12 additional languages).
 Resume file: None
