@@ -20,11 +20,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Language
 
-- [ ] **LANG-01**: Pipeline supports 14+ Indian languages: en, hi, ta, te, bn, mr, gu, kn, ml, or, pa, as, ur, ne
-- [ ] **LANG-02**: Queries use native-script terms (not English translations) for each language
-- [ ] **LANG-03**: Heat terms dictionary covers 8 categories per language: heatwave, death/stroke, water crisis, power cuts, crop damage, human impact, government response, temperature
-- [ ] **LANG-04**: Dictionary includes both formal/IMD terms and colloquial/journalistic terms
-- [ ] **LANG-05**: Dictionary includes borrowed English terms that appear in regional language news (heat wave, heat stroke, load shedding, red alert)
+- [x] **LANG-01**: Pipeline supports 14+ Indian languages: en, hi, ta, te, bn, mr, gu, kn, ml, or, pa, as, ur, ne
+- [x] **LANG-02**: Queries use native-script terms (not English translations) for each language
+- [x] **LANG-03**: Heat terms dictionary covers 8 categories per language: heatwave, death/stroke, water crisis, power cuts, crop damage, human impact, government response, temperature
+- [x] **LANG-04**: Dictionary includes both formal/IMD terms and colloquial/journalistic terms
+- [x] **LANG-05**: Dictionary includes borrowed English terms that appear in regional language news (heat wave, heat stroke, load shedding, red alert)
 
 ### Extraction
 
@@ -134,11 +134,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | COLL-06 | Phase 5: Secondary News Sources | Pending |
 | COLL-07 | Phase 4: Google News RSS Source | Pending |
 | COLL-08 | Phase 6: Query Engine and Scheduling | Pending |
-| LANG-01 | Phase 3: Heat Terms Dictionary | Pending |
-| LANG-02 | Phase 3: Heat Terms Dictionary | Pending |
-| LANG-03 | Phase 3: Heat Terms Dictionary | Pending |
-| LANG-04 | Phase 3: Heat Terms Dictionary | Pending |
-| LANG-05 | Phase 3: Heat Terms Dictionary | Pending |
+| LANG-01 | Phase 3: Heat Terms Dictionary | Complete |
+| LANG-02 | Phase 3: Heat Terms Dictionary | Complete |
+| LANG-03 | Phase 3: Heat Terms Dictionary | Complete |
+| LANG-04 | Phase 3: Heat Terms Dictionary | Complete |
+| LANG-05 | Phase 3: Heat Terms Dictionary | Complete |
 | EXTR-01 | Phase 7: Article Extraction | Pending |
 | EXTR-02 | Phase 7: Article Extraction | Pending |
 | EXTR-03 | Phase 7: Article Extraction | Pending |

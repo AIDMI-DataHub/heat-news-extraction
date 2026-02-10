@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Foundation** - Python project scaffolding, dependencies, single entry point ✓ 2026-02-10
 - [x] **Phase 2: Data Models and Geographic Data** - Pydantic article models, state/district/language master data ✓ 2026-02-10
-- [ ] **Phase 3: Heat Terms Dictionary** - 450+ terms across 14 languages, 8 categories per language
+- [x] **Phase 3: Heat Terms Dictionary** - 450+ terms across 14 languages, 8 categories per language ✓ 2026-02-10
 - [ ] **Phase 4: Google News RSS Source** - Primary news source with common search interface
 - [ ] **Phase 5: Secondary News Sources** - NewsData.io and GNews adapters behind common interface
 - [ ] **Phase 6: Query Engine and Scheduling** - Hierarchical querying, smart batching, rate-limit-aware scheduler
@@ -190,7 +190,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 |-------|----------------|--------|-----------|
 | 1. Project Foundation | 1/1 | Complete | 2026-02-10 |
 | 2. Data Models and Geographic Data | 2/2 | Complete | 2026-02-10 |
-| 3. Heat Terms Dictionary | 0/2 | Not started | - |
+| 3. Heat Terms Dictionary | 2/2 | Complete | 2026-02-10 |
 | 4. Google News RSS Source | 0/1 | Not started | - |
 | 5. Secondary News Sources | 0/2 | Not started | - |
 | 6. Query Engine and Scheduling | 0/3 | Not started | - |

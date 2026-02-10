@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 4 - Source Connectors
+**Current focus:** Phase 4 - Google News RSS Source
 
 ## Current Position
 
-Phase: 4 of 10 (Source Connectors)
-Plan: 1 of ? in current phase
-Status: Ready for planning
-Last activity: 2026-02-10 -- Completed 03-02-PLAN.md (Phase 3 complete)
+Phase: 4 of 10 (Google News RSS Source)
+Plan: 0 of 1 in current phase
+Status: Ready to plan
+Last activity: 2026-02-10 -- Phase 3 verified and complete
 
 Progress: [███░░░░░░░] 30%
 
@@ -77,5 +77,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 03-02-PLAN.md. Phase 3 (Heat Terms Dictionary) fully complete. Ready for Phase 4 (Source Connectors).
+Stopped at: Phase 3 verified and complete. Ready for Phase 4 planning.
 Resume file: None
