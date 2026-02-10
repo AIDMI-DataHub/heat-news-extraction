@@ -1,4 +1,4 @@
-"""Geographic and reference data for the heat news extraction pipeline."""
+"""Geographic data and heat terms dictionary for the heat news extraction pipeline."""
 
 from .geo_loader import (
     District,
@@ -12,6 +12,19 @@ from .geo_loader import (
     get_region_by_slug,
     load_geo_data,
 )
+from .heat_terms_loader import (
+    CategoryTerms,
+    HeatTerm,
+    HeatTermsDictionary,
+    LanguageTerms,
+    TERM_CATEGORIES,
+    get_all_term_languages,
+    get_borrowed_terms,
+    get_terms_by_category,
+    get_terms_by_register,
+    get_terms_for_language,
+    load_heat_terms,
+)
 
 __all__ = [
     "District",
@@ -24,4 +37,15 @@ __all__ = [
     "get_languages_for_region",
     "get_region_by_slug",
     "load_geo_data",
+    "CategoryTerms",
+    "HeatTerm",
+    "HeatTermsDictionary",
+    "LanguageTerms",
+    "TERM_CATEGORIES",
+    "get_all_term_languages",
+    "get_borrowed_terms",
+    "get_terms_by_category",
+    "get_terms_by_register",
+    "get_terms_for_language",
+    "load_heat_terms",
 ]
