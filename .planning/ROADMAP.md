@@ -93,11 +93,11 @@ Plans:
   2. A GNewsSource class implements the common interface and returns results from GNews API
   3. Each source respects its daily API limit (200/day for NewsData.io, 100/day for GNews) and stops requesting when exhausted
   4. Both sources handle API errors, rate limits, and authentication issues gracefully without crashing
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: NewsData.io adapter
-- [ ] 05-02: GNews adapter
+- [ ] 05-01-PLAN.md -- NewsData.io source adapter with daily quota tracking
+- [ ] 05-02-PLAN.md -- GNews source adapter with language filtering and quota tracking
 
 ### Phase 6: Query Engine and Scheduling
 **Goal**: The pipeline intelligently generates and executes queries across all sources, covering all states/districts with hierarchical batching and rate-limit awareness
