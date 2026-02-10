@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 6 of 10 (Query Engine and Scheduling)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-02-10 -- Phase 5 verified and complete
+Plan: 1 of 3 in current phase
+Status: Executing
+Last activity: 2026-02-10 -- Completed 06-01 (query models and generator)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 55%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 3min
-- Total execution time: 0.38 hours
+- Total execution time: 0.43 hours
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: [█████░░░░░] 50%
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
 | 04-google-news-rss-source | 1 | 3min | 3min |
 | 05-secondary-news-sources | 2 | 4min | 2min |
+| 06-query-engine-and-scheduling | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (3min), 03-02 (5min), 04-01 (3min), 05-01 (2min), 05-02 (2min)
+- Last 5 plans: 03-02 (5min), 04-01 (3min), 05-01 (2min), 05-02 (2min), 06-01 (3min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -81,6 +82,10 @@ Recent decisions affecting current work:
 - [05-02]: HTTP 403 = quota exhausted in GNews (not auth error) -- sets _daily_count = _daily_limit
 - [05-02]: No follow_redirects on GNewsSource httpx client (REST API does not redirect)
 - [05-02]: _daily_count incremented after request but before parsing (same pattern as NewsDataSource)
+- [06-01]: Frozen dataclasses (not Pydantic) for Query/QueryResult -- internal objects, no I/O boundary validation needed
+- [06-01]: Sorted TERM_CATEGORIES iteration for deterministic query ordering across runs
+- [06-01]: First heatwave category term as primary heat term for district batching (most productive category)
+- [06-01]: GNEWS_SUPPORTED_LANGUAGES duplicated as constant to avoid circular imports from src.sources
 
 ### Pending Todos
 
@@ -94,5 +99,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Phase 5 verified and complete. Ready for Phase 6 planning.
+Stopped at: Completed 06-01-PLAN.md (query models and generator). Ready for 06-02.
 Resume file: None
