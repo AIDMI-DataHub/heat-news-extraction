@@ -166,10 +166,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTO-03 | Phase 10: Automation | Pending |
 | AUTO-04 | Phase 10: Automation | Pending |
 | AUTO-05 | Phase 6: Query Engine and Scheduling | Pending |
-| INFR-01 | Phase 1: Project Foundation | Pending |
-| INFR-02 | Phase 1: Project Foundation | Pending |
-| INFR-03 | Phase 1: Project Foundation | Pending |
-| INFR-04 | Phase 1: Project Foundation | Pending |
+| INFR-01 | Phase 1: Project Foundation | Complete |
+| INFR-02 | Phase 1: Project Foundation | Complete |
+| INFR-03 | Phase 1: Project Foundation | Complete |
+| INFR-04 | Phase 1: Project Foundation | Complete |
 | INFR-05 | Phase 2: Data Models and Geographic Data | Pending |
 
 **Coverage:**

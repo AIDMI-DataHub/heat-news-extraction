@@ -12,7 +12,7 @@ This roadmap delivers a daily automated pipeline that collects heat-related news
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Project Foundation** - Python project scaffolding, dependencies, single entry point
+- [x] **Phase 1: Project Foundation** - Python project scaffolding, dependencies, single entry point ✓ 2026-02-10
 - [ ] **Phase 2: Data Models and Geographic Data** - Pydantic article models, state/district/language master data
 - [ ] **Phase 3: Heat Terms Dictionary** - 450+ terms across 14 languages, 8 categories per language
 - [ ] **Phase 4: Google News RSS Source** - Primary news source with common search interface
@@ -188,7 +188,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Foundation | 0/1 | Not started | - |
+| 1. Project Foundation | 1/1 | Complete | 2026-02-10 |
 | 2. Data Models and Geographic Data | 0/2 | Not started | - |
 | 3. Heat Terms Dictionary | 0/2 | Not started | - |
 | 4. Google News RSS Source | 0/1 | Not started | - |
