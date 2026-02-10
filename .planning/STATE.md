@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 6 - Query Engine and Scheduling
+**Current focus:** Phase 7 - Article Extraction
 
 ## Current Position
 
-Phase: 6 of 10 (Query Engine and Scheduling) -- COMPLETE
-Plan: 3 of 3 in current phase (all done)
-Status: Phase Complete
-Last activity: 2026-02-10 -- Completed 06-03 (query executor)
+Phase: 7 of 10 (Article Extraction)
+Plan: 0 of 1 in current phase
+Status: Ready to plan
+Last activity: 2026-02-10 -- Phase 6 verified and complete
 
 Progress: [████████░░] 65%
 

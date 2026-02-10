@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Heat Terms Dictionary** - 450+ terms across 14 languages, 8 categories per language ✓ 2026-02-10
 - [x] **Phase 4: Google News RSS Source** - Primary news source with common search interface ✓ 2026-02-10
 - [x] **Phase 5: Secondary News Sources** - NewsData.io and GNews adapters behind common interface ✓ 2026-02-10
-- [ ] **Phase 6: Query Engine and Scheduling** - Hierarchical querying, smart batching, rate-limit-aware scheduler
+- [x] **Phase 6: Query Engine and Scheduling** - Hierarchical querying, smart batching, rate-limit-aware scheduler ✓ 2026-02-10
 - [ ] **Phase 7: Article Extraction** - Full text extraction from collected URLs using trafilatura
 - [ ] **Phase 8: Deduplication and Filtering** - URL/title dedup, relevance scoring, high-recall filtering
 - [ ] **Phase 9: Output and Reliability** - JSON/CSV output, checkpoint/resume, circuit breakers
@@ -193,7 +193,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 3. Heat Terms Dictionary | 2/2 | Complete | 2026-02-10 |
 | 4. Google News RSS Source | 1/1 | Complete | 2026-02-10 |
 | 5. Secondary News Sources | 2/2 | Complete | 2026-02-10 |
-| 6. Query Engine and Scheduling | 0/3 | Not started | - |
+| 6. Query Engine and Scheduling | 3/3 | Complete | 2026-02-10 |
 | 7. Article Extraction | 0/1 | Not started | - |
 | 8. Deduplication and Filtering | 0/3 | Not started | - |
 | 9. Output and Reliability | 0/3 | Not started | - |
