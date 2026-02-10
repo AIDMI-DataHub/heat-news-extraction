@@ -47,9 +47,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Data Model
 
-- [ ] **DATA-01**: Articles use Pydantic models with typed fields (no raw lists or position-based indexing)
-- [ ] **DATA-02**: Article model includes: title, url, source, date (IST), language, state/district, full_text, search_term, relevance_score
-- [ ] **DATA-03**: All dates are validated and stored in ISO format with IST timezone
+- [x] **DATA-01**: Articles use Pydantic models with typed fields (no raw lists or position-based indexing)
+- [x] **DATA-02**: Article model includes: title, url, source, date (IST), language, state/district, full_text, search_term, relevance_score
+- [x] **DATA-03**: All dates are validated and stored in ISO format with IST timezone
 
 ### Output
 
@@ -80,7 +80,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **INFR-02**: Core stack: httpx, feedparser, trafilatura, pydantic, tenacity, aiofiles
 - [ ] **INFR-03**: No browser dependencies (no Selenium, no Playwright for production)
 - [ ] **INFR-04**: Single requirements.txt with pinned versions
-- [ ] **INFR-05**: State/UT and district master list with language mappings as structured data
+- [x] **INFR-05**: State/UT and district master list with language mappings as structured data
 
 ## v2 Requirements
 
@@ -149,9 +149,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FILT-02 | Phase 8: Deduplication and Filtering | Pending |
 | FILT-03 | Phase 8: Deduplication and Filtering | Pending |
 | FILT-04 | Phase 8: Deduplication and Filtering | Pending |
-| DATA-01 | Phase 2: Data Models and Geographic Data | Pending |
-| DATA-02 | Phase 2: Data Models and Geographic Data | Pending |
-| DATA-03 | Phase 2: Data Models and Geographic Data | Pending |
+| DATA-01 | Phase 2: Data Models and Geographic Data | Complete |
+| DATA-02 | Phase 2: Data Models and Geographic Data | Complete |
+| DATA-03 | Phase 2: Data Models and Geographic Data | Complete |
 | OUTP-01 | Phase 9: Output and Reliability | Pending |
 | OUTP-02 | Phase 9: Output and Reliability | Pending |
 | OUTP-03 | Phase 9: Output and Reliability | Pending |
@@ -170,7 +170,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INFR-02 | Phase 1: Project Foundation | Complete |
 | INFR-03 | Phase 1: Project Foundation | Complete |
 | INFR-04 | Phase 1: Project Foundation | Complete |
-| INFR-05 | Phase 2: Data Models and Geographic Data | Pending |
+| INFR-05 | Phase 2: Data Models and Geographic Data | Complete |
 
 **Coverage:**
 - v1 requirements: 45 total

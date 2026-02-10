@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 2 - Data Models and Geographic Data
+**Current focus:** Phase 3 - Heat Terms Dictionary
 
 ## Current Position
 
-Phase: 2 of 10 (Data Models and Geographic Data)
-Plan: 2 of 2 in current phase
-Status: Phase 2 complete
-Last activity: 2026-02-10 -- Plan 02-02 complete (Geographic data and loader)
+Phase: 3 of 10 (Heat Terms Dictionary)
+Plan: 0 of 2 in current phase
+Status: Ready to plan
+Last activity: 2026-02-10 -- Phase 2 verified and complete
 
 Progress: [██░░░░░░░░] 20%
 
@@ -70,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 02-02-PLAN.md (Geographic data and loader). Phase 2 complete. Ready for Phase 3.
+Stopped at: Phase 2 verified and complete. Ready for Phase 3 planning.
 Resume file: None
