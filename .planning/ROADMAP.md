@@ -48,11 +48,11 @@ Plans:
   2. All dates in the Article model are validated as ISO format with IST timezone -- invalid dates are rejected
   3. A structured data file contains all 36 states/UTs and ~770 districts with their associated languages
   4. The state/district data correctly maps each entity to its relevant languages (e.g., Tamil Nadu maps to Tamil, English)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Pydantic article and metadata models
-- [ ] 02-02: State/district/language master data
+- [ ] 02-01-PLAN.md -- Pydantic ArticleRef and Article models with IST date validation
+- [ ] 02-02-PLAN.md -- State/district/language master data JSON and Pydantic-validated loader
 
 ### Phase 3: Heat Terms Dictionary
 **Goal**: A complete, structured multilingual heat terms dictionary is available for query generation across all 14 languages
