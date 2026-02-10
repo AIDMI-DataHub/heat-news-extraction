@@ -76,12 +76,14 @@ def _build_url(query: str, language: str, country: str) -> str:
     """
     encoded_query = quote_plus(query)
     hl = _LANG_TO_HL.get(language, language)
+    # ceid uses the base language code (e.g. "en"), not the regional hl
+    # variant (e.g. "en-IN").  Google News redirects if these disagree.
     return (
         f"{_BASE_URL}"
         f"?q={encoded_query}"
         f"&hl={hl}"
         f"&gl={country}"
-        f"&ceid={country}:{hl}"
+        f"&ceid={country}:{language}"
     )
 
 
@@ -274,5 +276,5 @@ class GoogleNewsSource:
     def _ensure_client(self) -> httpx.AsyncClient:
         """Return the HTTP client, creating one lazily if needed."""
         if self._client is None:
-            self._client = httpx.AsyncClient()
+            self._client = httpx.AsyncClient(follow_redirects=True)
         return self._client
