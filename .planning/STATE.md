@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 5 - Secondary News Sources
+**Current focus:** Phase 5 - Secondary News Sources (COMPLETE)
 
 ## Current Position
 
 Phase: 5 of 10 (Secondary News Sources)
-Plan: 1 of 2 in current phase
-Status: Executing
-Last activity: 2026-02-10 -- Plan 05-01 (NewsDataSource) complete
+Plan: 2 of 2 in current phase
+Status: Phase Complete
+Last activity: 2026-02-10 -- Plan 05-02 (GNewsSource) complete
 
-Progress: [████░░░░░░] 45%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 3min
-- Total execution time: 0.35 hours
+- Total execution time: 0.38 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [████░░░░░░] 45%
 | 02-data-models-and-geographic-data | 2 | 6min | 3min |
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
 | 04-google-news-rss-source | 1 | 3min | 3min |
-| 05-secondary-news-sources | 1 | 2min | 2min |
+| 05-secondary-news-sources | 2 | 4min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (4min), 03-01 (3min), 03-02 (5min), 04-01 (3min), 05-01 (2min)
+- Last 5 plans: 03-01 (3min), 03-02 (5min), 04-01 (3min), 05-01 (2min), 05-02 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -76,6 +76,11 @@ Recent decisions affecting current work:
 - [05-01]: No follow_redirects on NewsDataSource httpx client (REST API does not redirect)
 - [05-01]: Handle NewsData.io HTTP 200 error responses (status=error) alongside standard HTTP errors
 - [05-01]: _daily_count incremented after request but before parsing (counts API credit, not result)
+- [05-02]: Only 8 languages in GNewsSource _SUPPORTED_LANGUAGES (en, hi, bn, ta, te, mr, ml, pa) -- GNews does NOT support gu, kn, or, as, ur, ne
+- [05-02]: In-memory daily quota counter (100/day) for GNews -- same pattern as NewsDataSource
+- [05-02]: HTTP 403 = quota exhausted in GNews (not auth error) -- sets _daily_count = _daily_limit
+- [05-02]: No follow_redirects on GNewsSource httpx client (REST API does not redirect)
+- [05-02]: _daily_count incremented after request but before parsing (same pattern as NewsDataSource)
 
 ### Pending Todos
 
@@ -89,5 +94,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 05-01-PLAN.md (NewsDataSource). Ready for 05-02-PLAN.md (GNewsSource).
+Stopped at: Completed 05-02-PLAN.md (GNewsSource). Phase 5 complete. Ready for Phase 6.
 Resume file: None
