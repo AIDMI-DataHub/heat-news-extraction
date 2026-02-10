@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 3 - Heat Terms Dictionary
+**Current focus:** Phase 4 - Source Connectors
 
 ## Current Position
 
-Phase: 3 of 10 (Heat Terms Dictionary)
-Plan: 1 of 2 in current phase
-Status: Executing
-Last activity: 2026-02-10 -- Completed 03-01-PLAN.md
+Phase: 4 of 10 (Source Connectors)
+Plan: 1 of ? in current phase
+Status: Ready for planning
+Last activity: 2026-02-10 -- Completed 03-02-PLAN.md (Phase 3 complete)
 
-Progress: [██▓░░░░░░░] 25%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 3min
-- Total execution time: 0.18 hours
+- Total execution time: 0.27 hours
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [██▓░░░░░░░] 25%
 |-------|-------|-------|----------|
 | 01-project-foundation | 1 | 2min | 2min |
 | 02-data-models-and-geographic-data | 2 | 6min | 3min |
-| 03-heat-terms-dictionary | 1 | 3min | 3min |
+| 03-heat-terms-dictionary | 2 | 8min | 4min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2min), 02-01 (2min), 02-02 (4min), 03-01 (3min)
+- Last 5 plans: 01-01 (2min), 02-01 (2min), 02-02 (4min), 03-01 (3min), 03-02 (5min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -61,6 +61,9 @@ Recent decisions affecting current work:
 - [03-01]: 53 English terms and 71 Hindi terms extracted from research (high recall principle)
 - [03-01]: 10 borrowed English terms in Hindi Devanagari (heat wave, heat stroke, load shedding, alerts, etc.)
 - [03-01]: Suppressed Pydantic UserWarning for 'register' field name -- benign shadow of BaseModel method
+- [03-02]: 564 total terms across 14 languages (high recall principle, all confidence levels included)
+- [03-02]: Borrowed English terms transliterated in native script for every regional language
+- [03-02]: Urdu terms exclusively in Nastaliq/Arabic script, never Devanagari
 
 ### Pending Todos
 
@@ -74,5 +77,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 03-01-PLAN.md. Ready for 03-02-PLAN.md (12 additional languages).
+Stopped at: Completed 03-02-PLAN.md. Phase 3 (Heat Terms Dictionary) fully complete. Ready for Phase 4 (Source Connectors).
 Resume file: None
