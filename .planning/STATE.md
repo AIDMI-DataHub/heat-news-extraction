@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 6 of 10 (Query Engine and Scheduling)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-02-10 -- Completed 06-01 (query models and generator)
+Last activity: 2026-02-10 -- Completed 06-02 (source scheduler)
 
-Progress: [██████░░░░] 55%
+Progress: [███████░░░] 60%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 3min
-- Total execution time: 0.43 hours
+- Total execution time: 0.47 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [██████░░░░] 55%
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
 | 04-google-news-rss-source | 1 | 3min | 3min |
 | 05-secondary-news-sources | 2 | 4min | 2min |
-| 06-query-engine-and-scheduling | 1 | 3min | 3min |
+| 06-query-engine-and-scheduling | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (5min), 04-01 (3min), 05-01 (2min), 05-02 (2min), 06-01 (3min)
+- Last 5 plans: 04-01 (3min), 05-01 (2min), 05-02 (2min), 06-01 (3min), 06-02 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -86,6 +86,10 @@ Recent decisions affecting current work:
 - [06-01]: Sorted TERM_CATEGORIES iteration for deterministic query ordering across runs
 - [06-01]: First heatwave category term as primary heat term for district batching (most productive category)
 - [06-01]: GNEWS_SUPPORTED_LANGUAGES duplicated as constant to avoid circular imports from src.sources
+- [06-02]: TYPE_CHECKING import for NewsSource Protocol to avoid circular import at runtime
+- [06-02]: success=True with error field for expected skip conditions (budget exhausted, unsupported language) vs success=False for actual failures
+- [06-02]: Daily count incremented after HTTP request but before result processing (counts API credit, not successful parse)
+- [06-02]: time.monotonic() for all rate limiting timing (immune to wall-clock adjustments)
 
 ### Pending Todos
 
@@ -99,5 +103,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 06-01-PLAN.md (query models and generator). Ready for 06-02.
+Stopped at: Completed 06-02-PLAN.md (source scheduler). Ready for 06-03.
 Resume file: None
