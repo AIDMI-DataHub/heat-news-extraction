@@ -1,7 +1,7 @@
 # Requirements: Heat News Extraction Pipeline
 
 **Defined:** 2026-02-10
-**Core Value:** Capture every heat-related news report from every corner of India, in every language, every day — high recall over high precision.
+**Core Value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
 
 ## v1 Requirements
 
@@ -11,7 +11,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **COLL-01**: Pipeline queries all 36 Indian states and union territories daily for heat-related news
 - [ ] **COLL-02**: Pipeline queries ~770 districts using smart batching (multiple districts per query)
-- [ ] **COLL-03**: Pipeline uses hierarchical querying — states first, then districts for states with active heat news
+- [ ] **COLL-03**: Pipeline uses hierarchical querying -- states first, then districts for states with active heat news
 - [ ] **COLL-04**: Pipeline searches Google News RSS as primary source (~600 queries/day)
 - [ ] **COLL-05**: Pipeline searches NewsData.io API as secondary source (~200 queries/day)
 - [ ] **COLL-06**: Pipeline searches GNews API as tertiary source (~100 queries/day)
@@ -43,7 +43,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **FILT-01**: Pipeline filters for genuine heat/disaster relevance (not weather forecasts, cricket, or generic summer articles)
 - [ ] **FILT-02**: Pipeline uses term presence + context indicators for relevance scoring
 - [ ] **FILT-03**: Pipeline has an irrelevant pattern exclusion list (configurable)
-- [ ] **FILT-04**: Filtering prioritizes high recall — borderline articles are kept, not discarded
+- [ ] **FILT-04**: Filtering prioritizes high recall -- borderline articles are kept, not discarded
 
 ### Data Model
 
@@ -110,9 +110,9 @@ Explicitly excluded. Documented to prevent scope creep.
 
 | Feature | Reason |
 |---------|--------|
-| LLM-based structured extraction | Phase 2 of the broader vision — separate project |
-| Geo-database/spatial visualization | Phase 3 of the broader vision — separate project |
-| District-level entity extraction from article content | Phase 2 — requires LLM |
+| LLM-based structured extraction | Phase 2 of the broader vision -- separate project |
+| Geo-database/spatial visualization | Phase 3 of the broader vision -- separate project |
+| District-level entity extraction from article content | Phase 2 -- requires LLM |
 | Real-time alerting | This is a daily batch pipeline |
 | Paid API subscriptions | Zero budget constraint |
 | Mobile app or web dashboard | Output is files committed to repo |
@@ -126,13 +126,57 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated during roadmap creation) | | |
+| COLL-01 | Phase 6: Query Engine and Scheduling | Pending |
+| COLL-02 | Phase 6: Query Engine and Scheduling | Pending |
+| COLL-03 | Phase 6: Query Engine and Scheduling | Pending |
+| COLL-04 | Phase 4: Google News RSS Source | Pending |
+| COLL-05 | Phase 5: Secondary News Sources | Pending |
+| COLL-06 | Phase 5: Secondary News Sources | Pending |
+| COLL-07 | Phase 4: Google News RSS Source | Pending |
+| COLL-08 | Phase 6: Query Engine and Scheduling | Pending |
+| LANG-01 | Phase 3: Heat Terms Dictionary | Pending |
+| LANG-02 | Phase 3: Heat Terms Dictionary | Pending |
+| LANG-03 | Phase 3: Heat Terms Dictionary | Pending |
+| LANG-04 | Phase 3: Heat Terms Dictionary | Pending |
+| LANG-05 | Phase 3: Heat Terms Dictionary | Pending |
+| EXTR-01 | Phase 7: Article Extraction | Pending |
+| EXTR-02 | Phase 7: Article Extraction | Pending |
+| EXTR-03 | Phase 7: Article Extraction | Pending |
+| DEDU-01 | Phase 8: Deduplication and Filtering | Pending |
+| DEDU-02 | Phase 8: Deduplication and Filtering | Pending |
+| DEDU-03 | Phase 8: Deduplication and Filtering | Pending |
+| FILT-01 | Phase 8: Deduplication and Filtering | Pending |
+| FILT-02 | Phase 8: Deduplication and Filtering | Pending |
+| FILT-03 | Phase 8: Deduplication and Filtering | Pending |
+| FILT-04 | Phase 8: Deduplication and Filtering | Pending |
+| DATA-01 | Phase 2: Data Models and Geographic Data | Pending |
+| DATA-02 | Phase 2: Data Models and Geographic Data | Pending |
+| DATA-03 | Phase 2: Data Models and Geographic Data | Pending |
+| OUTP-01 | Phase 9: Output and Reliability | Pending |
+| OUTP-02 | Phase 9: Output and Reliability | Pending |
+| OUTP-03 | Phase 9: Output and Reliability | Pending |
+| OUTP-04 | Phase 9: Output and Reliability | Pending |
+| RELI-01 | Phase 9: Output and Reliability | Pending |
+| RELI-02 | Phase 9: Output and Reliability | Pending |
+| RELI-03 | Phase 9: Output and Reliability | Pending |
+| RELI-04 | Phase 9: Output and Reliability | Pending |
+| RELI-05 | Phase 9: Output and Reliability | Pending |
+| AUTO-01 | Phase 10: Automation | Pending |
+| AUTO-02 | Phase 10: Automation | Pending |
+| AUTO-03 | Phase 10: Automation | Pending |
+| AUTO-04 | Phase 10: Automation | Pending |
+| AUTO-05 | Phase 6: Query Engine and Scheduling | Pending |
+| INFR-01 | Phase 1: Project Foundation | Pending |
+| INFR-02 | Phase 1: Project Foundation | Pending |
+| INFR-03 | Phase 1: Project Foundation | Pending |
+| INFR-04 | Phase 1: Project Foundation | Pending |
+| INFR-05 | Phase 2: Data Models and Geographic Data | Pending |
 
 **Coverage:**
-- v1 requirements: 38 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 38
+- v1 requirements: 45 total
+- Mapped to phases: 45
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-10*
-*Last updated: 2026-02-10 after initial definition*
+*Last updated: 2026-02-10 after roadmap creation*
