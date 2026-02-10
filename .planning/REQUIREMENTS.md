@@ -13,8 +13,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **COLL-02**: Pipeline queries ~770 districts using smart batching (multiple districts per query)
 - [ ] **COLL-03**: Pipeline uses hierarchical querying -- states first, then districts for states with active heat news
 - [x] **COLL-04**: Pipeline searches Google News RSS as primary source (~600 queries/day)
-- [ ] **COLL-05**: Pipeline searches NewsData.io API as secondary source (~200 queries/day)
-- [ ] **COLL-06**: Pipeline searches GNews API as tertiary source (~100 queries/day)
+- [x] **COLL-05**: Pipeline searches NewsData.io API as secondary source (~200 queries/day)
+- [x] **COLL-06**: Pipeline searches GNews API as tertiary source (~100 queries/day)
 - [x] **COLL-07**: Each news source implements a common interface: search(query, language, country) -> List[ArticleRef]
 - [ ] **COLL-08**: Pipeline distributes queries across sources using a rate-limit-aware scheduler
 
@@ -130,8 +130,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | COLL-02 | Phase 6: Query Engine and Scheduling | Pending |
 | COLL-03 | Phase 6: Query Engine and Scheduling | Pending |
 | COLL-04 | Phase 4: Google News RSS Source | Complete |
-| COLL-05 | Phase 5: Secondary News Sources | Pending |
-| COLL-06 | Phase 5: Secondary News Sources | Pending |
+| COLL-05 | Phase 5: Secondary News Sources | Complete |
+| COLL-06 | Phase 5: Secondary News Sources | Complete |
 | COLL-07 | Phase 4: Google News RSS Source | Complete |
 | COLL-08 | Phase 6: Query Engine and Scheduling | Pending |
 | LANG-01 | Phase 3: Heat Terms Dictionary | Complete |

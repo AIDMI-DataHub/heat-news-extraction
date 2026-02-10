@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 5 - Secondary News Sources (COMPLETE)
+**Current focus:** Phase 6 - Query Engine and Scheduling
 
 ## Current Position
 
-Phase: 5 of 10 (Secondary News Sources)
-Plan: 2 of 2 in current phase
-Status: Phase Complete
-Last activity: 2026-02-10 -- Plan 05-02 (GNewsSource) complete
+Phase: 6 of 10 (Query Engine and Scheduling)
+Plan: 0 of 3 in current phase
+Status: Ready to plan
+Last activity: 2026-02-10 -- Phase 5 verified and complete
 
 Progress: [█████░░░░░] 50%
 
@@ -94,5 +94,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 05-02-PLAN.md (GNewsSource). Phase 5 complete. Ready for Phase 6.
+Stopped at: Phase 5 verified and complete. Ready for Phase 6 planning.
 Resume file: None
