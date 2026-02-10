@@ -109,12 +109,12 @@ Plans:
   3. Hierarchical querying works: state-level queries execute first, district-level queries follow for states with active results
   4. The rate-limit-aware scheduler distributes queries across Google News RSS, NewsData.io, and GNews based on each source's capacity
   5. Queries execute asynchronously using httpx async, processing multiple sources/states in parallel
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Query generator (terms + locations + languages)
-- [ ] 06-02: Rate-limit-aware multi-source scheduler
-- [ ] 06-03: Async execution engine with hierarchical querying
+- [ ] 06-01-PLAN.md -- Query data models and QueryGenerator (terms + locations + languages)
+- [ ] 06-02-PLAN.md -- Rate-limit-aware SourceScheduler with per-source limiters
+- [ ] 06-03-PLAN.md -- QueryExecutor with hierarchical state-then-district execution
 
 ### Phase 7: Article Extraction
 **Goal**: The pipeline extracts full article text from collected URLs, handling Indian language scripts correctly
