@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 
 ## Current Position
 
-Phase: 6 of 10 (Query Engine and Scheduling)
-Plan: 2 of 3 in current phase
-Status: Executing
-Last activity: 2026-02-10 -- Completed 06-02 (source scheduler)
+Phase: 6 of 10 (Query Engine and Scheduling) -- COMPLETE
+Plan: 3 of 3 in current phase (all done)
+Status: Phase Complete
+Last activity: 2026-02-10 -- Completed 06-03 (query executor)
 
-Progress: [███████░░░] 60%
+Progress: [████████░░] 65%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: 3min
-- Total execution time: 0.47 hours
+- Total execution time: 0.50 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [███████░░░] 60%
 | 03-heat-terms-dictionary | 2 | 8min | 4min |
 | 04-google-news-rss-source | 1 | 3min | 3min |
 | 05-secondary-news-sources | 2 | 4min | 2min |
-| 06-query-engine-and-scheduling | 2 | 5min | 2.5min |
+| 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (3min), 05-01 (2min), 05-02 (2min), 06-01 (3min), 06-02 (2min)
+- Last 5 plans: 05-01 (2min), 05-02 (2min), 06-01 (3min), 06-02 (2min), 06-03 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -90,6 +90,10 @@ Recent decisions affecting current work:
 - [06-02]: success=True with error field for expected skip conditions (budget exhausted, unsupported language) vs success=False for actual failures
 - [06-02]: Daily count incremented after HTTP request but before result processing (counts API credit, not successful parse)
 - [06-02]: time.monotonic() for all rate limiting timing (immune to wall-clock adjustments)
+- [06-03]: asyncio.TaskGroup for concurrent source execution with except* ExceptionGroup for robustness
+- [06-03]: Sequential queries within source, concurrent across sources (scheduler handles internal rate limiting)
+- [06-03]: Budget check before district query generation (not just before execution)
+- [06-03]: Flat ArticleRef list return -- no nested structure, consumer just iterates
 
 ### Pending Todos
 
@@ -103,5 +107,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-10
-Stopped at: Completed 06-02-PLAN.md (source scheduler). Ready for 06-03.
+Stopped at: Completed 06-03-PLAN.md (query executor). Phase 6 complete. Ready for Phase 7.
 Resume file: None
