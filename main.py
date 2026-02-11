@@ -25,7 +25,7 @@ import asyncio
 import logging
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -128,6 +128,16 @@ async def main() -> None:
         logger.info("Stage 1: Query collection")
         refs = await executor.run_collection()
         logger.info("Stage 1 complete: %d article refs collected", len(refs))
+
+        # Stage 1b -- Date filtering: keep only articles from last 48 hours.
+        # Google News RSS ignores date operators, so we filter client-side.
+        cutoff = datetime.now(ist) - timedelta(hours=48)
+        before_filter = len(refs)
+        refs = [r for r in refs if r.date >= cutoff]
+        logger.info(
+            "Date filter: %d -> %d refs (discarded %d older than 48h)",
+            before_filter, len(refs), before_filter - len(refs),
+        )
 
         # Stage 2 -- Article extraction
         logger.info("Stage 2: Article extraction (%d refs)", len(refs))
