@@ -174,11 +174,10 @@ Plans:
   3. The workflow operates on zero API budget -- only free-tier sources are used (no paid keys required)
   4. After collection, the workflow commits and pushes the new data files to the repository
   5. If the pipeline is interrupted mid-run, the next day's run starts fresh (or resumes, using the checkpoint system from Phase 9)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 10-01: GitHub Actions workflow and environment setup
-- [ ] 10-02: Time-budget management for 45-minute constraint
+- [ ] 10-01-PLAN.md -- GitHub Actions workflow, empty-string secret fix, and .gitignore CI documentation
 
 ## Progress
 
@@ -196,4 +195,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 7. Article Extraction | 1/1 | Complete | 2026-02-11 |
 | 8. Deduplication and Filtering | 2/2 | Complete | 2026-02-11 |
 | 9. Output and Reliability | 3/3 | Complete | 2026-02-11 |
-| 10. Automation | 0/2 | Not started | - |
+| 10. Automation | 0/1 | Not started | - |
