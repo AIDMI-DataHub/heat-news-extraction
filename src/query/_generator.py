@@ -161,8 +161,8 @@ class QueryGenerator:
                     continue
 
                 # Pick the best heat term for district batching:
-                # prefer "heatwave" category terms, fall back to first available
-                heatwave_terms = get_terms_by_category(lang, "heatwave")
+                # prefer "weather" category terms, fall back to first available
+                heatwave_terms = get_terms_by_category(lang, "weather")
                 if heatwave_terms:
                     heat_term = heatwave_terms[0]
                 else:

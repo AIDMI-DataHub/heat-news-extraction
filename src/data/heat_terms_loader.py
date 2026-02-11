@@ -1,27 +1,18 @@
 """Load, validate, and query heat-related terminology for the news extraction pipeline.
 
 Provides Pydantic-validated models for heat terms across multiple Indian languages,
-organized by category and register. Data is loaded from heat_terms.json and cached
-via lru_cache so the file is read only once per process.
+organized by category. Data is loaded from heat_terms.json and cached via lru_cache
+so the file is read only once per process.
 """
 
 from __future__ import annotations
 
 import json
-import warnings
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-
-# Pydantic v2 warns when a field name shadows a BaseModel method.
-# "register" is the correct domain term and works fine despite the warning.
-warnings.filterwarnings(
-    "ignore",
-    message='Field name "register" in "HeatTerm" shadows an attribute in parent "BaseModel"',
-    category=UserWarning,
-)
+from pydantic import BaseModel, ConfigDict, field_validator
 
 _DATA_DIR = Path(__file__).parent
 
@@ -29,27 +20,29 @@ _DATA_DIR = Path(__file__).parent
 # Type aliases
 # ---------------------------------------------------------------------------
 TermCategory = Literal[
-    "heatwave",
-    "death_stroke",
-    "water_crisis",
-    "power_cuts",
-    "crop_damage",
-    "human_impact",
-    "government_response",
+    "weather",
+    "health",
+    "water",
+    "power",
+    "agriculture",
+    "labor",
+    "governance",
+    "urban_infra",
+    "education",
     "temperature",
 ]
 
-TermRegister = Literal["formal", "colloquial", "journalistic", "borrowed"]
-
 TERM_CATEGORIES: frozenset[str] = frozenset(
     {
-        "heatwave",
-        "death_stroke",
-        "water_crisis",
-        "power_cuts",
-        "crop_damage",
-        "human_impact",
-        "government_response",
+        "weather",
+        "health",
+        "water",
+        "power",
+        "agriculture",
+        "labor",
+        "governance",
+        "urban_infra",
+        "education",
         "temperature",
     }
 )
@@ -58,44 +51,31 @@ TERM_CATEGORIES: frozenset[str] = frozenset(
 # ---------------------------------------------------------------------------
 # Pydantic models
 # ---------------------------------------------------------------------------
-class HeatTerm(BaseModel):
-    """A single heat-related term with its register classification."""
-
-    model_config = ConfigDict(frozen=True)
-
-    term: str = Field(..., min_length=1)
-    register: Literal["formal", "colloquial", "journalistic", "borrowed"]
-
-
-class CategoryTerms(BaseModel):
-    """Collection of terms within a single category."""
-
-    model_config = ConfigDict(frozen=True)
-
-    terms: list[HeatTerm] = Field(min_length=1)
-
-
 class LanguageTerms(BaseModel):
     """All categories and their terms for a single language."""
 
     model_config = ConfigDict(frozen=True)
 
     name: str
-    categories: dict[TermCategory, CategoryTerms]
+    categories: dict[TermCategory, list[str]]
 
     @field_validator("categories")
     @classmethod
     def validate_all_categories_present(
-        cls, v: dict[TermCategory, CategoryTerms]
-    ) -> dict[TermCategory, CategoryTerms]:
-        """Ensure all 8 term categories are present."""
+        cls, v: dict[TermCategory, list[str]]
+    ) -> dict[TermCategory, list[str]]:
+        """Ensure all 10 term categories are present."""
         present = set(v.keys())
         missing = TERM_CATEGORIES - present
         if missing:
             raise ValueError(
                 f"Missing required categories: {sorted(missing)}. "
-                f"All 8 categories must be present: {sorted(TERM_CATEGORIES)}"
+                f"All 10 categories must be present: {sorted(TERM_CATEGORIES)}"
             )
+        # Ensure each category has at least one term
+        for cat, terms in v.items():
+            if not terms:
+                raise ValueError(f"Category '{cat}' must have at least one term")
         return v
 
 
@@ -146,9 +126,8 @@ def get_terms_for_language(lang: str) -> list[str]:
         return []
     language = data.languages[lang]
     terms: list[str] = []
-    for category in language.categories.values():
-        for heat_term in category.terms:
-            terms.append(heat_term.term)
+    for category_terms in language.categories.values():
+        terms.extend(category_terms)
     return terms
 
 
@@ -157,7 +136,7 @@ def get_terms_by_category(lang: str, category: TermCategory) -> list[str]:
 
     Args:
         lang: ISO 639-1 language code (e.g. 'en', 'hi').
-        category: One of the 8 term categories.
+        category: One of the 10 term categories.
 
     Returns:
         List of term strings, or empty list if language or category not found.
@@ -168,28 +147,7 @@ def get_terms_by_category(lang: str, category: TermCategory) -> list[str]:
     language = data.languages[lang]
     if category not in language.categories:
         return []
-    return [t.term for t in language.categories[category].terms]
-
-
-def get_borrowed_terms(lang: str) -> list[str]:
-    """Return only terms with register 'borrowed' for a language.
-
-    Args:
-        lang: ISO 639-1 language code (e.g. 'en', 'hi').
-
-    Returns:
-        List of borrowed term strings, or empty list if language not found.
-    """
-    data = load_heat_terms()
-    if lang not in data.languages:
-        return []
-    language = data.languages[lang]
-    terms: list[str] = []
-    for category in language.categories.values():
-        for heat_term in category.terms:
-            if heat_term.register == "borrowed":
-                terms.append(heat_term.term)
-    return terms
+    return list(language.categories[category])
 
 
 def get_all_term_languages() -> list[str]:
@@ -199,25 +157,3 @@ def get_all_term_languages() -> list[str]:
         List of language code strings (e.g. ['en', 'hi']).
     """
     return list(load_heat_terms().languages.keys())
-
-
-def get_terms_by_register(lang: str, register: TermRegister) -> list[str]:
-    """Return all terms with a specific register for a language.
-
-    Args:
-        lang: ISO 639-1 language code (e.g. 'en', 'hi').
-        register: One of 'formal', 'colloquial', 'journalistic', 'borrowed'.
-
-    Returns:
-        List of term strings matching the register, or empty list if language not found.
-    """
-    data = load_heat_terms()
-    if lang not in data.languages:
-        return []
-    language = data.languages[lang]
-    terms: list[str] = []
-    for category in language.categories.values():
-        for heat_term in category.terms:
-            if heat_term.register == register:
-                terms.append(heat_term.term)
-    return terms

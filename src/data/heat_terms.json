@@ -1,1086 +1,1288 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "languages": {
     "en": {
       "name": "English",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "heatwave", "register": "formal" },
-            { "term": "heat wave", "register": "formal" },
-            { "term": "severe heatwave", "register": "formal" },
-            { "term": "extreme heat", "register": "formal" },
-            { "term": "heat spell", "register": "formal" },
-            { "term": "scorching heat", "register": "journalistic" },
-            { "term": "blistering heat", "register": "journalistic" },
-            { "term": "sweltering heat", "register": "journalistic" },
-            { "term": "hot winds", "register": "journalistic" },
-            { "term": "loo", "register": "colloquial" },
-            { "term": "hot loo winds", "register": "colloquial" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "heatstroke", "register": "formal" },
-            { "term": "heat stroke", "register": "formal" },
-            { "term": "sunstroke", "register": "colloquial" },
-            { "term": "heat-related death", "register": "formal" },
-            { "term": "heat casualty", "register": "formal" },
-            { "term": "heat exhaustion", "register": "formal" },
-            { "term": "suspected heat death", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "water crisis", "register": "formal" },
-            { "term": "water scarcity", "register": "formal" },
-            { "term": "acute water shortage", "register": "formal" },
-            { "term": "drought", "register": "formal" },
-            { "term": "water tanker", "register": "journalistic" },
-            { "term": "dried up", "register": "journalistic" },
-            { "term": "drying up", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "power cut", "register": "formal" },
-            { "term": "power outage", "register": "formal" },
-            { "term": "load shedding", "register": "colloquial" },
-            { "term": "blackout", "register": "formal" },
-            { "term": "electricity crisis", "register": "formal" },
-            { "term": "grid failure", "register": "formal" },
-            { "term": "power demand surge", "register": "journalistic" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "crop damage", "register": "formal" },
-            { "term": "crop loss", "register": "formal" },
-            { "term": "crop failure", "register": "formal" },
-            { "term": "agricultural loss", "register": "formal" },
-            { "term": "wilting", "register": "journalistic" },
-            { "term": "parched fields", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "dehydration", "register": "formal" },
-            { "term": "hospital admissions", "register": "formal" },
-            { "term": "school closure", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "heat advisory", "register": "formal" },
-            { "term": "heat action plan", "register": "formal" },
-            { "term": "red alert", "register": "formal" },
-            { "term": "orange alert", "register": "formal" },
-            { "term": "yellow alert", "register": "formal" },
-            { "term": "relief measures", "register": "formal" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "mercury soars", "register": "journalistic" },
-            { "term": "mercury crosses", "register": "journalistic" },
-            { "term": "temperature soars", "register": "journalistic" },
-            { "term": "record temperature", "register": "formal" },
-            { "term": "all-time high", "register": "journalistic" },
-            { "term": "degrees Celsius", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "heatwave",
+          "heat wave",
+          "severe heatwave",
+          "extreme heat",
+          "heat spell",
+          "scorching heat",
+          "blistering heat",
+          "sweltering heat",
+          "hot winds",
+          "loo",
+          "hot loo winds",
+          "intense heat",
+          "unbearable heat",
+          "deadly heat"
+        ],
+        "health": [
+          "heatstroke",
+          "heat stroke",
+          "sunstroke",
+          "heat exhaustion",
+          "heat-related death",
+          "heat casualty",
+          "heat fatality",
+          "suspected heat death",
+          "dehydration",
+          "heat cramps",
+          "heat illness"
+        ],
+        "water": [
+          "water crisis",
+          "water scarcity",
+          "acute water shortage",
+          "drought",
+          "water tanker",
+          "dried up",
+          "drying up",
+          "borewell dried",
+          "groundwater depleted",
+          "drinking water shortage",
+          "water rationing"
+        ],
+        "power": [
+          "power cut",
+          "power outage",
+          "load shedding",
+          "blackout",
+          "electricity crisis",
+          "grid failure",
+          "power demand surge",
+          "transformer burst"
+        ],
+        "agriculture": [
+          "crop damage",
+          "crop loss",
+          "crop failure",
+          "agricultural loss",
+          "wilting",
+          "parched fields",
+          "livestock death",
+          "cattle death",
+          "fodder shortage",
+          "farmer distress"
+        ],
+        "labor": [
+          "outdoor worker died",
+          "construction worker died",
+          "heat stress",
+          "brick kiln worker",
+          "street vendor",
+          "laborer died",
+          "worker collapsed",
+          "occupational heat"
+        ],
+        "governance": [
+          "heat advisory",
+          "heat action plan",
+          "IMD warning",
+          "red alert",
+          "orange alert",
+          "yellow alert",
+          "NDMA advisory",
+          "cooling shelter",
+          "relief measures",
+          "heat compensation"
+        ],
+        "urban_infra": [
+          "road melting",
+          "railway track buckled",
+          "transformer explosion",
+          "forest fire",
+          "wildfire",
+          "fire incident",
+          "urban heat island",
+          "water pipeline burst"
+        ],
+        "education": [
+          "school closure",
+          "schools closed",
+          "exam postponed",
+          "summer vacation extended",
+          "school timing changed"
+        ],
+        "temperature": [
+          "mercury soars",
+          "mercury crosses",
+          "temperature soars",
+          "record temperature",
+          "all-time high",
+          "degrees Celsius",
+          "maximum temperature",
+          "hottest day"
+        ]
       }
     },
     "hi": {
       "name": "Hindi",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "लू", "register": "colloquial" },
-            { "term": "लू चलना", "register": "colloquial" },
-            { "term": "भीषण गर्मी", "register": "journalistic" },
-            { "term": "प्रचंड गर्मी", "register": "journalistic" },
-            { "term": "कड़ी धूप", "register": "colloquial" },
-            { "term": "तेज धूप", "register": "colloquial" },
-            { "term": "गर्म हवा", "register": "colloquial" },
-            { "term": "उष्ण लहर", "register": "formal" },
-            { "term": "ताप लहर", "register": "formal" },
-            { "term": "हीट वेव", "register": "borrowed" },
-            { "term": "झुलसाने वाली गर्मी", "register": "journalistic" },
-            { "term": "तपती गर्मी", "register": "journalistic" },
-            { "term": "भयंकर गर्मी", "register": "journalistic" },
-            { "term": "गर्मी का कहर", "register": "journalistic" },
-            { "term": "गर्मी का प्रकोप", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "सूर्याघात", "register": "formal" },
-            { "term": "तापाघात", "register": "formal" },
-            { "term": "लू लगना", "register": "colloquial" },
-            { "term": "लू से मौत", "register": "journalistic" },
-            { "term": "गर्मी से मौत", "register": "journalistic" },
-            { "term": "हीट स्ट्रोक", "register": "borrowed" },
-            { "term": "सन स्ट्रोक", "register": "borrowed" },
-            { "term": "लू से मरे", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "जल संकट", "register": "formal" },
-            { "term": "पानी की किल्लत", "register": "colloquial" },
-            { "term": "पानी का संकट", "register": "colloquial" },
-            { "term": "जल की कमी", "register": "formal" },
-            { "term": "पेयजल संकट", "register": "formal" },
-            { "term": "पानी की कमी", "register": "colloquial" },
-            { "term": "सूखा", "register": "formal" },
-            { "term": "टैंकर से पानी", "register": "journalistic" },
-            { "term": "नदी सूखी", "register": "journalistic" },
-            { "term": "बोरवेल सूखे", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "बिजली कटौती", "register": "colloquial" },
-            { "term": "बिजली संकट", "register": "formal" },
-            { "term": "लोड शेडिंग", "register": "borrowed" },
-            { "term": "बिजली गुल", "register": "colloquial" },
-            { "term": "बिजली कट", "register": "colloquial" },
-            { "term": "बिजली की किल्लत", "register": "journalistic" },
-            { "term": "बिजली की मांग", "register": "formal" },
-            { "term": "विद्युत संकट", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "फसल नुकसान", "register": "formal" },
-            { "term": "फसल बर्बाद", "register": "colloquial" },
-            { "term": "फसल तबाह", "register": "journalistic" },
-            { "term": "खेती को नुकसान", "register": "formal" },
-            { "term": "फसलें सूखीं", "register": "journalistic" },
-            { "term": "किसान परेशान", "register": "journalistic" },
-            { "term": "फसलें झुलसीं", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "निर्जलीकरण", "register": "formal" },
-            { "term": "डिहाइड्रेशन", "register": "borrowed" },
-            { "term": "अस्पताल में भर्ती", "register": "formal" },
-            { "term": "स्कूल बंद", "register": "formal" },
-            { "term": "छुट्टी", "register": "colloquial" },
-            { "term": "मजदूरों की मौत", "register": "journalistic" },
-            { "term": "गर्मी से बेहाल", "register": "journalistic" },
-            { "term": "गर्मी से त्राहि-त्राहि", "register": "journalistic" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "हीट एक्शन प्लान", "register": "borrowed" },
-            { "term": "गर्मी से राहत", "register": "journalistic" },
-            { "term": "चेतावनी", "register": "formal" },
-            { "term": "रेड अलर्ट", "register": "borrowed" },
-            { "term": "ऑरेंज अलर्ट", "register": "borrowed" },
-            { "term": "येलो अलर्ट", "register": "borrowed" },
-            { "term": "एडवाइजरी", "register": "borrowed" },
-            { "term": "राहत सामग्री", "register": "formal" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "पारा चढ़ा", "register": "journalistic" },
-            { "term": "पारा पहुंचा", "register": "journalistic" },
-            { "term": "तापमान", "register": "formal" },
-            { "term": "तापमान बढ़ा", "register": "formal" },
-            { "term": "रिकॉर्ड तोड़ गर्मी", "register": "journalistic" },
-            { "term": "डिग्री सेल्सियस", "register": "formal" },
-            { "term": "पारा उबला", "register": "colloquial" }
-          ]
-        }
+        "weather": [
+          "लू",
+          "लू चलना",
+          "भीषण गर्मी",
+          "प्रचंड गर्मी",
+          "कड़ी धूप",
+          "तेज धूप",
+          "गर्म हवा",
+          "उष्ण लहर",
+          "ताप लहर",
+          "हीट वेव",
+          "झुलसाने वाली गर्मी",
+          "तपती गर्मी",
+          "भयंकर गर्मी",
+          "गर्मी का कहर",
+          "गर्मी का प्रकोप",
+          "अत्यधिक गर्मी"
+        ],
+        "health": [
+          "सूर्याघात",
+          "तापाघात",
+          "लू लगना",
+          "लू से मौत",
+          "गर्मी से मौत",
+          "हीट स्ट्रोक",
+          "सन स्ट्रोक",
+          "लू से मरे",
+          "निर्जलीकरण",
+          "डिहाइड्रेशन",
+          "अस्पताल में भर्ती",
+          "गर्मी से बेहाल",
+          "गर्मी से त्राहि-त्राहि"
+        ],
+        "water": [
+          "जल संकट",
+          "पानी की किल्लत",
+          "पानी का संकट",
+          "जल की कमी",
+          "पेयजल संकट",
+          "पानी की कमी",
+          "सूखा",
+          "टैंकर से पानी",
+          "नदी सूखी",
+          "बोरवेल सूखे",
+          "भूजल स्तर गिरा",
+          "पानी की राशनिंग"
+        ],
+        "power": [
+          "बिजली कटौती",
+          "बिजली संकट",
+          "लोड शेडिंग",
+          "बिजली गुल",
+          "बिजली कट",
+          "बिजली की किल्लत",
+          "बिजली की मांग",
+          "विद्युत संकट",
+          "ट्रांसफार्मर फटा"
+        ],
+        "agriculture": [
+          "फसल नुकसान",
+          "फसल बर्बाद",
+          "फसल तबाह",
+          "खेती को नुकसान",
+          "फसलें सूखीं",
+          "किसान परेशान",
+          "फसलें झुलसीं",
+          "पशु मृत्यु",
+          "चारे की कमी",
+          "सिंचाई संकट"
+        ],
+        "labor": [
+          "मजदूर की मौत",
+          "मजदूरों की मौत",
+          "निर्माण मजदूर",
+          "ईंट भट्टा मजदूर",
+          "फेरीवाला",
+          "डिलीवरी बॉय",
+          "श्रमिक की मौत",
+          "ठेला चालक",
+          "गर्मी में काम"
+        ],
+        "governance": [
+          "हीट एक्शन प्लान",
+          "गर्मी से राहत",
+          "चेतावनी",
+          "रेड अलर्ट",
+          "ऑरेंज अलर्ट",
+          "येलो अलर्ट",
+          "एडवाइजरी",
+          "राहत सामग्री",
+          "राहत शिविर",
+          "मुआवजा"
+        ],
+        "urban_infra": [
+          "सड़क पिघली",
+          "रेलवे ट्रैक मुड़ा",
+          "ट्रांसफार्मर में आग",
+          "जंगल की आग",
+          "आगजनी",
+          "पानी की पाइपलाइन फटी",
+          "शहरी गर्मी"
+        ],
+        "education": [
+          "स्कूल बंद",
+          "छुट्टी",
+          "परीक्षा स्थगित",
+          "गर्मी की छुट्टी बढ़ी",
+          "स्कूल का समय बदला"
+        ],
+        "temperature": [
+          "पारा चढ़ा",
+          "पारा पहुंचा",
+          "तापमान",
+          "तापमान बढ़ा",
+          "रिकॉर्ड तोड़ गर्मी",
+          "डिग्री सेल्सियस",
+          "पारा उबला",
+          "अधिकतम तापमान"
+        ]
       }
     },
     "ta": {
       "name": "Tamil",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "வெப்ப அலை", "register": "formal" },
-            { "term": "அக்னி நட்சத்திரம்", "register": "colloquial" },
-            { "term": "கடும் வெயில்", "register": "journalistic" },
-            { "term": "கொளுத்தும் வெயில்", "register": "journalistic" },
-            { "term": "எரிக்கும் வெயில்", "register": "journalistic" },
-            { "term": "கடுமையான வெப்பம்", "register": "formal" },
-            { "term": "வெயில் கொடுமை", "register": "colloquial" },
-            { "term": "ஹீட் வேவ்", "register": "borrowed" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "வெப்பத்தாக்கம்", "register": "formal" },
-            { "term": "வெப்ப தாக்கு", "register": "colloquial" },
-            { "term": "வெயிலில் மரணம்", "register": "journalistic" },
-            { "term": "வெப்பத்தால் உயிரிழப்பு", "register": "formal" },
-            { "term": "சன்ஸ்ட்ரோக்", "register": "borrowed" },
-            { "term": "ஹீட் ஸ்ட்ரோக்", "register": "borrowed" },
-            { "term": "வெயில் தாக்கம்", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "நீர் பற்றாக்குறை", "register": "formal" },
-            { "term": "நீர் நெருக்கடி", "register": "formal" },
-            { "term": "குடிநீர் பஞ்சம்", "register": "journalistic" },
-            { "term": "வறட்சி", "register": "formal" },
-            { "term": "நீர் தட்டுப்பாடு", "register": "formal" },
-            { "term": "குடிநீர் தட்டுப்பாடு", "register": "formal" },
-            { "term": "ஆறு வறண்டது", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "மின்வெட்டு", "register": "colloquial" },
-            { "term": "மின்தடை", "register": "formal" },
-            { "term": "மின் நெருக்கடி", "register": "formal" },
-            { "term": "லோட் ஷெட்டிங்", "register": "borrowed" },
-            { "term": "மின் பற்றாக்குறை", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "பயிர் சேதம்", "register": "formal" },
-            { "term": "பயிர் நஷ்டம்", "register": "formal" },
-            { "term": "விவசாயிகள் பாதிப்பு", "register": "journalistic" },
-            { "term": "பயிர்கள் கருகின", "register": "journalistic" },
-            { "term": "விவசாய நஷ்டம்", "register": "formal" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "நீரிழப்பு", "register": "formal" },
-            { "term": "மருத்துவமனையில் அனுமதி", "register": "formal" },
-            { "term": "பள்ளிகளுக்கு விடுமுறை", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "எச்சரிக்கை", "register": "formal" },
-            { "term": "நிவாரணம்", "register": "formal" },
-            { "term": "சிவப்பு எச்சரிக்கை", "register": "formal" },
-            { "term": "ரெட் அலர்ட்", "register": "borrowed" },
-            { "term": "ஆரஞ்சு எச்சரிக்கை", "register": "borrowed" },
-            { "term": "மஞ்சள் எச்சரிக்கை", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "வெப்பநிலை", "register": "formal" },
-            { "term": "வெப்பநிலை உயர்வு", "register": "formal" },
-            { "term": "டிகிரி செல்சியஸ்", "register": "formal" },
-            { "term": "உச்சபட்ச வெப்பநிலை", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "வெப்ப அலை",
+          "அக்னி நட்சத்திரம்",
+          "கடும் வெயில்",
+          "கொளுத்தும் வெயில்",
+          "எரிக்கும் வெயில்",
+          "கடுமையான வெப்பம்",
+          "வெயில் கொடுமை",
+          "ஹீட் வேவ்",
+          "கொடும் வெயில்",
+          "வெப்பத்தின் தாக்கம்",
+          "அசாதாரண வெப்பம்"
+        ],
+        "health": [
+          "வெப்பத்தாக்கம்",
+          "வெப்ப தாக்கு",
+          "வெயிலில் மரணம்",
+          "வெப்பத்தால் உயிரிழப்பு",
+          "சன்ஸ்ட்ரோக்",
+          "ஹீட் ஸ்ட்ரோக்",
+          "வெயில் தாக்கம்",
+          "நீரிழப்பு",
+          "மருத்துவமனையில் அனுமதி"
+        ],
+        "water": [
+          "நீர் பற்றாக்குறை",
+          "நீர் நெருக்கடி",
+          "குடிநீர் பஞ்சம்",
+          "வறட்சி",
+          "நீர் தட்டுப்பாடு",
+          "குடிநீர் தட்டுப்பாடு",
+          "ஆறு வறண்டது",
+          "நிலத்தடி நீர் குறைவு",
+          "தண்ணீர் டேங்கர்"
+        ],
+        "power": [
+          "மின்வெட்டு",
+          "மின்தடை",
+          "மின் நெருக்கடி",
+          "லோட் ஷெட்டிங்",
+          "மின் பற்றாக்குறை",
+          "மின் தேவை அதிகரிப்பு",
+          "மின்மாற்றி வெடிப்பு"
+        ],
+        "agriculture": [
+          "பயிர் சேதம்",
+          "பயிர் நஷ்டம்",
+          "விவசாயிகள் பாதிப்பு",
+          "பயிர்கள் கருகின",
+          "விவசாய நஷ்டம்",
+          "கால்நடை இறப்பு",
+          "தீவன பற்றாக்குறை"
+        ],
+        "labor": [
+          "கட்டுமான தொழிலாளர் மரணம்",
+          "வெயிலில் தொழிலாளர் மரணம்",
+          "செங்கல் சூளை தொழிலாளர்",
+          "தெரு வியாபாரி",
+          "தொழிலாளர் உயிரிழப்பு"
+        ],
+        "governance": [
+          "எச்சரிக்கை",
+          "நிவாரணம்",
+          "சிவப்பு எச்சரிக்கை",
+          "ரெட் அலர்ட்",
+          "ஆரஞ்சு எச்சரிக்கை",
+          "மஞ்சள் எச்சரிக்கை",
+          "நிவாரண நடவடிக்கை",
+          "ஹீட் ஆக்சன் பிளான்"
+        ],
+        "urban_infra": [
+          "சாலை உருகியது",
+          "ரயில்வே பாதை வளைவு",
+          "மின்மாற்றி தீ",
+          "காட்டுத்தீ",
+          "தீ விபத்து"
+        ],
+        "education": [
+          "பள்ளிகளுக்கு விடுமுறை",
+          "தேர்வு தள்ளி வைப்பு",
+          "கோடை விடுமுறை நீட்டிப்பு",
+          "பள்ளி நேரம் மாற்றம்"
+        ],
+        "temperature": [
+          "வெப்பநிலை",
+          "வெப்பநிலை உயர்வு",
+          "டிகிரி செல்சியஸ்",
+          "உச்சபட்ச வெப்பநிலை",
+          "சாதனை வெப்பநிலை"
+        ]
       }
     },
     "te": {
       "name": "Telugu",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "వడ గాలులు", "register": "colloquial" },
-            { "term": "ఎండ వేడి", "register": "colloquial" },
-            { "term": "భారీ ఎండలు", "register": "journalistic" },
-            { "term": "హీట్ వేవ్", "register": "borrowed" },
-            { "term": "ఉష్ణ తరంగం", "register": "formal" },
-            { "term": "కడ ఎండలు", "register": "journalistic" },
-            { "term": "మండుటెండ", "register": "journalistic" },
-            { "term": "ఎండల తీవ్రత", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "ఎండ దెబ్బ", "register": "colloquial" },
-            { "term": "హీట్ స్ట్రోక్", "register": "borrowed" },
-            { "term": "సన్ స్ట్రోక్", "register": "borrowed" },
-            { "term": "ఎండ వల్ల మరణం", "register": "formal" },
-            { "term": "ఉష్ణోగ్రత", "register": "formal" },
-            { "term": "వేడి తట్టుకోలేక", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "నీటి కొరత", "register": "formal" },
-            { "term": "నీటి సంక్షోభం", "register": "formal" },
-            { "term": "తాగునీటి సమస్య", "register": "colloquial" },
-            { "term": "కరువు", "register": "formal" },
-            { "term": "నీటి ఎద్దడి", "register": "colloquial" },
-            { "term": "బోర్లు ఎండిపోయాయి", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "విద్యుత్ కోత", "register": "formal" },
-            { "term": "కరెంట్ కట్", "register": "borrowed" },
-            { "term": "విద్యుత్ సంక్షోభం", "register": "formal" },
-            { "term": "లోడ్ షెడ్డింగ్", "register": "borrowed" },
-            { "term": "విద్యుత్ డిమాండ్", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "పంట నష్టం", "register": "formal" },
-            { "term": "పంట నాశనం", "register": "formal" },
-            { "term": "రైతుల ఆందోళన", "register": "journalistic" },
-            { "term": "పంటలు ఎండిపోయాయి", "register": "journalistic" },
-            { "term": "వ్యవసాయ నష్టం", "register": "formal" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "నిర్జలీకరణం", "register": "formal" },
-            { "term": "ఆసుపత్రిలో చేరిక", "register": "formal" },
-            { "term": "పాఠశాలలకు సెలవులు", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "హెచ్చరిక", "register": "formal" },
-            { "term": "సహాయ చర్యలు", "register": "formal" },
-            { "term": "రెడ్ అలర్ట్", "register": "borrowed" },
-            { "term": "ఆరెంజ్ అలర్ట్", "register": "borrowed" },
-            { "term": "ఎల్లో అలర్ట్", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "ఉష్ణోగ్రత పెరుగుదల", "register": "formal" },
-            { "term": "డిగ్రీల సెల్సియస్", "register": "formal" },
-            { "term": "పాదరసం పెరిగింది", "register": "journalistic" }
-          ]
-        }
+        "weather": [
+          "వడ గాలులు",
+          "ఎండ వేడి",
+          "భారీ ఎండలు",
+          "హీట్ వేవ్",
+          "ఉష్ణ తరంగం",
+          "కడ ఎండలు",
+          "మండుటెండ",
+          "ఎండల తీవ్రత",
+          "అసాధారణ ఎండలు",
+          "తీవ్ర ఎండలు"
+        ],
+        "health": [
+          "ఎండ దెబ్బ",
+          "హీట్ స్ట్రోక్",
+          "సన్ స్ట్రోక్",
+          "ఎండ వల్ల మరణం",
+          "ఉష్ణోగ్రత",
+          "వేడి తట్టుకోలేక",
+          "నిర్జలీకరణం",
+          "ఆసుపత్రిలో చేరిక"
+        ],
+        "water": [
+          "నీటి కొరత",
+          "నీటి సంక్షోభం",
+          "తాగునీటి సమస్య",
+          "కరువు",
+          "నీటి ఎద్దడి",
+          "బోర్లు ఎండిపోయాయి",
+          "భూగర్భ జలాలు తగ్గాయి",
+          "నీటి ట్యాంకర్"
+        ],
+        "power": [
+          "విద్యుత్ కోత",
+          "కరెంట్ కట్",
+          "విద్యుత్ సంక్షోభం",
+          "లోడ్ షెడ్డింగ్",
+          "విద్యుత్ డిమాండ్",
+          "ట్రాన్స్‌ఫార్మర్ పేలింది"
+        ],
+        "agriculture": [
+          "పంట నష్టం",
+          "పంట నాశనం",
+          "రైతుల ఆందోళన",
+          "పంటలు ఎండిపోయాయి",
+          "వ్యవసాయ నష్టం",
+          "పశువుల మరణం",
+          "మేత కొరత"
+        ],
+        "labor": [
+          "కూలీల మరణం",
+          "నిర్మాణ కార్మికుల మరణం",
+          "ఇటుక బట్టీ కార్మికులు",
+          "వీధి వ్యాపారులు",
+          "కార్మికుల మరణం"
+        ],
+        "governance": [
+          "హెచ్చరిక",
+          "సహాయ చర్యలు",
+          "రెడ్ అలర్ట్",
+          "ఆరెంజ్ అలర్ట్",
+          "ఎల్లో అలర్ట్",
+          "హీట్ యాక్షన్ ప్లాన్",
+          "సహాయ శిబిరం",
+          "నష్టపరిహారం"
+        ],
+        "urban_infra": [
+          "రోడ్డు కరిగింది",
+          "రైల్వే ట్రాక్ వంగింది",
+          "ట్రాన్స్‌ఫార్మర్ పేలుడు",
+          "అడవి మంటలు",
+          "అగ్ని ప్రమాదం"
+        ],
+        "education": [
+          "పాఠశాలలకు సెలవులు",
+          "పరీక్షలు వాయిదా",
+          "వేసవి సెలవులు పొడిగింపు",
+          "పాఠశాల సమయం మార్పు"
+        ],
+        "temperature": [
+          "ఉష్ణోగ్రత పెరుగుదల",
+          "డిగ్రీల సెల్సియస్",
+          "పాదరసం పెరిగింది",
+          "గరిష్ట ఉష్ణోగ్రత",
+          "రికార్డు ఉష్ణోగ్రత"
+        ]
       }
     },
     "bn": {
       "name": "Bengali",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "দাবদাহ", "register": "formal" },
-            { "term": "তাপপ্রবাহ", "register": "formal" },
-            { "term": "প্রচণ্ড গরম", "register": "journalistic" },
-            { "term": "তীব্র গরম", "register": "journalistic" },
-            { "term": "ঝলসানো গরম", "register": "journalistic" },
-            { "term": "লু হাওয়া", "register": "colloquial" },
-            { "term": "গরমের দাপট", "register": "journalistic" },
-            { "term": "দাবানল", "register": "journalistic" },
-            { "term": "অসহ্য গরম", "register": "colloquial" },
-            { "term": "হিট ওয়েভ", "register": "borrowed" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "হিটস্ট্রোক", "register": "borrowed" },
-            { "term": "তাপাঘাত", "register": "formal" },
-            { "term": "সূর্যাঘাত", "register": "formal" },
-            { "term": "গরমে মৃত্যু", "register": "journalistic" },
-            { "term": "তাপে মৃত্যু", "register": "formal" },
-            { "term": "লু লাগা", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "জলসংকট", "register": "formal" },
-            { "term": "জল সমস্যা", "register": "colloquial" },
-            { "term": "পানীয় জলের সংকট", "register": "formal" },
-            { "term": "খরা", "register": "formal" },
-            { "term": "জলাভাব", "register": "formal" },
-            { "term": "ট্যাঙ্কারে জল", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "বিদ্যুৎ বিভ্রাট", "register": "formal" },
-            { "term": "লোড শেডিং", "register": "borrowed" },
-            { "term": "বিদ্যুৎ সংকট", "register": "formal" },
-            { "term": "পাওয়ার কাট", "register": "borrowed" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "ফসলের ক্ষতি", "register": "formal" },
-            { "term": "ফসল নষ্ট", "register": "colloquial" },
-            { "term": "কৃষি ক্ষতি", "register": "formal" },
-            { "term": "চাষিদের ক্ষতি", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "পানিশূন্যতা", "register": "formal" },
-            { "term": "ডিহাইড্রেশন", "register": "borrowed" },
-            { "term": "হাসপাতালে ভর্তি", "register": "formal" },
-            { "term": "স্কুল বন্ধ", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "সরকারি ত্রাণ", "register": "formal" },
-            { "term": "সতর্কতা", "register": "formal" },
-            { "term": "রেড অ্যালার্ট", "register": "borrowed" },
-            { "term": "অরেঞ্জ অ্যালার্ট", "register": "borrowed" },
-            { "term": "ইয়েলো অ্যালার্ট", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "তাপমাত্রা", "register": "formal" },
-            { "term": "তাপমাত্রা বৃদ্ধি", "register": "formal" },
-            { "term": "পারদ চড়ছে", "register": "journalistic" },
-            { "term": "ডিগ্রি সেলসিয়াস", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "দাবদাহ",
+          "তাপপ্রবাহ",
+          "প্রচণ্ড গরম",
+          "তীব্র গরম",
+          "ঝলসানো গরম",
+          "লু হাওয়া",
+          "গরমের দাপট",
+          "দাবানল",
+          "অসহ্য গরম",
+          "হিট ওয়েভ",
+          "অত্যধিক গরম",
+          "ভয়াবহ গরম"
+        ],
+        "health": [
+          "হিটস্ট্রোক",
+          "তাপাঘাত",
+          "সূর্যাঘাত",
+          "গরমে মৃত্যু",
+          "তাপে মৃত্যু",
+          "লু লাগা",
+          "পানিশূন্যতা",
+          "ডিহাইড্রেশন",
+          "হাসপাতালে ভর্তি",
+          "গরমে অসুস্থ"
+        ],
+        "water": [
+          "জলসংকট",
+          "জল সমস্যা",
+          "পানীয় জলের সংকট",
+          "খরা",
+          "জলাভাব",
+          "ট্যাঙ্কারে জল",
+          "ভূগর্ভস্থ জল কমছে",
+          "নদী শুকিয়েছে"
+        ],
+        "power": [
+          "বিদ্যুৎ বিভ্রাট",
+          "লোড শেডিং",
+          "বিদ্যুৎ সংকট",
+          "পাওয়ার কাট",
+          "বিদ্যুতের চাহিদা বৃদ্ধি",
+          "ট্রান্সফর্মার বিস্ফোরণ"
+        ],
+        "agriculture": [
+          "ফসলের ক্ষতি",
+          "ফসল নষ্ট",
+          "কৃষি ক্ষতি",
+          "চাষিদের ক্ষতি",
+          "গবাদি পশুর মৃত্যু",
+          "পশুখাদ্যের অভাব"
+        ],
+        "labor": [
+          "শ্রমিকের মৃত্যু",
+          "নির্মাণ শ্রমিকের মৃত্যু",
+          "ইটভাটা শ্রমিক",
+          "পথচারী বিক্রেতা",
+          "কর্মক্ষেত্রে তাপজনিত মৃত্যু"
+        ],
+        "governance": [
+          "সরকারি ত্রাণ",
+          "সতর্কতা",
+          "রেড অ্যালার্ট",
+          "অরেঞ্জ অ্যালার্ট",
+          "ইয়েলো অ্যালার্ট",
+          "হিট অ্যাকশন প্ল্যান",
+          "ত্রাণ শিবির",
+          "ক্ষতিপূরণ"
+        ],
+        "urban_infra": [
+          "রাস্তা গলে গেছে",
+          "রেলওয়ে ট্র্যাক বেঁকে গেছে",
+          "ট্রান্সফর্মারে আগুন",
+          "দাবানল",
+          "অগ্নিকাণ্ড"
+        ],
+        "education": [
+          "স্কুল বন্ধ",
+          "পরীক্ষা স্থগিত",
+          "গ্রীষ্মকালীন ছুটি বাড়ানো",
+          "স্কুলের সময় পরিবর্তন"
+        ],
+        "temperature": [
+          "তাপমাত্রা",
+          "তাপমাত্রা বৃদ্ধি",
+          "পারদ চড়ছে",
+          "ডিগ্রি সেলসিয়াস",
+          "সর্বোচ্চ তাপমাত্রা",
+          "রেকর্ড তাপমাত্রা"
+        ]
       }
     },
     "mr": {
       "name": "Marathi",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "उष्णतेची लाट", "register": "formal" },
-            { "term": "उष्णलहर", "register": "formal" },
-            { "term": "भयंकर ऊन", "register": "colloquial" },
-            { "term": "कडक ऊन", "register": "colloquial" },
-            { "term": "प्रचंड उष्णता", "register": "journalistic" },
-            { "term": "ऊन्हाचा कहर", "register": "journalistic" },
-            { "term": "तापमानाचा पारा चढला", "register": "journalistic" },
-            { "term": "उन्हाळ्याची तीव्रता", "register": "formal" },
-            { "term": "हीट वेव्ह", "register": "borrowed" },
-            { "term": "लू", "register": "colloquial" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "उष्माघात", "register": "formal" },
-            { "term": "लू लागणे", "register": "colloquial" },
-            { "term": "उष्णतेने मृत्यू", "register": "formal" },
-            { "term": "ऊन लागणे", "register": "colloquial" },
-            { "term": "हीट स्ट्रोक", "register": "borrowed" },
-            { "term": "सन स्ट्रोक", "register": "borrowed" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "पाणी टंचाई", "register": "colloquial" },
-            { "term": "जलसंकट", "register": "formal" },
-            { "term": "पाणी समस्या", "register": "colloquial" },
-            { "term": "टँकरने पाणी पुरवठा", "register": "journalistic" },
-            { "term": "दुष्काळ", "register": "formal" },
-            { "term": "पिण्याच्या पाण्याची समस्या", "register": "formal" },
-            { "term": "विहिरी आटल्या", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "वीज कपात", "register": "formal" },
-            { "term": "लोडशेडिंग", "register": "borrowed" },
-            { "term": "वीज संकट", "register": "formal" },
-            { "term": "वीज गुल", "register": "colloquial" },
-            { "term": "भारनियमन", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "पीक नुकसान", "register": "formal" },
-            { "term": "शेतीचे नुकसान", "register": "formal" },
-            { "term": "शेतकरी संकटात", "register": "journalistic" },
-            { "term": "पिके करपली", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "निर्जलीकरण", "register": "formal" },
-            { "term": "रुग्णालयात दाखल", "register": "formal" },
-            { "term": "शाळांना सुटी", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "हीट अॅक्शन प्लान", "register": "borrowed" },
-            { "term": "दिलासा", "register": "formal" },
-            { "term": "सावधानतेचा इशारा", "register": "formal" },
-            { "term": "रेड अलर्ट", "register": "borrowed" },
-            { "term": "ऑरेंज अलर्ट", "register": "borrowed" },
-            { "term": "येलो अलर्ट", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "तापमान वाढ", "register": "formal" },
-            { "term": "अंश सेल्सिअस", "register": "formal" },
-            { "term": "पारा चढला", "register": "journalistic" }
-          ]
-        }
+        "weather": [
+          "उष्णतेची लाट",
+          "उष्णलहर",
+          "भयंकर ऊन",
+          "कडक ऊन",
+          "प्रचंड उष्णता",
+          "ऊन्हाचा कहर",
+          "तापमानाचा पारा चढला",
+          "उन्हाळ्याची तीव्रता",
+          "हीट वेव्ह",
+          "लू",
+          "भाजून काढणारी उष्णता",
+          "असह्य उष्णता"
+        ],
+        "health": [
+          "उष्माघात",
+          "लू लागणे",
+          "उष्णतेने मृत्यू",
+          "ऊन लागणे",
+          "हीट स्ट्रोक",
+          "सन स्ट्रोक",
+          "निर्जलीकरण",
+          "रुग्णालयात दाखल",
+          "उष्णतेने बेजार"
+        ],
+        "water": [
+          "पाणी टंचाई",
+          "जलसंकट",
+          "पाणी समस्या",
+          "टँकरने पाणी पुरवठा",
+          "दुष्काळ",
+          "पिण्याच्या पाण्याची समस्या",
+          "विहिरी आटल्या",
+          "भूजल पातळी खाली"
+        ],
+        "power": [
+          "वीज कपात",
+          "लोडशेडिंग",
+          "वीज संकट",
+          "वीज गुल",
+          "भारनियमन",
+          "वीज मागणी वाढली",
+          "ट्रान्सफॉर्मर फुटला"
+        ],
+        "agriculture": [
+          "पीक नुकसान",
+          "शेतीचे नुकसान",
+          "शेतकरी संकटात",
+          "पिके करपली",
+          "जनावरांचा मृत्यू",
+          "चारा टंचाई",
+          "सिंचन संकट"
+        ],
+        "labor": [
+          "मजुराचा मृत्यू",
+          "बांधकाम मजूर मृत्यू",
+          "वीटभट्टी मजूर",
+          "फेरीवाले",
+          "कामगारांचा मृत्यू"
+        ],
+        "governance": [
+          "हीट अॅक्शन प्लान",
+          "दिलासा",
+          "सावधानतेचा इशारा",
+          "रेड अलर्ट",
+          "ऑरेंज अलर्ट",
+          "येलो अलर्ट",
+          "मदत शिबिर",
+          "नुकसान भरपाई"
+        ],
+        "urban_infra": [
+          "रस्ता वितळला",
+          "रेल्वे रूळ वाकला",
+          "ट्रान्सफॉर्मरला आग",
+          "जंगलात आग",
+          "अग्निकांड"
+        ],
+        "education": [
+          "शाळांना सुटी",
+          "परीक्षा लांबणीवर",
+          "उन्हाळी सुटी वाढवली",
+          "शाळेची वेळ बदलली"
+        ],
+        "temperature": [
+          "तापमान वाढ",
+          "अंश सेल्सिअस",
+          "पारा चढला",
+          "कमाल तापमान",
+          "विक्रमी तापमान"
+        ]
       }
     },
     "gu": {
       "name": "Gujarati",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "ભારે ગરમી", "register": "journalistic" },
-            { "term": "આકરી ગરમી", "register": "colloquial" },
-            { "term": "લૂ", "register": "colloquial" },
-            { "term": "હીટવેવ", "register": "borrowed" },
-            { "term": "ઉષ્ણ મોજું", "register": "formal" },
-            { "term": "ગરમીનો પ્રકોપ", "register": "journalistic" },
-            { "term": "તાપ", "register": "colloquial" },
-            { "term": "આકરો તાપ", "register": "colloquial" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "લૂ લાગવી", "register": "colloquial" },
-            { "term": "હીટ સ્ટ્રોક", "register": "borrowed" },
-            { "term": "ગરમીથી મૃત્યુ", "register": "formal" },
-            { "term": "ઉષ્માઘાત", "register": "formal" },
-            { "term": "તડકાથી મોત", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "પાણીની તંગી", "register": "colloquial" },
-            { "term": "જળ સંકટ", "register": "formal" },
-            { "term": "પાણીની અછત", "register": "formal" },
-            { "term": "દુષ્કાળ", "register": "formal" },
-            { "term": "પીવાના પાણીની સમસ્યા", "register": "colloquial" },
-            { "term": "ટેન્કર", "register": "borrowed" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "વીજ કાપ", "register": "formal" },
-            { "term": "લોડશેડિંગ", "register": "borrowed" },
-            { "term": "વીજ સંકટ", "register": "formal" },
-            { "term": "અંધારપટ", "register": "colloquial" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "પાક નુકસાન", "register": "formal" },
-            { "term": "ખેતીને નુકસાન", "register": "formal" },
-            { "term": "ખેડૂતોને નુકસાન", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "ડિહાઇડ્રેશન", "register": "borrowed" },
-            { "term": "હોસ્પિટલમાં દાખલ", "register": "formal" },
-            { "term": "શાળા બંધ", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "રાહત", "register": "formal" },
-            { "term": "એડવાઇઝરી", "register": "borrowed" },
-            { "term": "હીટ એક્શન પ્લાન", "register": "borrowed" },
-            { "term": "રેડ એલર્ટ", "register": "borrowed" },
-            { "term": "ઓરેન્જ એલર્ટ", "register": "borrowed" },
-            { "term": "યેલો એલર્ટ", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "તાપમાન", "register": "formal" },
-            { "term": "તાપમાન વધ્યું", "register": "formal" },
-            { "term": "પારો ચઢ્યો", "register": "journalistic" },
-            { "term": "ડિગ્રી સેલ્સિયસ", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "ભારે ગરમી",
+          "આકરી ગરમી",
+          "લૂ",
+          "હીટવેવ",
+          "ઉષ્ણ મોજું",
+          "ગરમીનો પ્રકોપ",
+          "તાપ",
+          "આકરો તાપ",
+          "અસહ્ય ગરમી",
+          "ભયાનક ગરમી"
+        ],
+        "health": [
+          "લૂ લાગવી",
+          "હીટ સ્ટ્રોક",
+          "ગરમીથી મૃત્યુ",
+          "ઉષ્માઘાત",
+          "તડકાથી મોત",
+          "ડિહાઇડ્રેશન",
+          "હોસ્પિટલમાં દાખલ",
+          "ગરમીથી બેહાલ"
+        ],
+        "water": [
+          "પાણીની તંગી",
+          "જળ સંકટ",
+          "પાણીની અછત",
+          "દુષ્કાળ",
+          "પીવાના પાણીની સમસ્યા",
+          "ટેન્કર",
+          "ભૂગર્ભ જળ ઘટ્યું",
+          "નદી સુકાઈ"
+        ],
+        "power": [
+          "વીજ કાપ",
+          "લોડશેડિંગ",
+          "વીજ સંકટ",
+          "અંધારપટ",
+          "વીજ માંગ વધી",
+          "ટ્રાન્સફોર્મર ફાટ્યો"
+        ],
+        "agriculture": [
+          "પાક નુકસાન",
+          "ખેતીને નુકસાન",
+          "ખેડૂતોને નુકસાન",
+          "પશુ મૃત્યુ",
+          "ઘાસચારાની અછત",
+          "સિંચાઈ સંકટ"
+        ],
+        "labor": [
+          "મજૂરનું મૃત્યુ",
+          "બાંધકામ મજૂર મૃત્યુ",
+          "ઈંટ ભઠ્ઠા મજૂર",
+          "ફેરિયા",
+          "શ્રમિકનું મૃત્યુ"
+        ],
+        "governance": [
+          "રાહત",
+          "એડવાઇઝરી",
+          "હીટ એક્શન પ્લાન",
+          "રેડ એલર્ટ",
+          "ઓરેન્જ એલર્ટ",
+          "યેલો એલર્ટ",
+          "રાહત છાવણી",
+          "વળતર"
+        ],
+        "urban_infra": [
+          "રસ્તો ઓગળ્યો",
+          "રેલ્વે ટ્રેક વાંકો",
+          "ટ્રાન્સફોર્મરમાં આગ",
+          "જંગલમાં આગ",
+          "આગની ઘટના"
+        ],
+        "education": [
+          "શાળા બંધ",
+          "પરીક્ષા મોકૂફ",
+          "ઉનાળુ વેકેશન લંબાવ્યું",
+          "શાળાનો સમય બદલ્યો"
+        ],
+        "temperature": [
+          "તાપમાન",
+          "તાપમાન વધ્યું",
+          "પારો ચઢ્યો",
+          "ડિગ્રી સેલ્સિયસ",
+          "મહત્તમ તાપમાન",
+          "વિક્રમી તાપમાન"
+        ]
       }
     },
     "kn": {
       "name": "Kannada",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "ಬಿಸಿ ಗಾಳಿ", "register": "colloquial" },
-            { "term": "ಉಷ್ಣ ಅಲೆ", "register": "formal" },
-            { "term": "ಹೀಟ್ ವೇವ್", "register": "borrowed" },
-            { "term": "ತೀವ್ರ ಬಿಸಿಲು", "register": "journalistic" },
-            { "term": "ಕಡು ಬಿಸಿಲು", "register": "journalistic" },
-            { "term": "ಬರಗಾಲ ಬಿಸಿಲು", "register": "journalistic" },
-            { "term": "ಬೆಂಕಿ ಬಿಸಿಲು", "register": "colloquial" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "ಬಿಸಿಲಿನ ಹೊಡೆತ", "register": "colloquial" },
-            { "term": "ಹೀಟ್ ಸ್ಟ್ರೋಕ್", "register": "borrowed" },
-            { "term": "ಸನ್ ಸ್ಟ್ರೋಕ್", "register": "borrowed" },
-            { "term": "ಉಷ್ಣಾಘಾತ", "register": "formal" },
-            { "term": "ಬಿಸಿಲಿಗೆ ಸಾವು", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "ನೀರಿನ ಕೊರತೆ", "register": "formal" },
-            { "term": "ಜಲ ಸಂಕಟ", "register": "formal" },
-            { "term": "ಕುಡಿಯುವ ನೀರಿನ ಸಮಸ್ಯೆ", "register": "colloquial" },
-            { "term": "ಬರ", "register": "formal" },
-            { "term": "ಬರಗಾಲ", "register": "formal" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "ವಿದ್ಯುತ್ ಕಡಿತ", "register": "formal" },
-            { "term": "ಲೋಡ್ ಶೆಡ್ಡಿಂಗ್", "register": "borrowed" },
-            { "term": "ಕರೆಂಟ್ ಕಟ್", "register": "borrowed" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "ಬೆಳೆ ನಷ್ಟ", "register": "formal" },
-            { "term": "ಬೆಳೆ ಹಾನಿ", "register": "formal" },
-            { "term": "ರೈತರ ಸಂಕಷ್ಟ", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "ನಿರ್ಜಲೀಕರಣ", "register": "formal" },
-            { "term": "ಆಸ್ಪತ್ರೆಗೆ ದಾಖಲು", "register": "formal" },
-            { "term": "ಶಾಲೆಗಳಿಗೆ ರಜೆ", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "ಪರಿಹಾರ", "register": "formal" },
-            { "term": "ಎಚ್ಚರಿಕೆ", "register": "formal" },
-            { "term": "ಕೆಂಪು ಎಚ್ಚರಿಕೆ", "register": "formal" },
-            { "term": "ರೆಡ್ ಅಲರ್ಟ್", "register": "borrowed" },
-            { "term": "ಆರೆಂಜ್ ಅಲರ್ಟ್", "register": "borrowed" },
-            { "term": "ಯೆಲ್ಲೋ ಅಲರ್ಟ್", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "ತಾಪಮಾನ ಏರಿಕೆ", "register": "formal" },
-            { "term": "ಡಿಗ್ರಿ ಸೆಲ್ಸಿಯಸ್", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "ಬಿಸಿ ಗಾಳಿ",
+          "ಉಷ್ಣ ಅಲೆ",
+          "ಹೀಟ್ ವೇವ್",
+          "ತೀವ್ರ ಬಿಸಿಲು",
+          "ಕಡು ಬಿಸಿಲು",
+          "ಬರಗಾಲ ಬಿಸಿಲು",
+          "ಬೆಂಕಿ ಬಿಸಿಲು",
+          "ಅಸಹನೀಯ ಬಿಸಿ",
+          "ಭಯಾನಕ ಬಿಸಿ"
+        ],
+        "health": [
+          "ಬಿಸಿಲಿನ ಹೊಡೆತ",
+          "ಹೀಟ್ ಸ್ಟ್ರೋಕ್",
+          "ಸನ್ ಸ್ಟ್ರೋಕ್",
+          "ಉಷ್ಣಾಘಾತ",
+          "ಬಿಸಿಲಿಗೆ ಸಾವು",
+          "ನಿರ್ಜಲೀಕರಣ",
+          "ಆಸ್ಪತ್ರೆಗೆ ದಾಖಲು",
+          "ಬಿಸಿಲಿನಿಂದ ಅಸ್ವಸ್ಥ"
+        ],
+        "water": [
+          "ನೀರಿನ ಕೊರತೆ",
+          "ಜಲ ಸಂಕಟ",
+          "ಕುಡಿಯುವ ನೀರಿನ ಸಮಸ್ಯೆ",
+          "ಬರ",
+          "ಬರಗಾಲ",
+          "ಅಂತರ್ಜಲ ಕುಸಿತ",
+          "ನೀರಿನ ಟ್ಯಾಂಕರ್"
+        ],
+        "power": [
+          "ವಿದ್ಯುತ್ ಕಡಿತ",
+          "ಲೋಡ್ ಶೆಡ್ಡಿಂಗ್",
+          "ಕರೆಂಟ್ ಕಟ್",
+          "ವಿದ್ಯುತ್ ಬೇಡಿಕೆ ಹೆಚ್ಚಳ",
+          "ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್ ಸ್ಫೋಟ"
+        ],
+        "agriculture": [
+          "ಬೆಳೆ ನಷ್ಟ",
+          "ಬೆಳೆ ಹಾನಿ",
+          "ರೈತರ ಸಂಕಷ್ಟ",
+          "ಜಾನುವಾರು ಸಾವು",
+          "ಮೇವಿನ ಕೊರತೆ"
+        ],
+        "labor": [
+          "ಕೂಲಿ ಕಾರ್ಮಿಕರ ಸಾವು",
+          "ಕಟ್ಟಡ ಕಾರ್ಮಿಕರ ಸಾವು",
+          "ಇಟ್ಟಿಗೆ ಗೂಡಿನ ಕಾರ್ಮಿಕರು",
+          "ಬೀದಿ ವ್ಯಾಪಾರಿಗಳು"
+        ],
+        "governance": [
+          "ಪರಿಹಾರ",
+          "ಎಚ್ಚರಿಕೆ",
+          "ಕೆಂಪು ಎಚ್ಚರಿಕೆ",
+          "ರೆಡ್ ಅಲರ್ಟ್",
+          "ಆರೆಂಜ್ ಅಲರ್ಟ್",
+          "ಯೆಲ್ಲೋ ಅಲರ್ಟ್",
+          "ಪರಿಹಾರ ಶಿಬಿರ",
+          "ಪರಿಹಾರ ಧನ"
+        ],
+        "urban_infra": [
+          "ರಸ್ತೆ ಕರಗಿತು",
+          "ರೈಲ್ವೆ ಹಳಿ ಬಾಗಿತು",
+          "ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್‌ಗೆ ಬೆಂಕಿ",
+          "ಕಾಡ್ಗಿಚ್ಚು",
+          "ಬೆಂಕಿ ಅನಾಹುತ"
+        ],
+        "education": [
+          "ಶಾಲೆಗಳಿಗೆ ರಜೆ",
+          "ಪರೀಕ್ಷೆ ಮುಂದೂಡಿಕೆ",
+          "ಬೇಸಿಗೆ ರಜೆ ವಿಸ್ತರಣೆ",
+          "ಶಾಲೆ ಸಮಯ ಬದಲಾವಣೆ"
+        ],
+        "temperature": [
+          "ತಾಪಮಾನ ಏರಿಕೆ",
+          "ಡಿಗ್ರಿ ಸೆಲ್ಸಿಯಸ್",
+          "ಗರಿಷ್ಠ ತಾಪಮಾನ",
+          "ದಾಖಲೆ ತಾಪಮಾನ"
+        ]
       }
     },
     "ml": {
       "name": "Malayalam",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "ഉഷ്ണ തരംഗം", "register": "formal" },
-            { "term": "ചൂട് തരംഗം", "register": "colloquial" },
-            { "term": "കടുത്ത ചൂട്", "register": "journalistic" },
-            { "term": "കൊടും ചൂട്", "register": "journalistic" },
-            { "term": "ഹീറ്റ് വേവ്", "register": "borrowed" },
-            { "term": "വെയിലിന്റെ കാഠിന്യം", "register": "journalistic" },
-            { "term": "ചൂടിന്റെ കാഠിന്യം", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "സൂര്യാഘാതം", "register": "formal" },
-            { "term": "ഹീറ്റ് സ്ട്രോക്ക്", "register": "borrowed" },
-            { "term": "ചൂടേറ്റ് മരണം", "register": "journalistic" },
-            { "term": "വെയിലേറ്റ് മരണം", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "ജലക്ഷാമം", "register": "formal" },
-            { "term": "കുടിവെള്ള ക്ഷാമം", "register": "formal" },
-            { "term": "ജല ദൗര്‍ലഭ്യം", "register": "formal" },
-            { "term": "വരള്‍ച്ച", "register": "formal" },
-            { "term": "കിണര്‍ വറ്റി", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "വൈദ്യുതി മുടക്കം", "register": "formal" },
-            { "term": "ലോഡ് ഷെഡ്ഡിംഗ്", "register": "borrowed" },
-            { "term": "പവര്‍കട്ട്", "register": "borrowed" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "വിള നഷ്ടം", "register": "formal" },
-            { "term": "കൃഷി നാശം", "register": "formal" },
-            { "term": "കര്‍ഷകര്‍ പ്രതിസന്ധിയില്‍", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "നിര്‍ജലീകരണം", "register": "formal" },
-            { "term": "ആശുപത്രിയില്‍ പ്രവേശിപ്പിച്ചു", "register": "formal" },
-            { "term": "സ്കൂള്‍ അവധി", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "ദുരിതാശ്വാസം", "register": "formal" },
-            { "term": "മുന്നറിയിപ്പ്", "register": "formal" },
-            { "term": "റെഡ് അലര്‍ട്ട്", "register": "borrowed" },
-            { "term": "ഓറഞ്ച് അലര്‍ട്ട്", "register": "borrowed" },
-            { "term": "യെല്ലോ അലര്‍ട്ട്", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "താപനില", "register": "formal" },
-            { "term": "താപനില ഉയര്‍ന്നു", "register": "formal" },
-            { "term": "ഡിഗ്രി സെല്‍ഷ്യസ്", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "ഉഷ്ണ തരംഗം",
+          "ചൂട് തരംഗം",
+          "കടുത്ത ചൂട്",
+          "കൊടും ചൂട്",
+          "ഹീറ്റ് വേവ്",
+          "വെയിലിന്റെ കാഠിന്യം",
+          "ചൂടിന്റെ കാഠിന്യം",
+          "അസഹനീയ ചൂട്",
+          "ഭീകര ചൂട്"
+        ],
+        "health": [
+          "സൂര്യാഘാതം",
+          "ഹീറ്റ് സ്ട്രോക്ക്",
+          "ചൂടേറ്റ് മരണം",
+          "വെയിലേറ്റ് മരണം",
+          "നിര്‍ജലീകരണം",
+          "ആശുപത്രിയില്‍ പ്രവേശിപ്പിച്ചു",
+          "ചൂടുമൂലം അസുഖം"
+        ],
+        "water": [
+          "ജലക്ഷാമം",
+          "കുടിവെള്ള ക്ഷാമം",
+          "ജല ദൗര്‍ലഭ്യം",
+          "വരള്‍ച്ച",
+          "കിണര്‍ വറ്റി",
+          "ഭൂഗര്‍ഭ ജലനിരപ്പ് കുറഞ്ഞു",
+          "ജല ടാങ്കര്‍"
+        ],
+        "power": [
+          "വൈദ്യുതി മുടക്കം",
+          "ലോഡ് ഷെഡ്ഡിംഗ്",
+          "പവര്‍കട്ട്",
+          "വൈദ്യുതി ആവശ്യം വര്‍ദ്ധിച്ചു",
+          "ട്രാന്‍സ്ഫോര്‍മര്‍ പൊട്ടിത്തെറിച്ചു"
+        ],
+        "agriculture": [
+          "വിള നഷ്ടം",
+          "കൃഷി നാശം",
+          "കര്‍ഷകര്‍ പ്രതിസന്ധിയില്‍",
+          "കന്നുകാലി ചാവ്",
+          "തീറ്റപ്പുല്ല് ക്ഷാമം"
+        ],
+        "labor": [
+          "തൊഴിലാളി മരണം",
+          "നിര്‍മ്മാണ തൊഴിലാളി മരണം",
+          "ഇഷ്ടിക ചൂള തൊഴിലാളി",
+          "തെരുവ് കച്ചവടക്കാരന്‍"
+        ],
+        "governance": [
+          "ദുരിതാശ്വാസം",
+          "മുന്നറിയിപ്പ്",
+          "റെഡ് അലര്‍ട്ട്",
+          "ഓറഞ്ച് അലര്‍ട്ട്",
+          "യെല്ലോ അലര്‍ട്ട്",
+          "ദുരിതാശ്വാസ ക്യാമ്പ്",
+          "നഷ്ടപരിഹാരം"
+        ],
+        "urban_infra": [
+          "റോഡ് ഉരുകി",
+          "റെയില്‍വേ ട്രാക്ക് വളഞ്ഞു",
+          "ട്രാന്‍സ്ഫോര്‍മര്‍ പൊട്ടിത്തെറി",
+          "കാട്ടുതീ",
+          "അഗ്നിബാധ"
+        ],
+        "education": [
+          "സ്കൂള്‍ അവധി",
+          "പരീക്ഷ മാറ്റിവച്ചു",
+          "വേനല്‍ അവധി നീട്ടി",
+          "സ്കൂള്‍ സമയം മാറ്റി"
+        ],
+        "temperature": [
+          "താപനില",
+          "താപനില ഉയര്‍ന്നു",
+          "ഡിഗ്രി സെല്‍ഷ്യസ്",
+          "പരമാവധി താപനില",
+          "റെക്കോര്‍ഡ് താപനില"
+        ]
       }
     },
     "or": {
       "name": "Odia",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "ଉଷ୍ଣ ଲହରୀ", "register": "formal" },
-            { "term": "ହିଟ୍ ୱେଭ୍", "register": "borrowed" },
-            { "term": "ପ୍ରବଳ ଗରମ", "register": "journalistic" },
-            { "term": "ଭୟଙ୍କର ଗରମ", "register": "journalistic" },
-            { "term": "ଗରମ ପବନ", "register": "colloquial" },
-            { "term": "ଲୁ", "register": "colloquial" },
-            { "term": "ଝାଳ", "register": "colloquial" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "ଲୁ ଲାଗିବା", "register": "colloquial" },
-            { "term": "ହିଟ୍ ଷ୍ଟ୍ରୋକ୍", "register": "borrowed" },
-            { "term": "ଗରମରେ ମୃତ୍ୟୁ", "register": "journalistic" },
-            { "term": "ଉଷ୍ଣାଘାତ", "register": "formal" },
-            { "term": "ସୂର୍ଯ୍ୟାଘାତ", "register": "formal" },
-            { "term": "ଗରମରେ ମଲେ", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "ଜଳ ସଙ୍କଟ", "register": "formal" },
-            { "term": "ପାଣି ଅଭାବ", "register": "colloquial" },
-            { "term": "ପାଣି ସମସ୍ୟା", "register": "colloquial" },
-            { "term": "ଖରା", "register": "formal" },
-            { "term": "ପେୟ ଜଳ ସଙ୍କଟ", "register": "formal" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "ବିଦ୍ୟୁତ ବିଭ୍ରାଟ", "register": "formal" },
-            { "term": "ଲୋଡ୍ ସେଡିଂ", "register": "borrowed" },
-            { "term": "ବିଜୁଳି ସମସ୍ୟା", "register": "colloquial" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "ଫସଲ କ୍ଷତି", "register": "formal" },
-            { "term": "ଫସଲ ନଷ୍ଟ", "register": "formal" },
-            { "term": "ଚାଷୀଙ୍କ ସମସ୍ୟା", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "ନିର୍ଜଳୀକରଣ", "register": "formal" },
-            { "term": "ଡାକ୍ତରଖାନାରେ ଭର୍ତ୍ତି", "register": "formal" },
-            { "term": "ବିଦ୍ୟାଳୟ ବନ୍ଦ", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "ସହାୟତା", "register": "formal" },
-            { "term": "ସତର୍କତା", "register": "formal" },
-            { "term": "ରେଡ୍ ଆଲର୍ଟ", "register": "borrowed" },
-            { "term": "ଅରେଞ୍ଜ ଆଲର୍ଟ", "register": "borrowed" },
-            { "term": "ଏଲୋ ଆଲର୍ଟ", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "ତାପମାତ୍ରା", "register": "formal" },
-            { "term": "ତାପମାତ୍ରା ବୃଦ୍ଧି", "register": "formal" },
-            { "term": "ଡିଗ୍ରୀ ସେଲସିୟସ", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "ଉଷ୍ଣ ଲହରୀ",
+          "ହିଟ୍ ୱେଭ୍",
+          "ପ୍ରବଳ ଗରମ",
+          "ଭୟଙ୍କର ଗରମ",
+          "ଗରମ ପବନ",
+          "ଲୁ",
+          "ଝାଳ",
+          "ଅସହ୍ୟ ଗରମ",
+          "ତୀବ୍ର ଗରମ"
+        ],
+        "health": [
+          "ଲୁ ଲାଗିବା",
+          "ହିଟ୍ ଷ୍ଟ୍ରୋକ୍",
+          "ଗରମରେ ମୃତ୍ୟୁ",
+          "ଉଷ୍ଣାଘାତ",
+          "ସୂର୍ଯ୍ୟାଘାତ",
+          "ଗରମରେ ମଲେ",
+          "ନିର୍ଜଳୀକରଣ",
+          "ଡାକ୍ତରଖାନାରେ ଭର୍ତ୍ତି"
+        ],
+        "water": [
+          "ଜଳ ସଙ୍କଟ",
+          "ପାଣି ଅଭାବ",
+          "ପାଣି ସମସ୍ୟା",
+          "ଖରା",
+          "ପେୟ ଜଳ ସଙ୍କଟ",
+          "ଭୂଗର୍ଭ ଜଳ ହ୍ରାସ",
+          "ଟ୍ୟାଙ୍କର ପାଣି"
+        ],
+        "power": [
+          "ବିଦ୍ୟୁତ ବିଭ୍ରାଟ",
+          "ଲୋଡ୍ ସେଡିଂ",
+          "ବିଜୁଳି ସମସ୍ୟା",
+          "ବିଦ୍ୟୁତ ଚାହିଦା ବୃଦ୍ଧି",
+          "ଟ୍ରାନ୍ସଫର୍ମର ବିସ୍ଫୋରଣ"
+        ],
+        "agriculture": [
+          "ଫସଲ କ୍ଷତି",
+          "ଫସଲ ନଷ୍ଟ",
+          "ଚାଷୀଙ୍କ ସମସ୍ୟା",
+          "ଗୋରୁ ମୃତ୍ୟୁ",
+          "ଘାସ ଅଭାବ"
+        ],
+        "labor": [
+          "ଶ୍ରମିକ ମୃତ୍ୟୁ",
+          "ନିର୍ମାଣ ଶ୍ରମିକ ମୃତ୍ୟୁ",
+          "ଇଟା ଭାଟା ଶ୍ରମିକ",
+          "ପଥ ବ୍ୟବସାୟୀ"
+        ],
+        "governance": [
+          "ସହାୟତା",
+          "ସତର୍କତା",
+          "ରେଡ୍ ଆଲର୍ଟ",
+          "ଅରେଞ୍ଜ ଆଲର୍ଟ",
+          "ଏଲୋ ଆଲର୍ଟ",
+          "ସହାୟତା ଶିବିର",
+          "କ୍ଷତିପୂରଣ"
+        ],
+        "urban_infra": [
+          "ରାସ୍ତା ତରଳିଲା",
+          "ରେଳ ଟ୍ରାକ୍ ବଙ୍କା",
+          "ଟ୍ରାନ୍ସଫର୍ମରରେ ନିଆଁ",
+          "ଜଙ୍ଗଲ ନିଆଁ",
+          "ଅଗ୍ନିକାଣ୍ଡ"
+        ],
+        "education": [
+          "ବିଦ୍ୟାଳୟ ବନ୍ଦ",
+          "ପରୀକ୍ଷା ସ୍ଥଗିତ",
+          "ଗ୍ରୀଷ୍ମ ଛୁଟି ବୃଦ୍ଧି",
+          "ବିଦ୍ୟାଳୟ ସମୟ ପରିବର୍ତ୍ତନ"
+        ],
+        "temperature": [
+          "ତାପମାତ୍ରା",
+          "ତାପମାତ୍ରା ବୃଦ୍ଧି",
+          "ଡିଗ୍ରୀ ସେଲସିୟସ",
+          "ସର୍ବାଧିକ ତାପମାତ୍ରା",
+          "ରେକର୍ଡ ତାପମାତ୍ରା"
+        ]
       }
     },
     "pa": {
       "name": "Punjabi",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "ਲੂ", "register": "colloquial" },
-            { "term": "ਹੀਟ ਵੇਵ", "register": "borrowed" },
-            { "term": "ਭਿਆਨਕ ਗਰਮੀ", "register": "journalistic" },
-            { "term": "ਕੜਾਕੇ ਦੀ ਗਰਮੀ", "register": "colloquial" },
-            { "term": "ਤੱਤੀ ਹਵਾ", "register": "colloquial" },
-            { "term": "ਗਰਮੀ ਦਾ ਕਹਿਰ", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "ਲੂ ਲੱਗਣਾ", "register": "colloquial" },
-            { "term": "ਹੀਟ ਸਟ੍ਰੋਕ", "register": "borrowed" },
-            { "term": "ਗਰਮੀ ਨਾਲ ਮੌਤ", "register": "journalistic" },
-            { "term": "ਧੁੱਪ ਨਾਲ ਮੌਤ", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "ਪਾਣੀ ਦੀ ਕਿੱਲਤ", "register": "colloquial" },
-            { "term": "ਜਲ ਸੰਕਟ", "register": "formal" },
-            { "term": "ਪਾਣੀ ਦੀ ਸਮੱਸਿਆ", "register": "colloquial" },
-            { "term": "ਸੋਕਾ", "register": "formal" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "ਬਿਜਲੀ ਕੱਟ", "register": "colloquial" },
-            { "term": "ਲੋਡ ਸ਼ੈਡਿੰਗ", "register": "borrowed" },
-            { "term": "ਬਿਜਲੀ ਸੰਕਟ", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "ਫ਼ਸਲ ਨੁਕਸਾਨ", "register": "formal" },
-            { "term": "ਫ਼ਸਲ ਬਰਬਾਦ", "register": "colloquial" },
-            { "term": "ਕਿਸਾਨ ਪਰੇਸ਼ਾਨ", "register": "journalistic" },
-            { "term": "ਕਣਕ ਦੀ ਫ਼ਸਲ ਨੁਕਸਾਨ", "register": "formal" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "ਡੀਹਾਈਡ੍ਰੇਸ਼ਨ", "register": "borrowed" },
-            { "term": "ਹਸਪਤਾਲ ਵਿੱਚ ਭਰਤੀ", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "ਰਾਹਤ", "register": "formal" },
-            { "term": "ਐਡਵਾਈਜ਼ਰੀ", "register": "borrowed" },
-            { "term": "ਰੈੱਡ ਅਲਰਟ", "register": "borrowed" },
-            { "term": "ਔਰੇਂਜ ਅਲਰਟ", "register": "borrowed" },
-            { "term": "ਯੈਲੋ ਅਲਰਟ", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "ਤਾਪਮਾਨ ਵਧਿਆ", "register": "formal" },
-            { "term": "ਪਾਰਾ ਚੜ੍ਹਿਆ", "register": "journalistic" },
-            { "term": "ਡਿਗਰੀ ਸੈਲਸੀਅਸ", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "ਲੂ",
+          "ਹੀਟ ਵੇਵ",
+          "ਭਿਆਨਕ ਗਰਮੀ",
+          "ਕੜਾਕੇ ਦੀ ਗਰਮੀ",
+          "ਤੱਤੀ ਹਵਾ",
+          "ਗਰਮੀ ਦਾ ਕਹਿਰ",
+          "ਸਖ਼ਤ ਗਰਮੀ",
+          "ਅਸਹਿ ਗਰਮੀ",
+          "ਤਪਦੀ ਗਰਮੀ"
+        ],
+        "health": [
+          "ਲੂ ਲੱਗਣਾ",
+          "ਹੀਟ ਸਟ੍ਰੋਕ",
+          "ਗਰਮੀ ਨਾਲ ਮੌਤ",
+          "ਧੁੱਪ ਨਾਲ ਮੌਤ",
+          "ਡੀਹਾਈਡ੍ਰੇਸ਼ਨ",
+          "ਹਸਪਤਾਲ ਵਿੱਚ ਭਰਤੀ",
+          "ਗਰਮੀ ਨਾਲ ਬੀਮਾਰ"
+        ],
+        "water": [
+          "ਪਾਣੀ ਦੀ ਕਿੱਲਤ",
+          "ਜਲ ਸੰਕਟ",
+          "ਪਾਣੀ ਦੀ ਸਮੱਸਿਆ",
+          "ਸੋਕਾ",
+          "ਭੂ-ਜਲ ਪੱਧਰ ਡਿੱਗਿਆ",
+          "ਟੈਂਕਰ ਨਾਲ ਪਾਣੀ"
+        ],
+        "power": [
+          "ਬਿਜਲੀ ਕੱਟ",
+          "ਲੋਡ ਸ਼ੈਡਿੰਗ",
+          "ਬਿਜਲੀ ਸੰਕਟ",
+          "ਬਿਜਲੀ ਦੀ ਮੰਗ ਵਧੀ",
+          "ਟਰਾਂਸਫਾਰਮਰ ਫਟਿਆ"
+        ],
+        "agriculture": [
+          "ਫ਼ਸਲ ਨੁਕਸਾਨ",
+          "ਫ਼ਸਲ ਬਰਬਾਦ",
+          "ਕਿਸਾਨ ਪਰੇਸ਼ਾਨ",
+          "ਕਣਕ ਦੀ ਫ਼ਸਲ ਨੁਕਸਾਨ",
+          "ਪਸ਼ੂ ਮੌਤ",
+          "ਚਾਰੇ ਦੀ ਕਮੀ"
+        ],
+        "labor": [
+          "ਮਜ਼ਦੂਰ ਦੀ ਮੌਤ",
+          "ਉਸਾਰੀ ਮਜ਼ਦੂਰ ਮੌਤ",
+          "ਇੱਟ ਭੱਠਾ ਮਜ਼ਦੂਰ",
+          "ਰੇਹੜੀ ਵਾਲਾ"
+        ],
+        "governance": [
+          "ਰਾਹਤ",
+          "ਐਡਵਾਈਜ਼ਰੀ",
+          "ਰੈੱਡ ਅਲਰਟ",
+          "ਔਰੇਂਜ ਅਲਰਟ",
+          "ਯੈਲੋ ਅਲਰਟ",
+          "ਰਾਹਤ ਕੈਂਪ",
+          "ਮੁਆਵਜ਼ਾ"
+        ],
+        "urban_infra": [
+          "ਸੜਕ ਪਿਘਲੀ",
+          "ਰੇਲਵੇ ਟ੍ਰੈਕ ਮੁੜਿਆ",
+          "ਟਰਾਂਸਫਾਰਮਰ ਵਿੱਚ ਅੱਗ",
+          "ਜੰਗਲ ਵਿੱਚ ਅੱਗ",
+          "ਅੱਗ ਦੀ ਘਟਨਾ"
+        ],
+        "education": [
+          "ਸਕੂਲ ਬੰਦ",
+          "ਪ੍ਰੀਖਿਆ ਅੱਗੇ ਪਾਈ",
+          "ਗਰਮੀ ਦੀਆਂ ਛੁੱਟੀਆਂ ਵਧਾਈਆਂ",
+          "ਸਕੂਲ ਦਾ ਸਮਾਂ ਬਦਲਿਆ"
+        ],
+        "temperature": [
+          "ਤਾਪਮਾਨ ਵਧਿਆ",
+          "ਪਾਰਾ ਚੜ੍ਹਿਆ",
+          "ਡਿਗਰੀ ਸੈਲਸੀਅਸ",
+          "ਵੱਧ ਤੋਂ ਵੱਧ ਤਾਪਮਾਨ",
+          "ਰਿਕਾਰਡ ਤਾਪਮਾਨ"
+        ]
       }
     },
     "as": {
       "name": "Assamese",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "তাপ প্ৰবাহ", "register": "formal" },
-            { "term": "হিট ৱেভ", "register": "borrowed" },
-            { "term": "প্ৰচণ্ড গৰম", "register": "journalistic" },
-            { "term": "তীব্ৰ গৰম", "register": "journalistic" },
-            { "term": "লু", "register": "colloquial" },
-            { "term": "গৰমৰ প্ৰকোপ", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "তাপাঘাত", "register": "formal" },
-            { "term": "লু লগা", "register": "colloquial" },
-            { "term": "হিট ষ্ট্ৰক", "register": "borrowed" },
-            { "term": "গৰমত মৃত্যু", "register": "journalistic" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "জল সংকট", "register": "formal" },
-            { "term": "পানী নাটনি", "register": "colloquial" },
-            { "term": "পানীৰ অভাব", "register": "colloquial" },
-            { "term": "খৰাং", "register": "formal" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "বিদ্যুৎ বিভ্ৰাট", "register": "formal" },
-            { "term": "লোড শ্বেডিং", "register": "borrowed" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "শস্যৰ ক্ষতি", "register": "formal" },
-            { "term": "খেতিৰ নষ্ট", "register": "colloquial" },
-            { "term": "কৃষকৰ সমস্যা", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "পানীশূন্যতা", "register": "formal" },
-            { "term": "চিকিৎসালয়ত ভৰ্তি", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "সাহায্য", "register": "formal" },
-            { "term": "সতৰ্কবাণী", "register": "formal" },
-            { "term": "ৰেড এলাৰ্ট", "register": "borrowed" },
-            { "term": "অৰেঞ্জ এলাৰ্ট", "register": "borrowed" },
-            { "term": "ইয়েলো এলাৰ্ট", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "তাপমাত্ৰা", "register": "formal" },
-            { "term": "তাপমাত্ৰা বৃদ্ধি", "register": "formal" },
-            { "term": "ডিগ্ৰী চেলচিয়াছ", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "তাপ প্ৰবাহ",
+          "হিট ৱেভ",
+          "প্ৰচণ্ড গৰম",
+          "তীব্ৰ গৰম",
+          "লু",
+          "গৰমৰ প্ৰকোপ",
+          "অসহনীয় গৰম",
+          "ভয়ংকৰ গৰম"
+        ],
+        "health": [
+          "তাপাঘাত",
+          "লু লগা",
+          "হিট ষ্ট্ৰক",
+          "গৰমত মৃত্যু",
+          "পানীশূন্যতা",
+          "চিকিৎসালয়ত ভৰ্তি",
+          "গৰমত অসুস্থ"
+        ],
+        "water": [
+          "জল সংকট",
+          "পানী নাটনি",
+          "পানীৰ অভাব",
+          "খৰাং",
+          "ভূগৰ্ভস্থ জল হ্ৰাস",
+          "টেংকাৰ পানী"
+        ],
+        "power": [
+          "বিদ্যুৎ বিভ্ৰাট",
+          "লোড শ্বেডিং",
+          "বিদ্যুতৰ চাহিদা বৃদ্ধি",
+          "ট্ৰেন্সফৰ্মাৰ বিস্ফোৰণ"
+        ],
+        "agriculture": [
+          "শস্যৰ ক্ষতি",
+          "খেতিৰ নষ্ট",
+          "কৃষকৰ সমস্যা",
+          "গৰু মৃত্যু",
+          "ঘাঁহৰ অভাব"
+        ],
+        "labor": [
+          "শ্ৰমিকৰ মৃত্যু",
+          "নিৰ্মাণ শ্ৰমিকৰ মৃত্যু",
+          "ইটা ভাটা শ্ৰমিক"
+        ],
+        "governance": [
+          "সাহায্য",
+          "সতৰ্কবাণী",
+          "ৰেড এলাৰ্ট",
+          "অৰেঞ্জ এলাৰ্ট",
+          "ইয়েলো এলাৰ্ট",
+          "সাহায্য শিবিৰ",
+          "ক্ষতিপূৰণ"
+        ],
+        "urban_infra": [
+          "ৰাস্তা গলিছে",
+          "ৰেলৱে ট্ৰেক বেঁকা",
+          "ট্ৰেন্সফৰ্মাৰত জুই",
+          "হাবিত জুই"
+        ],
+        "education": [
+          "বিদ্যালয় বন্ধ",
+          "পৰীক্ষা স্থগিত",
+          "গ্ৰীষ্মকালীন ছুটি বৃদ্ধি"
+        ],
+        "temperature": [
+          "তাপমাত্ৰা",
+          "তাপমাত্ৰা বৃদ্ধি",
+          "ডিগ্ৰী চেলচিয়াছ",
+          "সৰ্বাধিক তাপমাত্ৰা"
+        ]
       }
     },
     "ur": {
       "name": "Urdu",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "لو", "register": "colloquial" },
-            { "term": "ہیٹ ویو", "register": "borrowed" },
-            { "term": "شدید گرمی", "register": "journalistic" },
-            { "term": "سخت گرمی", "register": "colloquial" },
-            { "term": "گرمی کی لہر", "register": "formal" },
-            { "term": "موسمِ گرما کی شدت", "register": "formal" },
-            { "term": "گرم ہوائیں", "register": "colloquial" },
-            { "term": "تپتی دھوپ", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "لو لگنا", "register": "colloquial" },
-            { "term": "ہیٹ اسٹروک", "register": "borrowed" },
-            { "term": "سن اسٹروک", "register": "borrowed" },
-            { "term": "گرمی سے اموات", "register": "formal" },
-            { "term": "گرمی سے ہلاکتیں", "register": "formal" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "پانی کا بحران", "register": "formal" },
-            { "term": "قلتِ آب", "register": "formal" },
-            { "term": "پانی کی قلت", "register": "formal" },
-            { "term": "پینے کے پانی کا بحران", "register": "formal" },
-            { "term": "خشک سالی", "register": "formal" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "بجلی کی کٹوتی", "register": "colloquial" },
-            { "term": "لوڈ شیڈنگ", "register": "borrowed" },
-            { "term": "بجلی بحران", "register": "formal" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "فصل نقصان", "register": "formal" },
-            { "term": "فصل تباہ", "register": "journalistic" },
-            { "term": "کسانوں کا نقصان", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "پانی کی کمی", "register": "colloquial" },
-            { "term": "ہسپتال میں داخل", "register": "formal" },
-            { "term": "اسکول بند", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "امداد", "register": "formal" },
-            { "term": "ایڈوائزری", "register": "borrowed" },
-            { "term": "ریڈ الرٹ", "register": "borrowed" },
-            { "term": "اورنج الرٹ", "register": "borrowed" },
-            { "term": "یلو الرٹ", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "درجہ حرارت", "register": "formal" },
-            { "term": "درجہ حرارت بڑھا", "register": "formal" },
-            { "term": "پارہ چڑھا", "register": "journalistic" },
-            { "term": "ڈگری سیلسیس", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "لو",
+          "ہیٹ ویو",
+          "شدید گرمی",
+          "سخت گرمی",
+          "گرمی کی لہر",
+          "موسمِ گرما کی شدت",
+          "گرم ہوائیں",
+          "تپتی دھوپ",
+          "ناقابلِ برداشت گرمی",
+          "خوفناک گرمی"
+        ],
+        "health": [
+          "لو لگنا",
+          "ہیٹ اسٹروک",
+          "سن اسٹروک",
+          "گرمی سے اموات",
+          "گرمی سے ہلاکتیں",
+          "پانی کی کمی",
+          "ہسپتال میں داخل",
+          "گرمی سے بیمار"
+        ],
+        "water": [
+          "پانی کا بحران",
+          "قلتِ آب",
+          "پانی کی قلت",
+          "پینے کے پانی کا بحران",
+          "خشک سالی",
+          "زیرِ زمین پانی کم",
+          "ٹینکر سے پانی"
+        ],
+        "power": [
+          "بجلی کی کٹوتی",
+          "لوڈ شیڈنگ",
+          "بجلی بحران",
+          "بجلی کی طلب بڑھی",
+          "ٹرانسفارمر پھٹا"
+        ],
+        "agriculture": [
+          "فصل نقصان",
+          "فصل تباہ",
+          "کسانوں کا نقصان",
+          "مویشیوں کی موت",
+          "چارے کی کمی"
+        ],
+        "labor": [
+          "مزدور کی موت",
+          "تعمیراتی مزدور کی موت",
+          "اینٹ بھٹہ مزدور",
+          "ریڑھی والا"
+        ],
+        "governance": [
+          "امداد",
+          "ایڈوائزری",
+          "ریڈ الرٹ",
+          "اورنج الرٹ",
+          "یلو الرٹ",
+          "ہیٹ ایکشن پلان",
+          "ریلیف کیمپ",
+          "معاوضہ"
+        ],
+        "urban_infra": [
+          "سڑک پگھلی",
+          "ریلوے ٹریک ٹیڑھا",
+          "ٹرانسفارمر میں آگ",
+          "جنگل میں آگ",
+          "آتشزدگی"
+        ],
+        "education": [
+          "اسکول بند",
+          "امتحان ملتوی",
+          "گرمیوں کی چھٹیاں بڑھائیں",
+          "اسکول کے اوقات بدلے"
+        ],
+        "temperature": [
+          "درجہ حرارت",
+          "درجہ حرارت بڑھا",
+          "پارہ چڑھا",
+          "ڈگری سیلسیس",
+          "زیادہ سے زیادہ درجہ حرارت",
+          "ریکارڈ درجہ حرارت"
+        ]
       }
     },
     "ne": {
       "name": "Nepali",
       "categories": {
-        "heatwave": {
-          "terms": [
-            { "term": "लू", "register": "colloquial" },
-            { "term": "हिट वेभ", "register": "borrowed" },
-            { "term": "भिषण गर्मी", "register": "journalistic" },
-            { "term": "अत्यधिक गर्मी", "register": "formal" },
-            { "term": "तातो हावा", "register": "colloquial" },
-            { "term": "गर्मीको कहर", "register": "journalistic" }
-          ]
-        },
-        "death_stroke": {
-          "terms": [
-            { "term": "लू लाग्नु", "register": "colloquial" },
-            { "term": "हिट स्ट्रोक", "register": "borrowed" },
-            { "term": "गर्मीले मृत्यु", "register": "journalistic" },
-            { "term": "घामले मृत्यु", "register": "colloquial" }
-          ]
-        },
-        "water_crisis": {
-          "terms": [
-            { "term": "पानीको अभाव", "register": "formal" },
-            { "term": "जल संकट", "register": "formal" },
-            { "term": "खडेरी", "register": "formal" },
-            { "term": "खोलाहरू सुक्यो", "register": "journalistic" }
-          ]
-        },
-        "power_cuts": {
-          "terms": [
-            { "term": "बिजुली कटौती", "register": "formal" },
-            { "term": "लोडसेडिङ", "register": "borrowed" }
-          ]
-        },
-        "crop_damage": {
-          "terms": [
-            { "term": "बाली नोक्सानी", "register": "formal" },
-            { "term": "खेती नोक्सानी", "register": "formal" },
-            { "term": "किसानको समस्या", "register": "journalistic" }
-          ]
-        },
-        "human_impact": {
-          "terms": [
-            { "term": "निर्जलीकरण", "register": "formal" },
-            { "term": "अस्पतालमा भर्ना", "register": "formal" },
-            { "term": "विद्यालय बन्द", "register": "formal" }
-          ]
-        },
-        "government_response": {
-          "terms": [
-            { "term": "राहत", "register": "formal" },
-            { "term": "चेतावनी", "register": "formal" },
-            { "term": "रेड अलर्ट", "register": "borrowed" },
-            { "term": "अरेन्ज अलर्ट", "register": "borrowed" },
-            { "term": "एलो अलर्ट", "register": "borrowed" }
-          ]
-        },
-        "temperature": {
-          "terms": [
-            { "term": "तापक्रम", "register": "formal" },
-            { "term": "तापक्रम बढ्यो", "register": "formal" },
-            { "term": "डिग्री सेल्सियस", "register": "formal" }
-          ]
-        }
+        "weather": [
+          "लू",
+          "हिट वेभ",
+          "भिषण गर्मी",
+          "अत्यधिक गर्मी",
+          "तातो हावा",
+          "गर्मीको कहर",
+          "असहनीय गर्मी",
+          "भयानक गर्मी"
+        ],
+        "health": [
+          "लू लाग्नु",
+          "हिट स्ट्रोक",
+          "गर्मीले मृत्यु",
+          "घामले मृत्यु",
+          "निर्जलीकरण",
+          "अस्पतालमा भर्ना",
+          "गर्मीले बिरामी"
+        ],
+        "water": [
+          "पानीको अभाव",
+          "जल संकट",
+          "खडेरी",
+          "खोलाहरू सुक्यो",
+          "भूमिगत जल घट्यो",
+          "ट्यांकर पानी"
+        ],
+        "power": [
+          "बिजुली कटौती",
+          "लोडसेडिङ",
+          "बिजुली संकट",
+          "ट्रान्सफर्मर विस्फोट"
+        ],
+        "agriculture": [
+          "बाली नोक्सानी",
+          "खेती नोक्सानी",
+          "किसानको समस्या",
+          "पशु मृत्यु",
+          "घाँस अभाव"
+        ],
+        "labor": [
+          "मजदुरको मृत्यु",
+          "निर्माण मजदुर मृत्यु",
+          "इँटा भट्टा मजदुर"
+        ],
+        "governance": [
+          "राहत",
+          "चेतावनी",
+          "रेड अलर्ट",
+          "अरेन्ज अलर्ट",
+          "एलो अलर्ट",
+          "राहत शिविर",
+          "क्षतिपूर्ति"
+        ],
+        "urban_infra": [
+          "सडक पग्लियो",
+          "रेलवे ट्र्याक बाक्लियो",
+          "ट्रान्सफर्मरमा आगो",
+          "जंगलमा आगो",
+          "आगलागी"
+        ],
+        "education": [
+          "विद्यालय बन्द",
+          "परीक्षा स्थगित",
+          "गर्मी बिदा लम्बियो"
+        ],
+        "temperature": [
+          "तापक्रम",
+          "तापक्रम बढ्यो",
+          "डिग्री सेल्सियस",
+          "अधिकतम तापक्रम",
+          "कीर्तिमानी तापक्रम"
+        ]
       }
     }
   }
