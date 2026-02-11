@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 8 - Deduplication and Filtering
+**Current focus:** Phase 8 - Deduplication and Filtering (COMPLETE)
 
 ## Current Position
 
 Phase: 8 of 10 (Deduplication and Filtering)
-Plan: 1 of 2 in current phase
-Status: Executing
-Last activity: 2026-02-11 -- Plan 08-01 complete (URL and title dedup)
+Plan: 2 of 2 in current phase (COMPLETE)
+Status: Phase Complete
+Last activity: 2026-02-11 -- Plan 08-02 complete (relevance scoring and pipeline composition)
 
-Progress: [████████░░] 75%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: 3min
-- Total execution time: 0.58 hours
+- Total execution time: 0.61 hours
 
 **By Phase:**
 
@@ -34,10 +34,10 @@ Progress: [████████░░] 75%
 | 05-secondary-news-sources | 2 | 4min | 2min |
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 | 07-article-extraction | 1 | 2min | 2min |
-| 08-deduplication-and-filtering | 1 | 3min | 3min |
+| 08-deduplication-and-filtering | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 06-01 (3min), 06-02 (2min), 06-03 (2min), 07-01 (2min), 08-01 (3min)
+- Last 5 plans: 06-02 (2min), 06-03 (2min), 07-01 (2min), 08-01 (3min), 08-02 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -105,6 +105,11 @@ Recent decisions affecting current work:
 - [08-01]: Language bucketing prevents cross-language title comparison (Hindi vs English are different articles)
 - [08-01]: 0.85 SequenceMatcher threshold after source suffix stripping for title dedup
 - [08-01]: 20 tracking parameters in _TRACKING_PARAMS frozenset for URL normalization
+- [08-02]: Conjunctive exclusion patterns (cricket AND score) to preserve heat articles mentioning sports venues
+- [08-02]: Score formula: (term_score * 0.5) + (category_score * 0.3) + title_bonus(0.2) capped at 1.0
+- [08-02]: full_text=None articles get 0.3 floor if title has heat terms (not penalized for extraction failure)
+- [08-02]: Exclude ONLY if score < 0.05 AND matches exclusion (high recall -- borderline kept)
+- [08-02]: English-only term matching in score_relevance (matches pipeline's English-first extraction)
 
 ### Pending Todos
 
@@ -118,5 +123,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-11
-Stopped at: Completed 08-01-PLAN.md (URL and title dedup). Ready for 08-02.
+Stopped at: Completed 08-02-PLAN.md (relevance scoring and pipeline composition). Phase 8 complete. Ready for Phase 9.
 Resume file: None
