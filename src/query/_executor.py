@@ -9,12 +9,18 @@ Ties together the QueryGenerator (what to search) with SourceSchedulers
 
 All three sources execute concurrently via ``asyncio.TaskGroup``.  Errors are
 caught and logged -- ``run_collection`` never raises.
+
+Checkpoint integration: the executor optionally accepts a
+:class:`~src.reliability.CheckpointStore` for crash recovery.  When present,
+already-completed queries are skipped and checkpoints are saved after each
+individual query completion (maximum recovery granularity).
 """
 
 from __future__ import annotations
 
 import asyncio
 import logging
+from typing import TYPE_CHECKING
 
 from src.data.geo_loader import StateUT, get_all_regions
 from src.models.article import ArticleRef
@@ -22,6 +28,9 @@ from src.models.article import ArticleRef
 from ._generator import QueryGenerator
 from ._models import Query, QueryResult
 from ._scheduler import SourceScheduler
+
+if TYPE_CHECKING:
+    from src.reliability._checkpoint import CheckpointStore
 
 logger = logging.getLogger(__name__)
 
@@ -34,15 +43,29 @@ class QueryExecutor:
             each value a SourceScheduler wrapping a NewsSource.
         generator: QueryGenerator that produces Query objects from geographic
             data and heat terms.
+        checkpoint: Optional CheckpointStore for crash recovery.  When
+            provided, completed queries are skipped and checkpoint is
+            saved after each individual query completion.
     """
 
     def __init__(
         self,
         schedulers: dict[str, SourceScheduler],
         generator: QueryGenerator,
+        checkpoint: CheckpointStore | None = None,
     ) -> None:
         self._schedulers = schedulers
         self._generator = generator
+        self._checkpoint = checkpoint
+
+    # ------------------------------------------------------------------
+    # Properties
+    # ------------------------------------------------------------------
+
+    @property
+    def checkpoint(self) -> CheckpointStore | None:
+        """Return the checkpoint store, if any."""
+        return self._checkpoint
 
     # ------------------------------------------------------------------
     # Public API
@@ -196,6 +219,10 @@ class QueryExecutor:
     ) -> list[QueryResult]:
         """Run a list of queries through a single scheduler sequentially.
 
+        Integrates checkpoint skip/save when a CheckpointStore is present:
+        - Skips queries already completed in a previous run.
+        - Marks each query as completed and saves checkpoint after execution.
+
         Checks remaining budget after each query and breaks early if
         the scheduler's budget is exhausted.
 
@@ -203,9 +230,21 @@ class QueryExecutor:
             List of QueryResult objects from executing the queries.
         """
         results: list[QueryResult] = []
+        skipped_checkpoint = 0
+
         for query in queries:
+            # Skip if already completed in a previous run
+            if self._checkpoint is not None and self._checkpoint.is_completed(query):
+                skipped_checkpoint += 1
+                continue
+
             result = await scheduler.execute(query)
             results.append(result)
+
+            # Mark completed and save checkpoint after each query
+            if self._checkpoint is not None:
+                await self._checkpoint.mark_completed(query)
+                await self._checkpoint.save()
 
             # Break early if budget exhausted
             budget = scheduler.remaining_budget
@@ -217,5 +256,12 @@ class QueryExecutor:
                     len(queries),
                 )
                 break
+
+        if skipped_checkpoint > 0:
+            logger.info(
+                "%s: skipped %d queries from checkpoint",
+                scheduler.name,
+                skipped_checkpoint,
+            )
 
         return results
