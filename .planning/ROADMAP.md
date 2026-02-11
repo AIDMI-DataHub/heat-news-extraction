@@ -125,10 +125,10 @@ Plans:
   2. Extraction correctly preserves Devanagari, Tamil, Telugu, Bengali, and other Indian scripts without corruption or mojibake
   3. Failed extractions (blocked sites, timeouts, paywalls) are logged with the URL and reason but do not halt the pipeline
   4. Extraction results are stored in the Article model's full_text field
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 07-01: Trafilatura extraction with Indian script handling
+- [ ] 07-01-PLAN.md -- Google News URL resolver, trafilatura extraction with async bridge, and batch processing
 
 ### Phase 8: Deduplication and Filtering
 **Goal**: The pipeline removes duplicate articles and filters for genuine heat/disaster relevance while maintaining high recall
