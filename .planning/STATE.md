@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 8 - Deduplication and Filtering (COMPLETE)
+**Current focus:** Phase 9 - Output and Reliability
 
 ## Current Position
 
-Phase: 8 of 10 (Deduplication and Filtering)
-Plan: 2 of 2 in current phase (COMPLETE)
-Status: Phase Complete
-Last activity: 2026-02-11 -- Plan 08-02 complete (relevance scoring and pipeline composition)
+Phase: 9 of 10 (Output and Reliability)
+Plan: 1 of 3 in current phase
+Status: In Progress
+Last activity: 2026-02-11 -- Plan 09-01 complete (output writers and collection metadata)
 
-Progress: [████████░░] 80%
+Progress: [████████░░] 83%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
+- Total plans completed: 15
 - Average duration: 3min
-- Total execution time: 0.61 hours
+- Total execution time: 0.64 hours
 
 **By Phase:**
 
@@ -35,9 +35,10 @@ Progress: [████████░░] 80%
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 | 07-article-extraction | 1 | 2min | 2min |
 | 08-deduplication-and-filtering | 2 | 5min | 2.5min |
+| 09-output-and-reliability | 1 | 2min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 06-02 (2min), 06-03 (2min), 07-01 (2min), 08-01 (3min), 08-02 (2min)
+- Last 5 plans: 06-03 (2min), 07-01 (2min), 08-01 (3min), 08-02 (2min), 09-01 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -110,6 +111,10 @@ Recent decisions affecting current work:
 - [08-02]: full_text=None articles get 0.3 floor if title has heat terms (not penalized for extraction failure)
 - [08-02]: Exclude ONLY if score < 0.05 AND matches exclusion (high recall -- borderline kept)
 - [08-02]: English-only term matching in score_relevance (matches pipeline's English-first extraction)
+- [09-01]: asyncio.TaskGroup for parallel per-state JSON+CSV writes (consistent with 06-03 pattern)
+- [09-01]: ensure_ascii=False in both article JSON and metadata JSON for consistent Indian script handling
+- [09-01]: State slug derived from article.state via lower/replace (simple, no external slugify library)
+- [09-01]: Empty articles list writes empty CSV file (no header) to signal zero results
 
 ### Pending Todos
 
@@ -123,5 +128,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-11
-Stopped at: Completed 08-02-PLAN.md (relevance scoring and pipeline composition). Phase 8 complete. Ready for Phase 9.
+Stopped at: Completed 09-01-PLAN.md (output writers and collection metadata). Plans 09-02 and 09-03 remaining.
 Resume file: None
