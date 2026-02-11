@@ -195,11 +195,9 @@ class GNewsSource:
                     language,
                 )
             elif status == 429:
-                logger.warning(
-                    "GNews per-second rate limit hit (HTTP 429) for query=%r lang=%s",
-                    query,
-                    language,
-                )
+                from src.reliability._retry import RateLimitError
+
+                raise RateLimitError(status_code=429, source="gnews") from exc
             elif status == 401:
                 logger.error(
                     "Invalid GNews API key (HTTP 401) for query=%r lang=%s",

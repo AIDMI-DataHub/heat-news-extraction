@@ -196,11 +196,9 @@ class NewsDataSource:
                     language,
                 )
             elif status == 429:
-                logger.warning(
-                    "NewsData.io rate limited (HTTP 429) for query=%r lang=%s",
-                    query,
-                    language,
-                )
+                from src.reliability._retry import RateLimitError
+
+                raise RateLimitError(status_code=429, source="newsdata") from exc
             else:
                 logger.warning(
                     "NewsData.io HTTP %s for query=%r lang=%s",

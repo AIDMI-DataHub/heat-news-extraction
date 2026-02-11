@@ -201,6 +201,10 @@ class GoogleNewsSource:
             response = await client.get(url, timeout=self._timeout)
             response.raise_for_status()
         except httpx.HTTPStatusError as exc:
+            if exc.response.status_code == 429:
+                from src.reliability._retry import RateLimitError
+
+                raise RateLimitError(status_code=429, source="google_news") from exc
             logger.warning(
                 "Google News returned HTTP %s for query=%r lang=%s: %s",
                 exc.response.status_code,

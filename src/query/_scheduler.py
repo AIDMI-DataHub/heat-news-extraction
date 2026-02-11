@@ -22,6 +22,7 @@ from typing import TYPE_CHECKING
 from ._models import Query, QueryResult
 
 if TYPE_CHECKING:
+    from src.reliability._circuit_breaker import CircuitBreaker
     from src.sources._protocol import NewsSource
 
 logger = logging.getLogger(__name__)
@@ -116,8 +117,8 @@ class SourceScheduler:
     """Rate-limit-aware wrapper around a :class:`NewsSource`.
 
     Combines daily budget tracking, per-second delay, rolling-window
-    enforcement, concurrency limiting, and language filtering into a single
-    ``execute()`` call that **never raises**.
+    enforcement, concurrency limiting, language filtering, and circuit
+    breaker protection into a single ``execute()`` call that **never raises**.
 
     Args:
         source: The underlying NewsSource to wrap.
@@ -128,6 +129,8 @@ class SourceScheduler:
         supported_languages: Frozenset of supported language codes, or
             ``None`` to accept all languages.
         concurrency: Maximum number of concurrent requests (semaphore size).
+        circuit_breaker: Optional per-source circuit breaker.  When open,
+            queries are skipped immediately (fail fast, before budget check).
     """
 
     def __init__(
@@ -139,6 +142,7 @@ class SourceScheduler:
         window_limiter: WindowLimiter | None = None,
         supported_languages: frozenset[str] | None = None,
         concurrency: int = 1,
+        circuit_breaker: CircuitBreaker | None = None,
     ) -> None:
         self._source = source
         self._name = name
@@ -148,6 +152,7 @@ class SourceScheduler:
         self._supported_languages = supported_languages
         self._daily_count: int = 0
         self._semaphore: asyncio.Semaphore = asyncio.Semaphore(concurrency)
+        self._circuit_breaker = circuit_breaker
 
     # -- Public API --------------------------------------------------------
 
@@ -156,12 +161,23 @@ class SourceScheduler:
 
         Returns a :class:`QueryResult` in all cases.  On transport or parse
         errors, ``success`` is ``False`` and ``error`` contains a description.
-        Budget exhaustion and unsupported-language skips are reported with
-        ``success=True`` and a descriptive ``error`` field (these are expected
-        conditions, not failures).
+        Budget exhaustion, unsupported-language, and circuit-breaker-open
+        skips are reported with ``success=True`` and a descriptive ``error``
+        field (these are expected conditions, not failures).
 
         This method **never raises**.
         """
+        # 0. Circuit breaker check (before budget, before rate limiter -- fail fast)
+        if self._circuit_breaker is not None and self._circuit_breaker.is_open:
+            logger.debug("%s: circuit breaker open, skipping query", self._name)
+            return QueryResult(
+                query=query,
+                source_name=self._name,
+                articles=[],
+                success=True,
+                error="circuit_breaker_open",
+            )
+
         # 1. Budget check -- no HTTP request if exhausted
         if self._is_budget_exhausted():
             logger.debug("%s: budget exhausted, skipping query", self._name)
@@ -196,18 +212,28 @@ class SourceScheduler:
                 if self._window_limiter:
                     await self._window_limiter.acquire()
 
-                # 6. Call underlying source
-                articles = await self._source.search(
-                    query.query_string,
-                    query.language,
-                    state=query.state,
-                    search_term=query.query_string,
-                )
+                # 6. Call underlying source with tenacity retry for rate limits
+                from src.reliability._retry import RateLimitError, with_rate_limit_retry
+
+                @with_rate_limit_retry()
+                async def _call_source() -> list:
+                    return await self._source.search(
+                        query.query_string,
+                        query.language,
+                        state=query.state,
+                        search_term=query.query_string,
+                    )
+
+                articles = await _call_source()
 
             # 7. Increment daily count (after request, before result processing)
             self._daily_count += 1
 
-            # 8. Return successful result
+            # 8. Record circuit breaker success
+            if self._circuit_breaker is not None:
+                self._circuit_breaker.record_success()
+
+            # 9. Return successful result
             return QueryResult(
                 query=query,
                 source_name=self._name,
@@ -216,7 +242,11 @@ class SourceScheduler:
             )
 
         except Exception as exc:
-            # 9. Never raise -- return error result
+            # 10. Record circuit breaker failure
+            if self._circuit_breaker is not None:
+                self._circuit_breaker.record_failure()
+
+            # 11. Never raise -- return error result
             logger.warning(
                 "%s: query failed: %s",
                 self._name,
@@ -260,7 +290,10 @@ class SourceScheduler:
 # ---------------------------------------------------------------------------
 # Factory functions
 # ---------------------------------------------------------------------------
-def create_google_scheduler(source: NewsSource) -> SourceScheduler:
+def create_google_scheduler(
+    source: NewsSource,
+    circuit_breaker: CircuitBreaker | None = None,
+) -> SourceScheduler:
     """Pre-configured scheduler for Google News RSS (unlimited, 5 concurrent, ~1.5/s with jitter)."""
     return SourceScheduler(
         source=source,
@@ -268,10 +301,14 @@ def create_google_scheduler(source: NewsSource) -> SourceScheduler:
         daily_limit=None,
         per_second_limiter=PerSecondLimiter(max_per_second=1.5, jitter=0.3),
         concurrency=5,
+        circuit_breaker=circuit_breaker,
     )
 
 
-def create_newsdata_scheduler(source: NewsSource) -> SourceScheduler:
+def create_newsdata_scheduler(
+    source: NewsSource,
+    circuit_breaker: CircuitBreaker | None = None,
+) -> SourceScheduler:
     """Pre-configured scheduler for NewsData.io (200/day, 30/15min window, 10/s)."""
     return SourceScheduler(
         source=source,
@@ -282,10 +319,14 @@ def create_newsdata_scheduler(source: NewsSource) -> SourceScheduler:
         supported_languages=frozenset(
             {"en", "hi", "ta", "te", "bn", "mr", "gu", "kn", "ml", "or", "pa", "as", "ur", "ne"}
         ),
+        circuit_breaker=circuit_breaker,
     )
 
 
-def create_gnews_scheduler(source: NewsSource) -> SourceScheduler:
+def create_gnews_scheduler(
+    source: NewsSource,
+    circuit_breaker: CircuitBreaker | None = None,
+) -> SourceScheduler:
     """Pre-configured scheduler for GNews (100/day, 1/s)."""
     return SourceScheduler(
         source=source,
@@ -295,4 +336,5 @@ def create_gnews_scheduler(source: NewsSource) -> SourceScheduler:
         supported_languages=frozenset(
             {"en", "hi", "bn", "ta", "te", "mr", "ml", "pa"}
         ),
+        circuit_breaker=circuit_breaker,
     )
