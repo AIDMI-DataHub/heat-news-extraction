@@ -32,6 +32,7 @@ jobs:
         env:
           NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
           GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+          TIMEOUT_MINUTES: "175"  # 5 min less than step timeout for safety
         run: python main.py
 
       - name: Commit and push results

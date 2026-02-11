@@ -1,6 +1,6 @@
 """Heat News Extraction Pipeline -- complete end-to-end orchestration.
 
-Collects heat-related news articles from across all Indian states, union
+Collects heat-related news articles from across Indian states, union
 territories, and districts in 14+ local languages using free-tier news
 APIs and RSS feeds.
 
@@ -8,15 +8,26 @@ Pipeline stages:
     1. **Query collection** -- generate and execute search queries via
        Google News RSS, NewsData.io, and GNews APIs with per-source
        circuit breakers, rate limiting, and checkpoint/resume.
-    2. **Article extraction** -- fetch HTML and extract full text via
+    2. **Date filtering** -- discard articles older than DATE_RANGE_HOURS.
+    3. **Article extraction** -- fetch HTML and extract full text via
        trafilatura for each collected article reference.
-    3. **Deduplication and filtering** -- URL dedup, title similarity
+    4. **Deduplication and filtering** -- URL dedup, title similarity
        dedup, relevance scoring, and exclusion filtering.
-    4. **Output** -- write per-state JSON/CSV files and collection
+    5. **Output** -- write per-state JSON/CSV files and collection
        metadata to a date-organized output directory.
 
+Configuration (all via environment variables):
+    TIMEOUT_MINUTES   Hard deadline for the entire pipeline (default: 0 = no
+                      limit, runs to completion). Set by CI for time-bounded runs.
+    STATES            Comma-separated state slugs (default: all 36).
+                      Example: STATES=delhi,maharashtra,tamil-nadu
+    DATE_RANGE_HOURS  Only keep articles from the last N hours (default: 48).
+    MAX_ARTICLES      Cap articles sent to extraction (default: 5000).
+
 Usage:
-    python main.py
+    python main.py                                      # all states, no time limit
+    STATES=delhi,bihar python main.py                   # specific states
+    TIMEOUT_MINUTES=30 STATES=delhi python main.py      # with deadline
 """
 
 from __future__ import annotations
@@ -29,6 +40,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from src.data.geo_loader import get_all_regions, get_region_by_slug
 from src.dedup import deduplicate_and_filter
 from src.extraction import extract_articles
 from src.output import CollectionMetadata, write_collection_output
@@ -55,29 +67,51 @@ async def main() -> None:
         format="%(asctime)s %(name)s %(levelname)s %(message)s",
     )
 
-    # API keys from environment (None if not set -- sources degrade gracefully)
-    # The `or None` converts empty strings to None (GitHub Actions sets undefined
-    # secrets to "" rather than leaving them unset in the environment).
+    # --- Configuration from environment ---
+    timeout_min = int(os.environ.get("TIMEOUT_MINUTES", "0"))
+    states_csv = os.environ.get("STATES", "").strip()
+    date_range_hours = int(os.environ.get("DATE_RANGE_HOURS", "48"))
+    max_articles = int(os.environ.get("MAX_ARTICLES", "5000"))
+
+    # API keys (None if not set -- sources degrade gracefully).
+    # The `or None` converts empty strings to None (GitHub Actions sets
+    # undefined secrets to "" rather than leaving them unset).
     newsdata_key = os.environ.get("NEWSDATA_API_KEY") or None
     gnews_key = os.environ.get("GNEWS_API_KEY") or None
 
-    # Time budget: split the GitHub Actions step timeout across pipeline stages.
-    # STEP_BUDGET_MINUTES should match the workflow step's timeout-minutes.
-    # Default 180 min.  Reserve 5 min for dedup + output (fast, CPU-only).
-    # Split the remaining 175 min: 60% collection, 40% extraction.
+    # --- Deadlines (optional -- only for CI time constraints) ---
+    # TIMEOUT_MINUTES=0 means no deadline: the pipeline runs to completion.
+    # When set, collection gets 80% and extraction gets the remainder.
     pipeline_start = time.monotonic()
-    step_budget_min = int(os.environ.get("STEP_BUDGET_MINUTES", "180"))
-    work_budget_sec = (step_budget_min - 5) * 60  # 5 min reserved for dedup + output
-    collection_deadline = pipeline_start + work_budget_sec * 0.60
-    extraction_deadline = pipeline_start + work_budget_sec * 0.95
+    if timeout_min > 0:
+        pipeline_deadline = pipeline_start + timeout_min * 60
+        collection_deadline = pipeline_start + timeout_min * 60 * 0.80
+    else:
+        pipeline_deadline = None
+        collection_deadline = None
+
     logger.info(
-        "Time budget: %.0f min collection, %.0f min extraction, 5 min output (step=%d min)",
-        (collection_deadline - pipeline_start) / 60,
-        (extraction_deadline - collection_deadline) / 60,
-        step_budget_min,
+        "Config: timeout=%s, states=%s, date_range=%dh, max_articles=%d",
+        f"{timeout_min} min" if timeout_min > 0 else "none (run to completion)",
+        states_csv or "all",
+        date_range_hours,
+        max_articles,
     )
 
-    # Output directory: output/<YYYY-MM-DD> in IST
+    # --- State filtering ---
+    regions = None
+    if states_csv:
+        slugs = [s.strip() for s in states_csv.split(",") if s.strip()]
+        regions = [r for slug in slugs if (r := get_region_by_slug(slug)) is not None]
+        not_found = set(slugs) - {r.slug for r in regions}
+        if not_found:
+            logger.warning("Unknown state slugs (skipped): %s", sorted(not_found))
+        if not regions:
+            logger.error("No valid states found for STATES=%s", states_csv)
+            return
+        logger.info("Filtering to %d states: %s", len(regions), [r.slug for r in regions])
+
+    # --- Time zone and output directory ---
     ist = ZoneInfo("Asia/Kolkata")
     now = datetime.now(ist)
     output_dir = Path("output") / now.strftime("%Y-%m-%d")
@@ -126,46 +160,66 @@ async def main() -> None:
 
         # Stage 1 -- Query collection
         logger.info("Stage 1: Query collection")
-        refs = await executor.run_collection()
+        refs = await executor.run_collection(regions=regions)
         logger.info("Stage 1 complete: %d article refs collected", len(refs))
 
-        # Stage 1b -- Date filtering: keep only articles from last 48 hours.
-        # Google News RSS ignores date operators, so we filter client-side.
-        cutoff = datetime.now(ist) - timedelta(hours=48)
+        # Stage 2 -- Date filtering
+        cutoff = now - timedelta(hours=date_range_hours)
         before_filter = len(refs)
         refs = [r for r in refs if r.date >= cutoff]
         logger.info(
-            "Date filter: %d -> %d refs (discarded %d older than 48h)",
-            before_filter, len(refs), before_filter - len(refs),
+            "Date filter: %d -> %d refs (discarded %d older than %dh)",
+            before_filter, len(refs), before_filter - len(refs), date_range_hours,
         )
 
-        # Stage 2 -- Article extraction
-        logger.info("Stage 2: Article extraction (%d refs)", len(refs))
+        # Cap articles to avoid unbounded extraction
+        if len(refs) > max_articles:
+            logger.info(
+                "Capping refs at MAX_ARTICLES=%d (had %d)", max_articles, len(refs),
+            )
+            refs = refs[:max_articles]
+
+        # Stage 3 -- Article extraction
+        # When running with a deadline, give extraction all remaining time
+        # minus a 2-min buffer.  Without a deadline, just extract everything.
+        extraction_deadline = None
+        if pipeline_deadline is not None:
+            remaining_sec = pipeline_deadline - time.monotonic()
+            extraction_deadline = time.monotonic() + max(remaining_sec - 120, 60)
+        logger.info(
+            "Stage 3: Article extraction (%d refs, %s)",
+            len(refs),
+            f"{max(remaining_sec - 120, 60) / 60:.0f} min available"
+            if pipeline_deadline is not None
+            else "no deadline",
+        )
         articles = await extract_articles(refs, deadline=extraction_deadline)
-        logger.info("Stage 2 complete: %d articles extracted", len(articles))
+        extracted_count = sum(1 for a in articles if a.full_text is not None)
+        logger.info(
+            "Stage 3 complete: %d/%d articles with full text",
+            extracted_count, len(articles),
+        )
 
-        # Stage 3 -- Deduplication and filtering
-        logger.info("Stage 3: Deduplication and filtering")
+        # Stage 4 -- Deduplication and filtering
+        logger.info("Stage 4: Deduplication and filtering")
         filtered = deduplicate_and_filter(articles)
-        logger.info("Stage 3 complete: %d articles after dedup+filter", len(filtered))
+        logger.info("Stage 4 complete: %d articles after dedup+filter", len(filtered))
 
-        # Stage 4 -- Output
-        logger.info("Stage 4: Writing output to %s", output_dir)
+        # Stage 5 -- Output
+        logger.info("Stage 5: Writing output to %s", output_dir)
         metadata = CollectionMetadata(
             collection_timestamp=datetime.now(ist),
             sources_queried=["google_news", "newsdata", "gnews"],
             query_terms_used=sorted({ref.search_term for ref in refs}),
             counts={
                 "articles_found": len(refs),
-                "articles_extracted": sum(
-                    1 for a in articles if a.full_text is not None
-                ),
+                "articles_extracted": extracted_count,
                 "articles_filtered": len(filtered),
             },
         )
         result = await write_collection_output(filtered, output_dir, metadata)
         logger.info(
-            "Stage 4 complete: wrote %d JSON, %d CSV, %d metadata files",
+            "Stage 5 complete: wrote %d JSON, %d CSV, %d metadata files",
             len(result["json"]),
             len(result["csv"]),
             len(result["metadata"]),
