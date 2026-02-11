@@ -3,3 +3,13 @@
 This sub-package holds JSON and CSV output writers for persisting
 collected articles and extraction results to disk.
 """
+
+from src.output._metadata import CollectionMetadata
+from src.output._writers import write_collection_output, write_csv, write_json
+
+__all__ = [
+    "CollectionMetadata",
+    "write_collection_output",
+    "write_csv",
+    "write_json",
+]
