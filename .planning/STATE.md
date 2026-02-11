@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 ## Current Position
 
 Phase: 9 of 10 (Output and Reliability)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In Progress
-Last activity: 2026-02-11 -- Plan 09-01 complete (output writers and collection metadata)
+Last activity: 2026-02-11 -- Plan 09-02 complete (reliability primitives: circuit breaker, retry, checkpoint)
 
-Progress: [████████░░] 83%
+Progress: [████████░░] 86%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 15
+- Total plans completed: 16
 - Average duration: 3min
-- Total execution time: 0.64 hours
+- Total execution time: 0.69 hours
 
 **By Phase:**
 
@@ -35,10 +35,10 @@ Progress: [████████░░] 83%
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 | 07-article-extraction | 1 | 2min | 2min |
 | 08-deduplication-and-filtering | 2 | 5min | 2.5min |
-| 09-output-and-reliability | 1 | 2min | 2min |
+| 09-output-and-reliability | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 06-03 (2min), 07-01 (2min), 08-01 (3min), 08-02 (2min), 09-01 (2min)
+- Last 5 plans: 07-01 (2min), 08-01 (3min), 08-02 (2min), 09-01 (2min), 09-02 (3min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -115,6 +115,11 @@ Recent decisions affecting current work:
 - [09-01]: ensure_ascii=False in both article JSON and metadata JSON for consistent Indian script handling
 - [09-01]: State slug derived from article.state via lower/replace (simple, no external slugify library)
 - [09-01]: Empty articles list writes empty CSV file (no header) to signal zero results
+- [09-02]: RateLimitError re-raised from sources ONLY for HTTP 429 -- preserves "never raises" contract for all other errors
+- [09-02]: Circuit breaker check before budget check in scheduler (fail fast, don't wait for rate limiter)
+- [09-02]: success=True with error="circuit_breaker_open" for circuit breaker skip (same pattern as budget_exhausted)
+- [09-02]: Tenacity decorator as local function inside execute() for clean source call wrapping
+- [09-02]: Inline import of RateLimitError in source except blocks (rare 429 path, avoids circular imports)
 
 ### Pending Todos
 
@@ -128,5 +133,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-11
-Stopped at: Completed 09-01-PLAN.md (output writers and collection metadata). Plans 09-02 and 09-03 remaining.
+Stopped at: Completed 09-02-PLAN.md (reliability primitives: circuit breaker, retry, checkpoint). Plan 09-03 remaining.
 Resume file: None
