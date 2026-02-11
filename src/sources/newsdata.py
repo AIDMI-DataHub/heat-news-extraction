@@ -173,6 +173,7 @@ class NewsDataSource:
             "q": query,
             "language": language,
             "country": country.lower(),
+            "timeframe": 24,  # Last 24 hours only (daily pipeline)
         }
 
         try:

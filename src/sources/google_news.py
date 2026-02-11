@@ -69,12 +69,15 @@ def _build_url(query: str, language: str, country: str) -> str:
 
     URL format::
 
-        https://news.google.com/rss/search?q={query}&hl={hl}&gl={country}&ceid={country}:{hl}
+        https://news.google.com/rss/search?q={query}+when:1d&hl={hl}&gl={country}&ceid={country}:{hl}
+
+    Appends ``when:1d`` to the query to restrict results to the last 24
+    hours -- essential for a daily pipeline to avoid re-collecting old articles.
 
     Uses :func:`urllib.parse.quote_plus` for proper Unicode encoding of
     non-Latin search terms (Devanagari, Tamil, etc.).
     """
-    encoded_query = quote_plus(query)
+    encoded_query = quote_plus(query + " when:1d")
     hl = _LANG_TO_HL.get(language, language)
     # ceid uses the base language code (e.g. "en"), not the regional hl
     # variant (e.g. "en-IN").  Google News redirects if these disagree.

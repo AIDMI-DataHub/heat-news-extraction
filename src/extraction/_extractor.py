@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import time
 
 import httpx
 import trafilatura
@@ -113,14 +114,18 @@ async def extract_article(
 
 
 async def extract_articles(
-    refs: list[ArticleRef], max_concurrent: int = 10
+    refs: list[ArticleRef],
+    max_concurrent: int = 10,
+    deadline: float | None = None,
 ) -> list[Article]:
     """Batch-extract articles from a list of :class:`ArticleRef`.
 
     Creates a shared :class:`httpx.AsyncClient` and uses an
     :class:`asyncio.Semaphore` to bound concurrency at *max_concurrent*.
 
-    This is the public batch API consumed by the pipeline.
+    Processes refs in chunks and checks the *deadline* (monotonic time)
+    between chunks.  When the deadline is reached, remaining refs are
+    returned as :class:`Article` objects with ``full_text=None``.
 
     Parameters
     ----------
@@ -128,6 +133,9 @@ async def extract_articles(
         Article references collected by the query engine.
     max_concurrent:
         Maximum number of concurrent extraction tasks.
+    deadline:
+        Optional monotonic time deadline.  When reached, extraction stops
+        and unprocessed refs become Articles with ``full_text=None``.
 
     Returns
     -------
@@ -138,6 +146,8 @@ async def extract_articles(
         logger.info("No article refs to extract")
         return []
 
+    articles: list[Article] = []
+    chunk_size = max_concurrent * 3  # Process 30 at a time
     semaphore = asyncio.Semaphore(max_concurrent)
 
     async def _extract_one(ref: ArticleRef) -> Article:
@@ -148,16 +158,37 @@ async def extract_articles(
         follow_redirects=True,
         timeout=httpx.Timeout(15.0, connect=5.0),
     ) as client:
-        tasks = [_extract_one(ref) for ref in refs]
-        articles: list[Article] = await asyncio.gather(
-            *tasks, return_exceptions=False
-        )
+        for i in range(0, len(refs), chunk_size):
+            # Check deadline between chunks
+            if deadline is not None and time.monotonic() >= deadline:
+                logger.warning(
+                    "Extraction deadline reached after %d/%d refs, stopping",
+                    len(articles),
+                    len(refs),
+                )
+                break
+
+            chunk = refs[i : i + chunk_size]
+            tasks = [_extract_one(ref) for ref in chunk]
+            chunk_results: list[Article] = await asyncio.gather(
+                *tasks, return_exceptions=False
+            )
+            articles.extend(chunk_results)
+
+    # Fill remaining unprocessed refs as Articles with full_text=None
+    if len(articles) < len(refs):
+        skipped = len(refs) - len(articles)
+        logger.info("Skipping extraction for %d remaining refs (deadline)", skipped)
+        for ref in refs[len(articles) :]:
+            articles.append(
+                Article(**ref.model_dump(), full_text=None, relevance_score=0.0)
+            )
 
     # Log batch summary
     successful = sum(1 for a in articles if a.full_text is not None)
     failed = len(articles) - successful
     logger.info(
-        "Extraction complete: %d refs, %d extracted, %d failed",
+        "Extraction complete: %d refs, %d extracted, %d failed/skipped",
         len(refs),
         successful,
         failed,

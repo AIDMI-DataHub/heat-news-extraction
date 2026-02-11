@@ -26,7 +26,7 @@ Key design decisions
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import httpx
 
@@ -171,12 +171,15 @@ class GNewsSource:
             )
             return []
 
+        # Only fetch articles from the last 24 hours (daily pipeline).
+        since = datetime.now(timezone.utc) - timedelta(hours=24)
         params = {
             "apikey": self._api_key,
             "q": query,
             "lang": language,
             "country": country.lower(),
             "max": 10,
+            "from": since.strftime("%Y-%m-%dT%H:%M:%SZ"),
         }
 
         try:
