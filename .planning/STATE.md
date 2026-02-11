@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 8 - Relevance Scoring
+**Current focus:** Phase 8 - Deduplication and Filtering
 
 ## Current Position
 
-Phase: 8 of 10 (Relevance Scoring)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-02-11 -- Phase 7 complete (article extraction)
+Phase: 8 of 10 (Deduplication and Filtering)
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-02-11 -- Plan 08-01 complete (URL and title dedup)
 
-Progress: [████████░░] 70%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 13
 - Average duration: 3min
-- Total execution time: 0.53 hours
+- Total execution time: 0.58 hours
 
 **By Phase:**
 
@@ -34,9 +34,10 @@ Progress: [████████░░] 70%
 | 05-secondary-news-sources | 2 | 4min | 2min |
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 | 07-article-extraction | 1 | 2min | 2min |
+| 08-deduplication-and-filtering | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 05-02 (2min), 06-01 (3min), 06-02 (2min), 06-03 (2min), 07-01 (2min)
+- Last 5 plans: 06-01 (3min), 06-02 (2min), 06-03 (2min), 07-01 (2min), 08-01 (3min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -99,6 +100,11 @@ Recent decisions affecting current work:
 - [07-01]: asyncio.to_thread over run_in_executor for trafilatura sync-to-async bridge -- simpler API
 - [07-01]: Shared httpx.AsyncClient per batch for connection pooling (created inside extract_articles)
 - [07-01]: relevance_score=0.0 default for all Articles -- Phase 8 sets the actual score
+- [08-01]: Sorted list of tuples for urlencode to guarantee deterministic query param ordering
+- [08-01]: _quality_score() defined in _url_dedup.py and imported by _title_dedup.py (no duplication)
+- [08-01]: Language bucketing prevents cross-language title comparison (Hindi vs English are different articles)
+- [08-01]: 0.85 SequenceMatcher threshold after source suffix stripping for title dedup
+- [08-01]: 20 tracking parameters in _TRACKING_PARAMS frozenset for URL normalization
 
 ### Pending Todos
 
@@ -112,5 +118,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-11
-Stopped at: Completed 07-01-PLAN.md (article extraction). Phase 7 complete. Ready for Phase 8.
+Stopped at: Completed 08-01-PLAN.md (URL and title dedup). Ready for 08-02.
 Resume file: None
