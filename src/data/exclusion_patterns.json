@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "Patterns indicating clearly irrelevant content. Update this file without code changes to add new patterns. Each pattern is a regex checked against article title + text. Patterns are intentionally conjunctive (e.g., cricket AND score) to avoid excluding legitimate heat articles mentioning sports venues.",
+  "patterns": [
+    {"pattern": "\\bcricket\\b.*\\b(score|scorecard|innings|wicket|runs)\\b", "category": "sports", "description": "Cricket match scores and scorecards"},
+    {"pattern": "\\bIPL\\b.*\\b(match|final|semi|qualifier|auction)\\b", "category": "sports", "description": "IPL cricket events"},
+    {"pattern": "\\b(football|soccer|tennis|badminton)\\b.*\\b(score|match|final|tournament)\\b", "category": "sports", "description": "Other sports scores"},
+    {"pattern": "\\bweather\\s+forecast\\b.*\\b(tomorrow|next\\s+week|weekend|today|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b", "category": "weather_forecast", "description": "Generic day-specific weather forecasts"},
+    {"pattern": "\\bsummer\\s+(fashion|style|recipe|vacation|getaway|travel|destination|outfit)\\b", "category": "lifestyle", "description": "Summer lifestyle content"},
+    {"pattern": "\\bhoroscope\\b", "category": "astrology", "description": "Horoscope/astrology content"},
+    {"pattern": "\\b(hot|heat)\\s+(deal|sale|offer|discount|price)\\b", "category": "marketing", "description": "Marketing using heat terminology"},
+    {"pattern": "\\b(hot|heat|sizzling)\\s+(new|latest|upcoming)\\s+(movie|film|song|album|trailer|release)\\b", "category": "entertainment", "description": "Entertainment using heat metaphors"},
+    {"pattern": "\\bhot\\s+(stock|share|investment|crypto|bitcoin)\\b", "category": "finance", "description": "Financial content using heat metaphors"}
+  ]
+}
