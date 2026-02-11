@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import time
 from typing import TYPE_CHECKING
 
 from src.data.geo_loader import StateUT, get_all_regions
@@ -46,6 +47,9 @@ class QueryExecutor:
         checkpoint: Optional CheckpointStore for crash recovery.  When
             provided, completed queries are skipped and checkpoint is
             saved after each individual query completion.
+        deadline: Optional monotonic time deadline.  When set, the executor
+            stops collecting and returns whatever was gathered so far,
+            leaving time for downstream stages (extraction, dedup, output).
     """
 
     def __init__(
@@ -53,10 +57,12 @@ class QueryExecutor:
         schedulers: dict[str, SourceScheduler],
         generator: QueryGenerator,
         checkpoint: CheckpointStore | None = None,
+        deadline: float | None = None,
     ) -> None:
         self._schedulers = schedulers
         self._generator = generator
         self._checkpoint = checkpoint
+        self._deadline = deadline
 
     # ------------------------------------------------------------------
     # Properties
@@ -130,7 +136,11 @@ class QueryExecutor:
         # ----------------------------------------------------------
         active_regions = [r for r in regions if r.slug in active_slugs]
 
-        if not active_regions:
+        if self._deadline is not None and time.monotonic() >= self._deadline:
+            logger.warning(
+                "Deadline reached after state queries -- skipping district queries"
+            )
+        elif not active_regions:
             logger.info("Phase 2: skipping district queries -- no active states")
         else:
             logger.info(
@@ -233,6 +243,16 @@ class QueryExecutor:
         skipped_checkpoint = 0
 
         for query in queries:
+            # Stop if deadline approaching -- leave time for extraction/dedup/output
+            if self._deadline is not None and time.monotonic() >= self._deadline:
+                logger.warning(
+                    "%s: deadline reached after %d/%d queries, stopping to allow output",
+                    scheduler.name,
+                    len(results),
+                    len(queries),
+                )
+                break
+
             # Skip if already completed in a previous run
             if self._checkpoint is not None and self._checkpoint.is_completed(query):
                 skipped_checkpoint += 1

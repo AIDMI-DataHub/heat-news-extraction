@@ -24,6 +24,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -60,6 +61,14 @@ async def main() -> None:
     newsdata_key = os.environ.get("NEWSDATA_API_KEY") or None
     gnews_key = os.environ.get("GNEWS_API_KEY") or None
 
+    # Time budget: stop collecting 10 minutes before the GitHub Actions step
+    # timeout so extraction, dedup, and output stages always complete.
+    # Default 170 min (step timeout is 180 min). Override with env var.
+    pipeline_start = time.monotonic()
+    collection_budget_sec = int(os.environ.get("COLLECTION_BUDGET_MINUTES", "170")) * 60
+    deadline = pipeline_start + collection_budget_sec
+    logger.info("Collection deadline: %d minutes from now", collection_budget_sec // 60)
+
     # Output directory: output/<YYYY-MM-DD> in IST
     ist = ZoneInfo("Asia/Kolkata")
     now = datetime.now(ist)
@@ -93,6 +102,7 @@ async def main() -> None:
         },
         generator=generator,
         checkpoint=checkpoint,
+        deadline=deadline,
     )
 
     # ------------------------------------------------------------------
