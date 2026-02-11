@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-02-10)
 
 ## Current Position
 
-Phase: 9 of 10 (Output and Reliability)
-Plan: 2 of 3 in current phase
-Status: In Progress
-Last activity: 2026-02-11 -- Plan 09-02 complete (reliability primitives: circuit breaker, retry, checkpoint)
+Phase: 9 of 10 (Output and Reliability) -- COMPLETE
+Plan: 3 of 3 in current phase
+Status: Phase Complete
+Last activity: 2026-02-11 -- Plan 09-03 complete (pipeline integration: checkpoint in executor, main.py end-to-end wiring)
 
-Progress: [████████░░] 86%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 16
+- Total plans completed: 17
 - Average duration: 3min
-- Total execution time: 0.69 hours
+- Total execution time: 0.72 hours
 
 **By Phase:**
 
@@ -35,10 +35,10 @@ Progress: [████████░░] 86%
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
 | 07-article-extraction | 1 | 2min | 2min |
 | 08-deduplication-and-filtering | 2 | 5min | 2.5min |
-| 09-output-and-reliability | 2 | 5min | 2.5min |
+| 09-output-and-reliability | 3 | 7min | 2.3min |
 
 **Recent Trend:**
-- Last 5 plans: 07-01 (2min), 08-01 (3min), 08-02 (2min), 09-01 (2min), 09-02 (3min)
+- Last 5 plans: 08-01 (3min), 08-02 (2min), 09-01 (2min), 09-02 (3min), 09-03 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -120,6 +120,11 @@ Recent decisions affecting current work:
 - [09-02]: success=True with error="circuit_breaker_open" for circuit breaker skip (same pattern as budget_exhausted)
 - [09-02]: Tenacity decorator as local function inside execute() for clean source call wrapping
 - [09-02]: Inline import of RateLimitError in source except blocks (rare 429 path, avoids circular imports)
+- [09-03]: TYPE_CHECKING guard for CheckpointStore import in QueryExecutor (same pattern as NewsSource)
+- [09-03]: Checkpoint save after each individual query for maximum recovery granularity
+- [09-03]: Checkpoint deleted on successful completion, preserved on failure for resume
+- [09-03]: Sources closed in finally block regardless of success or failure
+- [09-03]: API keys from os.environ.get() with None default for graceful degradation
 
 ### Pending Todos
 
@@ -133,5 +138,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-11
-Stopped at: Completed 09-02-PLAN.md (reliability primitives: circuit breaker, retry, checkpoint). Plan 09-03 remaining.
+Stopped at: Completed 09-03-PLAN.md (pipeline integration). Phase 9 complete. Ready for Phase 10.
 Resume file: None
