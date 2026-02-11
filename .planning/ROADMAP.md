@@ -140,12 +140,11 @@ Plans:
   3. Relevance filtering scores articles using term presence + context indicators and excludes clearly irrelevant content (weather forecasts, cricket, generic summer articles)
   4. A configurable irrelevant pattern exclusion list exists and can be updated without code changes
   5. Borderline articles are kept (high recall) -- the filter errs on the side of inclusion, not exclusion
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: URL normalization and URL-based deduplication
-- [ ] 08-02: Title similarity deduplication
-- [ ] 08-03: Relevance scoring and filtering
+- [ ] 08-01-PLAN.md -- URL and title deduplication with quality scoring (TDD)
+- [ ] 08-02-PLAN.md -- Relevance scoring, exclusion patterns, and pipeline assembly (TDD)
 
 ### Phase 9: Output and Reliability
 **Goal**: The pipeline produces organized JSON/CSV output files and can recover from crashes by resuming from checkpoints
@@ -195,6 +194,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 5. Secondary News Sources | 2/2 | Complete | 2026-02-10 |
 | 6. Query Engine and Scheduling | 3/3 | Complete | 2026-02-10 |
 | 7. Article Extraction | 1/1 | Complete | 2026-02-11 |
-| 8. Deduplication and Filtering | 0/3 | Not started | - |
+| 8. Deduplication and Filtering | 0/2 | Not started | - |
 | 9. Output and Reliability | 0/3 | Not started | - |
 | 10. Automation | 0/2 | Not started | - |
