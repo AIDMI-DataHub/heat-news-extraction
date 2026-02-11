@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-10)
 
 **Core value:** Capture every heat-related news report from every corner of India, in every language, every day -- high recall over high precision.
-**Current focus:** Phase 7 - Article Extraction
+**Current focus:** Phase 8 - Relevance Scoring
 
 ## Current Position
 
-Phase: 7 of 10 (Article Extraction)
-Plan: 0 of 1 in current phase
+Phase: 8 of 10 (Relevance Scoring)
+Plan: 0 of ? in current phase
 Status: Ready to plan
-Last activity: 2026-02-10 -- Phase 6 verified and complete
+Last activity: 2026-02-11 -- Phase 7 complete (article extraction)
 
-Progress: [████████░░] 65%
+Progress: [████████░░] 70%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: 3min
-- Total execution time: 0.50 hours
+- Total execution time: 0.53 hours
 
 **By Phase:**
 
@@ -33,9 +33,10 @@ Progress: [████████░░] 65%
 | 04-google-news-rss-source | 1 | 3min | 3min |
 | 05-secondary-news-sources | 2 | 4min | 2min |
 | 06-query-engine-and-scheduling | 3 | 7min | 2.3min |
+| 07-article-extraction | 1 | 2min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 05-01 (2min), 05-02 (2min), 06-01 (3min), 06-02 (2min), 06-03 (2min)
+- Last 5 plans: 05-02 (2min), 06-01 (3min), 06-02 (2min), 06-03 (2min), 07-01 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -94,6 +95,10 @@ Recent decisions affecting current work:
 - [06-03]: Sequential queries within source, concurrent across sources (scheduler handles internal rate limiting)
 - [06-03]: Budget check before district query generation (not just before execution)
 - [06-03]: Flat ArticleRef list return -- no nested structure, consumer just iterates
+- [07-01]: XPath (tree.xpath) over cssselect for lxml HTML parsing -- avoids cssselect import issues
+- [07-01]: asyncio.to_thread over run_in_executor for trafilatura sync-to-async bridge -- simpler API
+- [07-01]: Shared httpx.AsyncClient per batch for connection pooling (created inside extract_articles)
+- [07-01]: relevance_score=0.0 default for all Articles -- Phase 8 sets the actual score
 
 ### Pending Todos
 
@@ -106,6 +111,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-10
-Stopped at: Completed 06-03-PLAN.md (query executor). Phase 6 complete. Ready for Phase 7.
+Last session: 2026-02-11
+Stopped at: Completed 07-01-PLAN.md (article extraction). Phase 7 complete. Ready for Phase 8.
 Resume file: None
