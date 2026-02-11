@@ -9,4 +9,5 @@ dist/
 build/
 .pytest_cache/
 /data/
+# Output directory -- ignored locally, force-added by CI workflow
 /output/

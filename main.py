@@ -55,8 +55,10 @@ async def main() -> None:
     )
 
     # API keys from environment (None if not set -- sources degrade gracefully)
-    newsdata_key = os.environ.get("NEWSDATA_API_KEY")
-    gnews_key = os.environ.get("GNEWS_API_KEY")
+    # The `or None` converts empty strings to None (GitHub Actions sets undefined
+    # secrets to "" rather than leaving them unset in the environment).
+    newsdata_key = os.environ.get("NEWSDATA_API_KEY") or None
+    gnews_key = os.environ.get("GNEWS_API_KEY") or None
 
     # Output directory: output/<YYYY-MM-DD> in IST
     ist = ZoneInfo("Asia/Kolkata")
