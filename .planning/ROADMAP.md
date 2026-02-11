@@ -157,12 +157,12 @@ Plans:
   4. After each completed query batch, a checkpoint is saved; restarting the pipeline skips already-completed queries
   5. Each news source has an independent circuit breaker -- if one source fails repeatedly, others continue operating
   6. Rate limit errors trigger exponential backoff with jitter (via tenacity), not immediate failure
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 09-01: JSON and CSV output writers
-- [ ] 09-02: Checkpoint and resume system
-- [ ] 09-03: Circuit breakers and retry logic
+- [ ] 09-01-PLAN.md -- JSON/CSV output writers and CollectionMetadata model
+- [ ] 09-02-PLAN.md -- Reliability primitives (circuit breaker, tenacity retry, checkpoint store) and source/scheduler integration
+- [ ] 09-03-PLAN.md -- Checkpoint integration into QueryExecutor and complete pipeline wiring in main.py
 
 ### Phase 10: Automation
 **Goal**: The pipeline runs automatically every day via GitHub Actions, completes within the 45-minute window, and commits results to the repository
