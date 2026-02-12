@@ -32,8 +32,8 @@ jobs:
         env:
           NEWSDATA_API_KEY: ${{ secrets.NEWSDATA_API_KEY }}
           GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          LLM_PROVIDER: "gemini"
           TIMEOUT_MINUTES: "175"  # 5 min less than step timeout for safety
         run: python main.py
 
