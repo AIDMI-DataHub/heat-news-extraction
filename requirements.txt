@@ -4,3 +4,4 @@ trafilatura==2.0.0
 pydantic==2.10.6
 tenacity==9.0.0
 aiofiles==24.1.0
+python-dotenv==1.1.0

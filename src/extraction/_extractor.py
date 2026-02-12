@@ -57,12 +57,16 @@ async def _extract_text(html: str, url: str) -> str | None:
         text: str | None = await asyncio.to_thread(
             trafilatura.extract,
             html,
-            favor_recall=True,
+            favor_precision=True,
             include_comments=False,
-            include_tables=True,
+            include_tables=False,
             deduplicate=True,
             url=url,
         )
+        # Discard very short extractions (likely ads, navbars, or footers)
+        if text is not None and len(text.strip()) < 100:
+            logger.warning("Extracted text too short (%d chars), discarding: %s", len(text.strip()), url)
+            return None
         return text
     except Exception:
         logger.error("Trafilatura error for %s", url, exc_info=True)

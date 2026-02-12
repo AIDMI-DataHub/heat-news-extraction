@@ -17,7 +17,7 @@ The query engine package provides the complete query lifecycle:
   ``asyncio.TaskGroup``.
 """
 
-from ._executor import QueryExecutor
+from ._executor import QueryExecutor, tag_districts_from_text, tag_districts_with_llm
 from ._generator import GNEWS_SUPPORTED_LANGUAGES, QueryGenerator
 from ._models import (
     Query,
@@ -50,4 +50,6 @@ __all__ = [
     "create_gnews_scheduler",
     "create_google_scheduler",
     "create_newsdata_scheduler",
+    "tag_districts_from_text",
+    "tag_districts_with_llm",
 ]

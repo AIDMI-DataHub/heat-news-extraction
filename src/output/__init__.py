@@ -5,10 +5,16 @@ collected articles and extraction results to disk.
 """
 
 from src.output._metadata import CollectionMetadata
-from src.output._writers import write_collection_output, write_csv, write_json
+from src.output._writers import (
+    create_output_directories,
+    write_collection_output,
+    write_csv,
+    write_json,
+)
 
 __all__ = [
     "CollectionMetadata",
+    "create_output_directories",
     "write_collection_output",
     "write_csv",
     "write_json",

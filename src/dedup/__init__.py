@@ -16,6 +16,7 @@ import logging
 
 from src.dedup._relevance import filter_articles, score_relevance
 from src.dedup._title_dedup import deduplicate_by_title
+from src.dedup._title_relevance import filter_by_title_relevance
 from src.dedup._url_dedup import deduplicate_by_url, normalize_url
 from src.models.article import Article
 
@@ -28,6 +29,7 @@ __all__ = [
     "normalize_url",
     "score_relevance",
     "filter_articles",
+    "filter_by_title_relevance",
 ]
 
 

@@ -31,6 +31,7 @@ from ._models import Query, QueryResult
 from ._scheduler import SourceScheduler
 
 if TYPE_CHECKING:
+    from src.relevance._base import RelevanceChecker
     from src.reliability._checkpoint import CheckpointStore
 
 logger = logging.getLogger(__name__)
@@ -167,7 +168,9 @@ class QueryExecutor:
                     district_queries_by_source
                 )
                 for result in district_results:
-                    all_articles.extend(result.articles)
+                    all_articles.extend(
+                        _tag_districts(result.articles, result.query.districts)
+                    )
 
         total = len(all_articles)
         logger.info(
@@ -285,3 +288,184 @@ class QueryExecutor:
             )
 
         return results
+
+
+def _tag_districts(
+    articles: list[ArticleRef], districts: tuple[str, ...]
+) -> list[ArticleRef]:
+    """Tag articles with a district name from the query batch.
+
+    Strategy:
+    1. Single-district batch: assign all articles to that district
+       (they were returned by a query targeting exactly that district).
+    2. Multi-district batch: match by checking if the article title
+       contains an English district name (case-insensitive substring).
+    3. Unmatched articles keep district=None (post-extraction tagging
+       in main.py will retry using full_text).
+
+    Uses Pydantic's model_copy to create new frozen instances.
+    """
+    if not districts:
+        return articles
+
+    # Single-district batch: assign all articles directly
+    if len(districts) == 1:
+        return [
+            article.model_copy(update={"district": districts[0]})
+            for article in articles
+        ]
+
+    # Multi-district batch: match by English title
+    tagged: list[ArticleRef] = []
+    for article in articles:
+        title_lower = article.title.lower()
+        matched = None
+        for d in districts:
+            if d.lower() in title_lower:
+                matched = d
+                break
+        if matched:
+            tagged.append(article.model_copy(update={"district": matched}))
+        else:
+            tagged.append(article)
+    return tagged
+
+
+def tag_districts_from_text(
+    articles: list[ArticleRef],
+    regions: list[StateUT],
+) -> list[ArticleRef]:
+    """Post-extraction district tagging using title + full_text.
+
+    For articles that still have ``district=None``, scans the combined
+    title and full_text for English district names belonging to the
+    article's state. This catches district mentions in regional-language
+    articles where the body often includes English proper nouns.
+
+    Articles that already have a district assigned are returned as-is.
+
+    Args:
+        articles: Articles (typically ``Article`` instances with full_text).
+        regions: List of StateUT objects for district name lookup.
+
+    Returns:
+        New list with district fields populated where a match was found.
+    """
+    # Build state name → list of (district_name,) lookup
+    state_districts: dict[str, list[str]] = {}
+    for region in regions:
+        if region.districts:
+            state_districts[region.name] = [d.name for d in region.districts]
+
+    tagged: list[ArticleRef] = []
+    matched_count = 0
+
+    for article in articles:
+        # Already tagged -- keep as-is
+        if article.district is not None:
+            tagged.append(article)
+            continue
+
+        districts = state_districts.get(article.state, [])
+        if not districts:
+            tagged.append(article)
+            continue
+
+        # Build search text: title + full_text (if available)
+        search_text = article.title.lower()
+        full_text = getattr(article, "full_text", None)
+        if full_text:
+            search_text += " " + full_text.lower()
+
+        # Find the first matching district name
+        matched = None
+        for d in districts:
+            if d.lower() in search_text:
+                matched = d
+                break
+
+        if matched:
+            tagged.append(article.model_copy(update={"district": matched}))
+            matched_count += 1
+        else:
+            tagged.append(article)
+
+    if matched_count:
+        logger.info(
+            "Post-extraction district tagging: matched %d/%d untagged articles",
+            matched_count,
+            sum(1 for a in articles if a.district is None),
+        )
+
+    return tagged
+
+
+async def tag_districts_with_llm(
+    articles: list[ArticleRef],
+    regions: list[StateUT],
+    checker: RelevanceChecker,
+) -> list[ArticleRef]:
+    """Use LLM to identify districts for articles still untagged.
+
+    Only processes articles with ``district=None``.  Sends each article's
+    title + text to the LLM along with the state's district list.  The LLM
+    identifies which single district the article is primarily about (or
+    ``None`` if it covers multiple districts / the whole state).
+
+    This is the final district tagging pass, run after the cheaper English
+    text matching in :func:`tag_districts_from_text`.
+
+    Args:
+        articles: Articles (typically ``Article`` with full_text).
+        regions: StateUT list for district name lookup.
+        checker: An active RelevanceChecker instance.
+
+    Returns:
+        New list with district fields populated where the LLM found a match.
+    """
+    state_districts: dict[str, list[str]] = {}
+    for region in regions:
+        if region.districts:
+            state_districts[region.name] = [d.name for d in region.districts]
+
+    # Identify articles needing LLM tagging
+    needs_llm: list[tuple[int, ArticleRef]] = []
+    for i, article in enumerate(articles):
+        if article.district is None and article.state in state_districts:
+            needs_llm.append((i, article))
+
+    if not needs_llm:
+        return articles
+
+    logger.info(
+        "LLM district extraction: %d articles to check", len(needs_llm),
+    )
+
+    # Run LLM extraction concurrently
+    async def _extract(article: ArticleRef) -> str | None:
+        full_text = getattr(article, "full_text", None)
+        return await checker.extract_district(
+            article.title,
+            full_text,
+            article.state,
+            state_districts[article.state],
+        )
+
+    tasks = [_extract(article) for _, article in needs_llm]
+    results = await asyncio.gather(*tasks)
+
+    # Build new list with LLM-tagged articles
+    tagged = list(articles)  # shallow copy
+    matched_count = 0
+    for (idx, _article), district in zip(needs_llm, results):
+        if district is not None:
+            tagged[idx] = tagged[idx].model_copy(update={"district": district})
+            matched_count += 1
+
+    logger.info(
+        "LLM district extraction: tagged %d/%d articles",
+        matched_count,
+        len(needs_llm),
+    )
+
+    return tagged

@@ -4,9 +4,13 @@ Generates API-ready search queries for all three news sources (Google News,
 NewsData.io, GNews) at both state and district levels. Each source gets a
 different query strategy:
 
-- Google News: 8 category-based OR-combined queries per state-language pair
-- NewsData.io: 1 broad query per state-language pair (512 char limit)
-- GNews: 1 broad query per state-language pair (200 char limit, 8 languages only)
+- Google News: 3 category-based OR-combined queries per state-language pair
+  (only weather, health, temperature -- other categories are too generic
+  and return mostly irrelevant articles)
+- NewsData.io: 1 broad query per state-language pair (512 char limit),
+  using only terms from core categories
+- GNews: 1 broad query per state-language pair (200 char limit, 8 languages only),
+  using only terms from core categories
 """
 
 from __future__ import annotations
@@ -15,18 +19,36 @@ from typing import Literal
 
 from src.data.geo_loader import StateUT
 from src.data.heat_terms_loader import (
-    TERM_CATEGORIES,
     get_terms_by_category,
     get_terms_for_language,
 )
 
 from ._models import Query, batch_districts, build_broad_query, build_category_query
 
+
+def _query_languages(region: StateUT) -> list[str]:
+    """Return query languages: primary regional language + English.
+
+    Uses only two languages per state to reduce query count while
+    ensuring every state is searched in both its main regional
+    language and English for broader coverage.
+    """
+    primary = next((lang for lang in region.languages if lang != "en"), None)
+    if primary:
+        return [primary, "en"]
+    return ["en"]
+
 # Languages supported by GNews API (mirrors GNewsSource._SUPPORTED_LANGUAGES
 # but defined here to avoid circular imports from src.sources).
 GNEWS_SUPPORTED_LANGUAGES: frozenset[str] = frozenset(
     {"en", "hi", "bn", "ta", "te", "mr", "ml", "pa"}
 )
+
+# Only query with categories that are inherently heat-specific.
+# Generic categories (power, education, governance, labor, agriculture,
+# urban_infra) match too many irrelevant articles (e.g. "school closed"
+# matches festival closures, "advisory" matches traffic advisories).
+QUERY_CATEGORIES: tuple[str, ...] = ("weather", "health", "temperature")
 
 # Character limits per source for query strings.
 _CHAR_LIMITS: dict[str, int] = {
@@ -66,9 +88,9 @@ class QueryGenerator:
         gnews_queries: list[Query] = []
 
         for region in regions:
-            for lang in region.languages:
-                # --- Google News: one query per category ---
-                for cat in sorted(TERM_CATEGORIES):
+            for lang in _query_languages(region):
+                # --- Google News: one query per core category ---
+                for cat in QUERY_CATEGORIES:
                     terms = get_terms_by_category(lang, cat)
                     if not terms:
                         continue
@@ -86,7 +108,8 @@ class QueryGenerator:
                     )
 
                 # --- NewsData.io: one broad query per state-language pair ---
-                all_terms = get_terms_for_language(lang)
+                # Only use terms from core categories to avoid generic matches.
+                all_terms = _get_core_terms(lang)
                 if all_terms:
                     query_string = build_broad_query(all_terms, region.name, 512)
                     newsdata_queries.append(
@@ -103,7 +126,7 @@ class QueryGenerator:
 
                 # --- GNews: one broad query per state-language pair (8 langs only) ---
                 if lang in GNEWS_SUPPORTED_LANGUAGES:
-                    all_terms = get_terms_for_language(lang)
+                    all_terms = _get_core_terms(lang)
                     if all_terms:
                         query_string = build_broad_query(
                             all_terms, region.name, 200
@@ -155,7 +178,7 @@ class QueryGenerator:
                 continue
             district_names = [d.name for d in region.districts]
 
-            for lang in region.languages:
+            for lang in _query_languages(region):
                 # Skip unsupported languages for GNews
                 if source_hint == "gnews" and lang not in GNEWS_SUPPORTED_LANGUAGES:
                     continue
@@ -195,6 +218,18 @@ class QueryGenerator:
                     )
 
         return queries
+
+
+def _get_core_terms(lang: str) -> list[str]:
+    """Return heat terms only from the core query categories for a language.
+
+    Used by NewsData.io and GNews broad queries to avoid including generic
+    terms (power cuts, school closures, etc.) that cause false positives.
+    """
+    terms: list[str] = []
+    for cat in QUERY_CATEGORIES:
+        terms.extend(get_terms_by_category(lang, cat))
+    return terms
 
 
 def _extract_batch_districts(
