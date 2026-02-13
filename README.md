@@ -16,16 +16,16 @@ Built for [AIDMI](https://github.com/AIDMI-DataHub) (All India Disaster Mitigati
 
 The pipeline is a cost funnel -- cheapest filters run first to minimize expensive operations:
 
-| Stage | What | Input | Output |
-|-------|------|-------|--------|
-| **1. Collection** | Search queries in 14 languages across all states | Geographic data + heat terms | ~8,000-15,000 article refs |
-| **2. Date filter** | Keep only today's articles | All refs | ~500-700 refs |
-| **2b. LLM relevance** | GPT-4o-mini checks if title is about heat in the correct state | Titles only | ~40-80 refs |
-| **3. Extraction** | Fetch HTML, extract article text via trafilatura | Relevant refs | Articles with full text |
-| **3b. District tag (text)** | Match English district names in title + body | Extracted articles | Some articles get districts |
-| **3c. District tag (LLM)** | LLM identifies district for remaining articles | Untagged articles | Most articles get districts |
-| **4. Dedup** | URL normalization + title similarity (cosine 0.85) + exclusion patterns | All articles | Deduplicated articles |
-| **5. Output** | Write per-state, per-district JSON and CSV | Final articles | Structured output files |
+| Stage | What |
+|-------|------|
+| **1. Collection** | Search queries in 14 languages across all states |
+| **2. Date filter** | Keep only today's articles |
+| **2b. LLM relevance** | GPT-4o-mini checks if title is about heat in the correct state |
+| **3. Extraction** | Fetch HTML, extract article text via trafilatura |
+| **3b. District tag (text)** | Match English district names in title + body |
+| **3c. District tag (LLM)** | LLM identifies district for remaining articles |
+| **4. Dedup** | URL normalization + title similarity + exclusion patterns |
+| **5. Output** | Write per-state, per-district JSON and CSV |
 
 ## Output Structure
 
