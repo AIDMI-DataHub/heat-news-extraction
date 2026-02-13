@@ -169,13 +169,11 @@ Three layers of rate control prevent API throttling:
 ### Timeout management
 In CI, the pipeline splits its time budget: 80% for collection, 20% for extraction/output. This ensures output is always produced even if collection takes longer than expected.
 
-## Setup
+## Getting Started
 
-### Prerequisites
+### 1. Clone and install
 
-- Python 3.12+
-
-### Installation
+Requires Python 3.12+.
 
 ```bash
 git clone https://github.com/AIDMI-DataHub/heat-news-extraction.git
@@ -183,9 +181,9 @@ cd heat-news-extraction
 pip install -r requirements.txt
 ```
 
-### API keys
+### 2. Set up API keys
 
-Create a `.env` file (or set environment variables):
+Create a `.env` file in the project root:
 
 ```bash
 # Required for LLM relevance checking (default provider)
@@ -202,9 +200,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 At minimum, you need `OPENAI_API_KEY` for LLM relevance checking. The pipeline can run with zero API keys (`LLM_PROVIDER=none`), but output quality will be significantly lower.
 
-## Usage
-
-### Run locally
+### 3. Run
 
 ```bash
 # Full run -- all states, today's news
