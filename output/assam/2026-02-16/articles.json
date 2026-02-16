@@ -1,0 +1,20 @@
+{
+  "state": "Assam",
+  "district": null,
+  "date": "2026-02-16",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "Heatwave and thunderstorms to hit as SAWS issues fire danger warning - IOL",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOazY3LWdPWk1WeEduN2FtRmt1Yml1UUNTY2RVc0R5V3pBRWJSaDlxVmJpX3BBRzFqZ2dkQzVKanNfbFlVcVROMkRQQi1KOExMQkN0a2ZqdmVjb2RmMXVwN3pWVTRrRzBteDZJVjZPOWZYOVZKb0RQMGUzLWFCM2VtU3l4d2dTNGYtWFg2RG1pLWhQY3JlekVqeFB5aTJ3VS1XclIyQ184c0tYUW9ROWtmVUJNLXNDdmhWLVU3bQ?oc=5",
+      "source": "IOL",
+      "date": "2026-02-16T09:36:18+05:30",
+      "language": "en",
+      "state": "Assam",
+      "district": null,
+      "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Assam",
+      "full_text": null,
+      "relevance_score": 0.5166666666666666
+    }
+  ]
+}
