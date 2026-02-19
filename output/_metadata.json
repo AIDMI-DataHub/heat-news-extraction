@@ -1,5 +1,5 @@
 {
-  "collection_timestamp": "2026-02-18T14:17:23.110044+05:30",
+  "collection_timestamp": "2026-02-19T14:16:54.598377+05:30",
   "sources_queried": [
     "google_news",
     "newsdata",
@@ -7,27 +7,18 @@
   ],
   "query_terms_used": [
     "(\"mercury soars\" OR \"mercury crosses\" OR \"temperature soars\" OR \"record temperature\" OR \"all-time high\" OR \"degrees Celsius\" OR \"maximum temperature\" OR \"hottest day\") Maharashtra",
+    "(\"तापमान वाढ\" OR \"अंश सेल्सिअस\" OR \"पारा चढला\" OR \"कमाल तापमान\" OR \"विक्रमी तापमान\") Maharashtra",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Bihar",
-    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Chandigarh",
+    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Chhattisgarh",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Jammu and Kashmir",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Jharkhand",
-    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Uttar Pradesh",
-    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Uttarakhand",
-    "(\"ఉష్ణోగ్రత పెరుగుదల\" OR \"డిగ్రీల సెల్సియస్\" OR \"పాదరసం పెరిగింది\" OR \"గరిష్ట ఉష్ణోగ్రత\" OR \"రికార్డు ఉష్ణోగ్రత\") Telangana",
     "(\"వడ గాలులు\" OR \"ఎండ వేడి\" OR \"భారీ ఎండలు\" OR \"హీట్ వేవ్\" OR \"ఉష్ణ తరంగం\" OR \"కడ ఎండలు\" OR మండుటెండ OR \"ఎండల తీవ్రత\" OR \"అసాధారణ ఎండలు\" OR \"తీవ్ర ఎండలు\") Telangana",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Karnataka",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Ladakh",
     "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Maharashtra",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Punjab",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Uttarakhand",
-    "(তাপমাত্রা OR \"তাপমাত্রা বৃদ্ধি\" OR \"পারদ চড়ছে\" OR \"ডিগ্রি সেলসিয়াস\" OR \"সর্বোচ্চ তাপমাত্রা\" OR \"রেকর্ড তাপমাত্রা\") West Bengal",
-    "(দাবদাহ OR তাপপ্রবাহ OR \"প্রচণ্ড গরম\" OR \"তীব্র গরম\" OR \"ঝলসানো গরম\" OR \"লু হাওয়া\" OR \"গরমের দাপট\" OR দাবানল OR \"অসহ্য গরম\" OR \"হিট ওয়েভ\" OR \"অত্যধিক গরম\" OR \"ভয়াবহ গরম\") West Bengal",
-    "(તાપમાન OR \"તાપમાન વધ્યું\" OR \"પારો ચઢ્યો\" OR \"ડિગ્રી સેલ્સિયસ\" OR \"મહત્તમ તાપમાન\" OR \"વિક્રમી તાપમાન\") Gujarat",
-    "দাবদাহ (Alipurduar OR Bankura OR Birbhum OR \"Burdwan (Bardhaman)\" OR \"Cooch Behar\" OR \"Dakshin Dinajpur (South Dinajpur)\" OR Darjeeling OR Hooghly OR Howrah OR Jalpaiguri OR Kalimpong OR Kolkata OR Malda OR Murshidabad OR Nadia OR \"North 24 Parganas\" OR \"Paschim Medinipur (West Medinipur)\" OR \"Purba Medinipur (East Medinipur)\" OR Purulia OR \"South 24 Parganas\" OR \"Uttar Dinajpur (North Dinajpur)\")"
+    "(তাপমাত্রা OR \"তাপমাত্রা বৃদ্ধি\" OR \"পারদ চড়ছে\" OR \"ডিগ্রি সেলসিয়াস\" OR \"সর্বোচ্চ তাপমাত্রা\" OR \"রেকর্ড তাপমাত্রা\") West Bengal"
   ],
   "counts": {
-    "articles_found": 21,
-    "articles_extracted": 16,
-    "articles_filtered": 19
+    "articles_found": 13,
+    "articles_extracted": 11,
+    "articles_filtered": 13
   }
 }
