@@ -1,30 +1,30 @@
 {
-  "collection_timestamp": "2026-02-22T13:54:45.423026+05:30",
+  "collection_timestamp": "2026-02-23T14:21:37.241715+05:30",
   "sources_queried": [
     "google_news",
     "newsdata",
     "gnews"
   ],
   "query_terms_used": [
-    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Bihar",
-    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Chandigarh",
+    "(\"mercury soars\" OR \"mercury crosses\" OR \"temperature soars\" OR \"record temperature\" OR \"all-time high\" OR \"degrees Celsius\" OR \"maximum temperature\" OR \"hottest day\") Delhi",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Delhi",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Haryana",
+    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Himachal Pradesh",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Jammu and Kashmir",
+    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Jharkhand",
+    "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Madhya Pradesh",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Rajasthan",
     "(\"पारा चढ़ा\" OR \"पारा पहुंचा\" OR तापमान OR \"तापमान बढ़ा\" OR \"रिकॉर्ड तोड़ गर्मी\" OR \"डिग्री सेल्सियस\" OR \"पारा उबला\" OR \"अधिकतम तापमान\") Uttar Pradesh",
-    "(\"ఉష్ణోగ్రత పెరుగుదల\" OR \"డిగ్రీల సెల్సియస్\" OR \"పాదరసం పెరిగింది\" OR \"గరిష్ట ఉష్ణోగ్రత\" OR \"రికార్డు ఉష్ణోగ్రత\") Andhra Pradesh",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Jammu and Kashmir",
-    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Maharashtra",
+    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Odisha",
+    "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\") Rajasthan",
+    "(लू OR \"लू चलना\" OR \"भीषण गर्मी\" OR \"प्रचंड गर्मी\" OR \"कड़ी धूप\" OR \"तेज धूप\" OR \"गर्म हवा\" OR \"उष्ण लहर\" OR \"ताप लहर\" OR \"हीट वेव\" OR \"झुलसाने वाली गर्मी\" OR \"तपती गर्मी\" OR \"भयंकर गर्मी\" OR \"गर्मी का कहर\" OR \"गर्मी का प्रकोप\" OR \"अत्यधिक गर्मी\") Bihar",
     "(लू OR \"लू चलना\" OR \"भीषण गर्मी\" OR \"प्रचंड गर्मी\" OR \"कड़ी धूप\" OR \"तेज धूप\" OR \"गर्म हवा\" OR \"उष्ण लहर\" OR \"ताप लहर\" OR \"हीट वेव\" OR \"झुलसाने वाली गर्मी\" OR \"तपती गर्मी\" OR \"भयंकर गर्मी\" OR \"गर्मी का कहर\" OR \"गर्मी का प्रकोप\" OR \"अत्यधिक गर्मी\") Delhi",
-    "(लू OR \"लू चलना\" OR \"भीषण गर्मी\" OR \"प्रचंड गर्मी\" OR \"कड़ी धूप\" OR \"तेज धूप\" OR \"गर्म हवा\" OR \"उष्ण लहर\" OR \"ताप लहर\" OR \"हीट वेव\" OR \"झुलसाने वाली गर्मी\" OR \"तपती गर्मी\" OR \"भयंकर गर्मी\" OR \"गर्मी का कहर\" OR \"गर्मी का प्रकोप\" OR \"अत्यधिक गर्मी\") Rajasthan",
-    "(તાપમાન OR \"તાપમાન વધ્યું\" OR \"પારો ચઢ્યો\" OR \"ડિગ્રી સેલ્સિયસ\" OR \"મહત્તમ તાપમાન\" OR \"વિક્રમી તાપમાન\") Gujarat",
-    "heatwave (Ahmednagar OR Akola OR Amravati OR Aurangabad OR Beed OR Bhandara OR Buldhana OR Chandrapur OR Dhule OR Gadchiroli OR Gondia OR Hingoli OR Jalgaon OR Jalna OR Kolhapur OR Latur OR \"Mumbai City\" OR \"Mumbai Suburban\" OR Nagpur OR Nanded OR Nandurbar OR Nashik OR Osmanabad OR Palghar OR Parbhani OR Pune OR Raigad OR Ratnagiri OR Sangli OR Satara OR Sindhudurg OR Solapur OR Thane OR Wardha OR Washim OR Yavatmal)",
-    "लू (\"Central Delhi\" OR \"East Delhi\" OR \"New Delhi\" OR \"North Delhi\" OR \"North East Delhi\" OR \"North West Delhi\" OR Shahdara OR \"South Delhi\" OR \"South East Delhi\" OR \"South West Delhi\" OR \"West Delhi\")"
+    "(வெப்பத்தாக்கம் OR \"வெப்ப தாக்கு\" OR \"வெயிலில் மரணம்\" OR \"வெப்பத்தால் உயிரிழப்பு\" OR சன்ஸ்ட்ரோக் OR \"ஹீட் ஸ்ட்ரோக்\" OR \"வெயில் தாக்கம்\" OR நீரிழப்பு OR \"மருத்துவமனையில் அனுமதி\") Tamil Nadu",
+    "लू (Anantnag OR Bandipore OR Baramulla OR Budgam OR Doda OR Ganderbal OR Jammu OR Kathua OR Kishtwar OR Kulgam OR Kupwara OR Poonch OR Pulwama OR Rajouri OR Ramban OR Reasi OR Samba OR Shopian OR Srinagar OR Udhampur)"
   ],
   "counts": {
-    "articles_found": 24,
-    "articles_extracted": 23,
-    "articles_filtered": 21
+    "articles_found": 27,
+    "articles_extracted": 25,
+    "articles_filtered": 26
   }
 }
