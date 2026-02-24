@@ -19,6 +19,30 @@ from src.models.article import Article, ArticleRef
 
 logger = logging.getLogger(__name__)
 
+# Boilerplate indicator phrases (case-insensitive substrings).
+# If extracted text is short AND contains any of these, it's almost
+# certainly nav/footer/banner content, not an article.
+_BOILERPLATE_PHRASES = [
+    "download app",
+    "download the app",
+    "डाउनलोड करें",
+    "ऐप डाउनलोड",
+    "all rights reserved",
+    "terms of use",
+    "privacy policy",
+    "cookie policy",
+    "subscribe to newsletter",
+    "sign up for newsletter",
+]
+
+
+def _is_boilerplate(text: str) -> bool:
+    """Return True if *text* looks like website boilerplate rather than article content."""
+    if len(text.strip()) >= 500:
+        return False
+    lowered = text.lower()
+    return any(phrase in lowered for phrase in _BOILERPLATE_PHRASES)
+
 _HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -92,6 +116,10 @@ async def _extract_text(html: str, url: str) -> str | None:
         # Discard very short extractions (likely ads, navbars, or footers)
         if text is not None and len(text.strip()) < 100:
             logger.warning("Extracted text too short (%d chars), discarding: %s", len(text.strip()), url)
+            return None
+        # Discard short boilerplate (app prompts, copyright notices, cookie banners)
+        if text is not None and _is_boilerplate(text):
+            logger.warning("Boilerplate detected (%d chars), discarding: %s", len(text.strip()), url)
             return None
         return text
     except Exception:
