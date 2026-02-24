@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import re
 import time
+from urllib.parse import urlparse
 
 import httpx
 import trafilatura
@@ -18,6 +20,20 @@ from src.extraction._resolver import resolve_url
 from src.models.article import Article, ArticleRef
 
 logger = logging.getLogger(__name__)
+
+# ─── MSN domain skip (Issue 8) ──────────────────────────────────────
+
+_SKIP_DOMAINS = frozenset({"msn.com"})
+
+
+def _should_skip_url(url: str) -> bool:
+    """Return True if URL belongs to a domain that never yields usable text."""
+    try:
+        netloc = urlparse(url).netloc.lower().removeprefix("www.")
+        return any(netloc == d or netloc.endswith("." + d) for d in _SKIP_DOMAINS)
+    except Exception:
+        return False
+
 
 # Boilerplate indicator phrases (case-insensitive substrings).
 # If extracted text is short AND contains any of these, it's almost
@@ -33,6 +49,10 @@ _BOILERPLATE_PHRASES = [
     "cookie policy",
     "subscribe to newsletter",
     "sign up for newsletter",
+    "copyright ©",
+    "© copyright",
+    "trademark of",
+    "registered trademark",
 ]
 
 
@@ -42,6 +62,87 @@ def _is_boilerplate(text: str) -> bool:
         return False
     lowered = text.lower()
     return any(phrase in lowered for phrase in _BOILERPLATE_PHRASES)
+
+# ─── Post-extraction text cleaning (Issues 4-6) ─────────────────────
+
+_BREADCRUMB_RE = re.compile(r"^(?:\s*-\s+.{1,50}\n){2,}", re.MULTILINE)
+
+_ALSO_READ_RE = re.compile(
+    r"^\s*(?:Also\s+Read|Read\s+Also|ये\s+भी\s+पढ़ें|यह\s+भी\s+पढ़ें)"
+    r"\s*[:|\-]?\s*.*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+_APP_PROMO_RE = re.compile(
+    r"^\s*(?:Download\s+(?:the\s+)?app|Get\s+the\s+app|ऐप\s+डाउनलोड\s+करें).*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+_RECOMMENDED_RE = re.compile(
+    r"(?:^.*(?:recommended|related\s+(?:news|articles|stories)"
+    r"|संबंधित\s+खबरें|સંબંધિત\s+સમાચાર).*\n)(?:.+\n?){2,}$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+_COPYRIGHT_RE = re.compile(
+    r"\n\s*(?:©\s*\d{4}|copyright\s*©|[a-z]+ name,? logo).*$",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def _deduplicate_paragraphs(text: str) -> str:
+    """Remove duplicate paragraphs, keeping first occurrence."""
+    paragraphs = text.split("\n\n")
+    seen: set[str] = set()
+    unique: list[str] = []
+    for para in paragraphs:
+        key = para.strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        unique.append(para)
+    return "\n\n".join(unique)
+
+
+def _clean_text(text: str) -> str:
+    """Strip content leakage: breadcrumbs, 'Also Read', app promos, recommended blocks, copyright."""
+    text = _BREADCRUMB_RE.sub("", text)
+    text = _ALSO_READ_RE.sub("", text)
+    text = _APP_PROMO_RE.sub("", text)
+    text = _RECOMMENDED_RE.sub("", text)
+    text = _COPYRIGHT_RE.sub("", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    text = _deduplicate_paragraphs(text)
+    return text.strip()
+
+
+# ─── Geo-validation (Issue 3) ───────────────────────────────────────
+
+_NON_INDIA_PLACES = [
+    "tennessee", "alabama", "arkansas", "california", "colorado",
+    "connecticut", "florida", "hawaii", "idaho", "illinois",
+    "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland",
+    "massachusetts", "michigan", "minnesota", "mississippi", "missouri",
+    "montana", "nebraska", "nevada", "new hampshire", "new jersey",
+    "new mexico", "new york", "north carolina", "north dakota", "ohio",
+    "oklahoma", "oregon", "pennsylvania", "rhode island",
+    "south carolina", "south dakota", "texas", "utah", "vermont",
+    "virginia", "washington", "west virginia", "wisconsin", "wyoming",
+]
+
+_NON_INDIA_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(p) for p in _NON_INDIA_PLACES) + r")\b",
+    re.IGNORECASE,
+)
+
+
+def _is_non_india(title: str, text: str | None) -> bool:
+    """Return True if article is clearly about a non-India location."""
+    combined = title
+    if text is not None:
+        combined += " " + text[:500]
+    return bool(_NON_INDIA_RE.search(combined))
+
 
 _HEADERS = {
     "User-Agent": (
@@ -113,6 +214,9 @@ async def _extract_text(html: str, url: str) -> str | None:
                 deduplicate=True,
                 url=url,
             )
+        # Clean content leakage before length/boilerplate checks
+        if text is not None:
+            text = _clean_text(text)
         # Discard very short extractions (likely ads, navbars, or footers)
         if text is not None and len(text.strip()) < 100:
             logger.warning("Extracted text too short (%d chars), discarding: %s", len(text.strip()), url)
@@ -141,6 +245,11 @@ async def extract_article(
     **Never raises** -- failures are logged and produce an Article with
     ``full_text=None`` (requirement EXTR-03).
     """
+    # Step 0: Skip known-bad domains (Issue 8)
+    if _should_skip_url(ref.url):
+        logger.debug("Skipping known-bad domain: %s", ref.url)
+        return Article(**ref.model_dump(), full_text=None, relevance_score=0.0)
+
     try:
         # Step 1: Resolve URL
         actual_url = await resolve_url(ref.url, client)
@@ -153,6 +262,11 @@ async def extract_article(
 
         # Step 3: Extract text
         text = await _extract_text(html, actual_url)
+
+        # Step 3b: Geo-validation (Issue 3)
+        if text is not None and _is_non_india(ref.title, text):
+            logger.info("Non-India article rejected: %s (state=%s)", actual_url, ref.state)
+            text = None
 
         # Step 4: Build Article
         if text is not None:
