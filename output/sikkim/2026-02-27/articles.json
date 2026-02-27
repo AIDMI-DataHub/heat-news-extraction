@@ -1,0 +1,20 @@
+{
+  "state": "Sikkim",
+  "district": null,
+  "date": "2026-02-27",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "IMD warns of thunderstorms in east; North India sees rising temperatures - Business Standard",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNU1ZrWlBlSnJtbUZRUlZVdE5fRURfOWVva2ZOc1dLc1I5dlFQQlVqc3VVU2QzMG5BOGxpTjFtbWR6V0JjUElXM0NjLW5jRHBkckxOa1VTeTdyR2l1NVpvaDNJOEM5RlNyLThuZzJ4MzRxal9TdkdTZjlVblM4cGxaUi1HUGJoM0RLVjgyYmZCVVh1MVg0b3JGTHFwZFl5Q19TdUtSeDBOZXYtLWVlTC0xNWxjRzN3Z2pfaTVTU0FqVUZCMk1aUGZHc1pxcEJzVzJsdGs3amkzSdIB1wFBVV95cUxNU1ZrWlBlSnJtbUZRUlZVdE5fRURfOWVva2ZOc1dLc1I5dlFQQlVqc3VVU2QzMG5BOGxpTjFtbWR6V0JjUElXM0NjLW5jRHBkckxOa1VTeTdyR2l1NVpvaDNJOEM5RlNyLThuZzJ4MzRxal9TdkdTZjlVblM4cGxaUi1HUGJoM0RLVjgyYmZCVVh1MVg0b3JGTHFwZFl5Q19TdUtSeDBOZXYtLWVlTC0xNWxjRzN3Z2pfaTVTU0FqVUZCMk1aUGZHc1pxcEJzVzJsdGs3amkzSQ?oc=5",
+      "source": "Business Standard",
+      "date": "2026-02-27T07:30:55+05:30",
+      "language": "en",
+      "state": "Sikkim",
+      "district": null,
+      "search_term": "(\"mercury soars\" OR \"mercury crosses\" OR \"temperature soars\" OR \"record temperature\" OR \"all-time high\" OR \"degrees Celsius\" OR \"maximum temperature\" OR \"hottest day\") Sikkim",
+      "full_text": null,
+      "relevance_score": 0.0
+    }
+  ]
+}
