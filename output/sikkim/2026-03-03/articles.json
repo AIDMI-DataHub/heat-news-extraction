@@ -1,0 +1,20 @@
+{
+  "state": "Sikkim",
+  "district": null,
+  "date": "2026-03-03",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "IMD Forecasts Thunderstorms in Northeast India, Fog in Sikkim; Temps to Rise in Northwest - The Right News",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOcmowQUJLcEQ1bk9CRmlQdFUyVjR2Ym9VV3ZOQnlHM0JNVjBUQ3RXaEtsSHl3QU5QOUxnaXVKQlFCUEs1WUZXRkEzSjRIOEtQdmlFNjRleEo0ZUFMSlcyUUdGWEQzMjVMWDNmc2QwSVB0Y1dYaW9mWWJqWnpUQk9kQzlGLTh5c2FRQkNZRm5PMVdHclF2ZVM2WVBkck56aXNfMl9jZXFhNVROd3M2cGpyNUZHa2Q1R2F3M1B3bkk0N2RBR3AyUlE?oc=5",
+      "source": "The Right News",
+      "date": "2026-03-03T10:36:48+05:30",
+      "language": "en",
+      "state": "Sikkim",
+      "district": null,
+      "search_term": "(\"mercury soars\" OR \"mercury crosses\" OR \"temperature soars\" OR \"record temperature\" OR \"all-time high\" OR \"degrees Celsius\" OR \"maximum temperature\" OR \"hottest day\") Sikkim",
+      "full_text": "India Meteorological Department (IMD) has forecast thunderstorms accompanied with lightning over Arunachal Pradesh, Assam and Meghalaya today.\nThe IMD said that dense fog conditions will prevail during morning hours over Sikkim today. The Weather Agency also predicted a gradual rise in maximum temperature by two to four degrees Celsius over the plains of Northwest India during the next four days.",
+      "relevance_score": 0.4833333333333333
+    }
+  ]
+}
