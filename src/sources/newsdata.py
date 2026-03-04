@@ -173,7 +173,8 @@ class NewsDataSource:
             "q": query,
             "language": language,
             "country": country.lower(),
-            "timeframe": 24,  # Last 24 hours only (daily pipeline)
+            # Note: timeframe parameter requires a paid plan on NewsData.io.
+            # The pipeline's date filter (Stage 2) handles recency instead.
         }
 
         try:

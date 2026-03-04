@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 # Gemini free tier: 15 RPM for Flash.
 # max_concurrent=1, min_interval=4.0 stays within limits.
-_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 _MAX_RETRIES = 3
 _INITIAL_BACKOFF = 2.0  # seconds (longer for free tier)
