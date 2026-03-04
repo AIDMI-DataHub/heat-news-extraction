@@ -49,8 +49,16 @@ def deduplicate_and_filter(articles: list[Article]) -> list[Article]:
     """
     input_count = len(articles)
 
+    # Stage 0: Remove articles with no extracted text
+    with_text = [a for a in articles if a.full_text and a.full_text.strip()]
+    if len(with_text) < input_count:
+        logger.info(
+            "Removed %d articles with empty text: %d -> %d",
+            input_count - len(with_text), input_count, len(with_text),
+        )
+
     # Stage 1: URL deduplication
-    deduped_url = deduplicate_by_url(articles)
+    deduped_url = deduplicate_by_url(with_text)
 
     # Stage 2: Title deduplication
     deduped_title = deduplicate_by_title(deduped_url, threshold=0.85)

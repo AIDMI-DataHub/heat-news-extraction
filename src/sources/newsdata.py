@@ -200,6 +200,18 @@ class NewsDataSource:
                 from src.reliability._retry import RateLimitError
 
                 raise RateLimitError(status_code=429, source="newsdata") from exc
+            elif status == 422:
+                # Log response body to diagnose persistent 422 errors
+                try:
+                    body = exc.response.json()
+                except Exception:
+                    body = exc.response.text[:200]
+                logger.warning(
+                    "NewsData.io HTTP 422 for query=%r lang=%s: %s",
+                    query,
+                    language,
+                    body,
+                )
             else:
                 logger.warning(
                     "NewsData.io HTTP %s for query=%r lang=%s",

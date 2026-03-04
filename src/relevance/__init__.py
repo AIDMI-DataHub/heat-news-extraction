@@ -106,14 +106,30 @@ def create_relevance_checker() -> RelevanceChecker | None:
         )
         return ConsensusChecker(checkers)
 
-    # Single provider mode
+    # Single provider mode -- with automatic fallback when possible
     checker = _create_single_checker(provider)
-    if checker is not None:
-        logger.info("Using %s for relevance checking", provider)
-    else:
+    if checker is None:
         logger.warning(
             "Could not create %s checker -- skipping LLM relevance check. "
             "Set LLM_PROVIDER=none to suppress this warning.",
             provider,
         )
+        return None
+
+    # Auto-create fallback: if the primary is OpenAI and a Gemini key
+    # is available, wrap in FallbackChecker so persistent OpenAI failures
+    # (e.g. billing limits, key revocation) automatically switch to Gemini.
+    fallback_provider = "gemini" if provider == "openai" else "openai"
+    fallback = _create_single_checker(fallback_provider)
+    if fallback is not None:
+        from src.relevance._fallback import FallbackChecker
+
+        logger.info(
+            "Using %s for relevance checking (auto-fallback: %s)",
+            provider,
+            fallback_provider,
+        )
+        return FallbackChecker(primary=checker, fallback=fallback)
+
+    logger.info("Using %s for relevance checking (no fallback available)", provider)
     return checker
