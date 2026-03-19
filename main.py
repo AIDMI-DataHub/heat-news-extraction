@@ -290,12 +290,12 @@ async def main() -> None:
                 before_filter, len(refs), before_filter - len(refs), date_range_hours,
             )
         else:
-            # Default: today only (midnight IST to now)
-            today_midnight = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            refs = [r for r in refs if r.date >= today_midnight]
+            # Default: last 24 hours (avoids gap between daily runs)
+            cutoff = now - timedelta(hours=24)
+            refs = [r for r in refs if r.date >= cutoff]
             logger.info(
-                "Date filter (today): %d -> %d refs (keeping %s onward)",
-                before_filter, len(refs), today_midnight.strftime("%Y-%m-%d 00:00 IST"),
+                "Date filter (24h): %d -> %d refs (keeping %s onward)",
+                before_filter, len(refs), cutoff.strftime("%Y-%m-%d %H:%M IST"),
             )
 
         # District filtering (if DISTRICTS is set)
