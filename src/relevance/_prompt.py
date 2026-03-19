@@ -12,13 +12,15 @@ RELEVANT (Yes):
 - Temperature records or forecasts showing unusual heat in {state}
 - Heat-related health issues (heatstroke, heat deaths, dehydration) in {state}
 - Heat-caused infrastructure problems (power outages, water shortages) in {state}
-- Government heat advisories for {state}
+- Government heat advisories, IMD warnings, or red/orange alerts for {state}
 - National-level heat news that explicitly mentions {state}
+- Weather forecasts that discuss heat, rising temperatures, or hot conditions in {state}
+- Articles about rain or storms that discuss relief FROM HEAT or end of a heat spell in {state}
 
 NOT RELEVANT (No):
-- Heat news about a DIFFERENT Indian state (e.g. article about Delhi ≠ Andaman)
-- Heat news from outside India
-- General weather not about heat (rain, cold, fog, storms)
+- Heat news about a DIFFERENT Indian state (if the title names another state like "Delhi heatwave" but the target state is Bihar, answer No)
+- Heat news from outside India (e.g. USA, Pakistan, unless it also covers {state})
+- Weather articles about rain, cold, fog, or storms with NO mention of heat or temperatures
 - Products, entertainment, or sports mentioning "heat"
 - Articles where heat/temperature is mentioned only incidentally
 

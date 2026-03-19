@@ -4,9 +4,9 @@ Generates API-ready search queries for all three news sources (Google News,
 NewsData.io, GNews) at both state and district levels. Each source gets a
 different query strategy:
 
-- Google News: 3 category-based OR-combined queries per state-language pair
-  (only weather, health, temperature -- other categories are too generic
-  and return mostly irrelevant articles)
+- Google News: 4 category-based OR-combined queries per state-language pair
+  (weather, health, temperature, governance -- other categories are too
+  generic and return mostly irrelevant articles)
 - NewsData.io: 1 broad query per state-language pair (512 char limit),
   using only terms from core categories
 - GNews: 1 broad query per state-language pair (200 char limit, 8 languages only),
@@ -44,11 +44,13 @@ GNEWS_SUPPORTED_LANGUAGES: frozenset[str] = frozenset(
     {"en", "hi", "bn", "ta", "te", "mr", "ml", "pa"}
 )
 
-# Only query with categories that are inherently heat-specific.
-# Generic categories (power, education, governance, labor, agriculture,
-# urban_infra) match too many irrelevant articles (e.g. "school closed"
-# matches festival closures, "advisory" matches traffic advisories).
-QUERY_CATEGORIES: tuple[str, ...] = ("weather", "health", "temperature")
+# Query with categories that are heat-specific or contain IMD/alert terms
+# that frequently appear in heat news articles. Generic categories (power,
+# education, labor, agriculture, urban_infra) are excluded because they
+# match too many irrelevant articles (e.g. "school closed" matches festival
+# closures). Governance is included because its terms (IMD warning, red
+# alert, heat advisory) are strong heat-news signals.
+QUERY_CATEGORIES: tuple[str, ...] = ("weather", "health", "temperature", "governance")
 
 # Character limits per source for query strings.
 _CHAR_LIMITS: dict[str, int] = {

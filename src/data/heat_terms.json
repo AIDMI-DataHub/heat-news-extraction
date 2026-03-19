@@ -18,7 +18,18 @@
           "hot loo winds",
           "intense heat",
           "unbearable heat",
-          "deadly heat"
+          "deadly heat",
+          "weather forecast heat",
+          "weather update heat",
+          "IMD forecast",
+          "IMD prediction",
+          "rising temperatures",
+          "temperatures expected to rise",
+          "relief from heat",
+          "respite from heat",
+          "heat respite",
+          "respite from scorching heat",
+          "rain brings relief from heat"
         ],
         "health": [
           "heatstroke",
@@ -82,13 +93,20 @@
           "heat advisory",
           "heat action plan",
           "IMD warning",
+          "IMD alert",
+          "IMD issues warning",
+          "red alert heat",
+          "orange alert heat",
+          "yellow alert heat",
           "red alert",
           "orange alert",
           "yellow alert",
           "NDMA advisory",
           "cooling shelter",
           "relief measures",
-          "heat compensation"
+          "heat compensation",
+          "heat alert",
+          "severe weather warning"
         ],
         "urban_infra": [
           "road melting",
@@ -115,7 +133,10 @@
           "all-time high",
           "degrees Celsius",
           "maximum temperature",
-          "hottest day"
+          "hottest day",
+          "temperature crosses 40",
+          "temperature crosses 45",
+          "temperature likely to rise"
         ]
       }
     },
@@ -138,7 +159,16 @@
           "भयंकर गर्मी",
           "गर्मी का कहर",
           "गर्मी का प्रकोप",
-          "अत्यधिक गर्मी"
+          "अत्यधिक गर्मी",
+          "मौसम अपडेट गर्मी",
+          "मौसम का हाल",
+          "मौसम पूर्वानुमान",
+          "आईएमडी",
+          "आईएमडी पूर्वानुमान",
+          "तापमान में बढ़ोतरी",
+          "गर्मी से राहत",
+          "गर्मी से निजात",
+          "बारिश से गर्मी में राहत"
         ],
         "health": [
           "सूर्याघात",
@@ -239,7 +269,10 @@
           "रिकॉर्ड तोड़ गर्मी",
           "डिग्री सेल्सियस",
           "पारा उबला",
-          "अधिकतम तापमान"
+          "अधिकतम तापमान",
+          "तापमान 40 पार",
+          "तापमान 45 पार",
+          "तापमान बढ़ने की संभावना"
         ]
       }
     },
