@@ -19,17 +19,20 @@
           "intense heat",
           "unbearable heat",
           "deadly heat",
-          "weather forecast heat",
-          "weather update heat",
+          "heat",
+          "weather forecast",
+          "weather update",
+          "weather alert",
           "IMD forecast",
           "IMD prediction",
+          "IMD alert",
+          "IMD",
           "rising temperatures",
           "temperatures expected to rise",
           "relief from heat",
           "respite from heat",
           "heat respite",
-          "respite from scorching heat",
-          "rain brings relief from heat"
+          "respite from scorching heat"
         ],
         "health": [
           "heatstroke",
@@ -92,12 +95,9 @@
         "governance": [
           "heat advisory",
           "heat action plan",
+          "heat alert",
           "IMD warning",
           "IMD alert",
-          "IMD issues warning",
-          "red alert heat",
-          "orange alert heat",
-          "yellow alert heat",
           "red alert",
           "orange alert",
           "yellow alert",
@@ -105,7 +105,6 @@
           "cooling shelter",
           "relief measures",
           "heat compensation",
-          "heat alert",
           "severe weather warning"
         ],
         "urban_infra": [
@@ -160,15 +159,17 @@
           "गर्मी का कहर",
           "गर्मी का प्रकोप",
           "अत्यधिक गर्मी",
-          "मौसम अपडेट गर्मी",
+          "मौसम",
+          "मौसम अपडेट",
           "मौसम का हाल",
           "मौसम पूर्वानुमान",
+          "मौसम अलर्ट",
           "आईएमडी",
           "आईएमडी पूर्वानुमान",
+          "आईएमडी अलर्ट",
           "तापमान में बढ़ोतरी",
           "गर्मी से राहत",
-          "गर्मी से निजात",
-          "बारिश से गर्मी में राहत"
+          "गर्मी से निजात"
         ],
         "health": [
           "सूर्याघात",
