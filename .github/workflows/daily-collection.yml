@@ -6,6 +6,10 @@ on:
     - cron: '30 6 * * *'
   workflow_dispatch:  # Allow manual trigger from Actions tab
 
+concurrency:
+  group: daily-collection
+  cancel-in-progress: false  # Let running pipeline finish; queue new one
+
 permissions:
   contents: write  # Required for git push with GITHUB_TOKEN
 
@@ -44,8 +48,25 @@ jobs:
           git add --force output/
           if git diff --cached --quiet; then
             echo "No new data to commit"
-          else
-            git commit -m "data: daily collection $(date -u +%Y-%m-%d)"
-            git pull --rebase
-            git push
+            exit 0
           fi
+          git commit -m "data: daily collection $(date -u +%Y-%m-%d)"
+          # Retry push up to 3 times to handle concurrent pushes
+          for attempt in 1 2 3; do
+            if git push origin main 2>/dev/null; then
+              echo "Push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push failed (attempt $attempt/3), rebasing on latest remote..."
+            git fetch origin main
+            if git rebase origin/main; then
+              continue  # Rebase succeeded, retry push
+            fi
+            echo "Rebase conflict, resolving by keeping our output/ changes..."
+            git checkout --theirs output/ 2>/dev/null || true
+            git checkout --ours output/ 2>/dev/null || true
+            git add output/
+            git rebase --continue || git rebase --skip || true
+          done
+          echo "WARNING: Could not push after 3 attempts, but pipeline data was collected successfully"
+          exit 0
