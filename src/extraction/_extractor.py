@@ -119,15 +119,25 @@ def _clean_text(text: str) -> str:
 # ─── Geo-validation (Issue 3) ───────────────────────────────────────
 
 _NON_INDIA_PLACES = [
-    "tennessee", "alabama", "arkansas", "california", "colorado",
-    "connecticut", "florida", "hawaii", "idaho", "illinois",
-    "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland",
-    "massachusetts", "michigan", "minnesota", "mississippi", "missouri",
-    "montana", "nebraska", "nevada", "new hampshire", "new jersey",
-    "new mexico", "new york", "north carolina", "north dakota", "ohio",
-    "oklahoma", "oregon", "pennsylvania", "rhode island",
-    "south carolina", "south dakota", "texas", "utah", "vermont",
-    "virginia", "washington", "west virginia", "wisconsin", "wyoming",
+    # US states
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado",
+    "connecticut", "delaware", "florida", "georgia", "hawaii", "idaho",
+    "illinois", "iowa", "kansas", "kentucky", "louisiana",
+    "maine", "maryland", "massachusetts", "michigan", "minnesota",
+    "mississippi", "missouri", "montana", "nebraska", "nevada",
+    "new hampshire", "new jersey", "new mexico", "new york",
+    "north carolina", "north dakota", "ohio", "oklahoma", "oregon",
+    "pennsylvania", "rhode island", "south carolina", "south dakota",
+    "tennessee", "texas", "utah", "vermont", "virginia", "washington",
+    "west virginia", "wisconsin", "wyoming",
+    # US cities commonly in weather news
+    "phoenix", "denver", "las vegas", "houston", "dallas", "chicago",
+    "los angeles", "san francisco", "miami", "seattle", "boston",
+    "atlanta", "portland", "san antonio", "tucson", "sacramento",
+    # Country/region markers
+    "united states", "usa", "u.s.a", "u.s.",
+    "united kingdom", "australia", "pakistan", "saudi arabia",
+    "middle east", "europe", "european",
 ]
 
 _NON_INDIA_RE = re.compile(
