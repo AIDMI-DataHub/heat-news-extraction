@@ -37,12 +37,13 @@ _BASE_URL = "https://news.google.com/rss/search"
 # ---------------------------------------------------------------------------
 # Language code mapping: our ISO 639-1 codes -> Google News ``hl`` parameter.
 #
-# English must be ``en-IN`` (English for India) rather than bare ``en``
-# which defaults to US English.  All other Indian languages use bare codes.
+# Uses bare ``en`` for English (matching pygooglenews upstream).  With
+# ``gl=IN`` already set, Google News returns India-targeted results.
+# All Indian languages use their bare ISO 639-1 codes.
 # ---------------------------------------------------------------------------
 
 _LANG_TO_HL: dict[str, str] = {
-    "en": "en-IN",
+    "en": "en",
     "hi": "hi",
     "ta": "ta",
     "te": "te",
@@ -58,32 +59,79 @@ _LANG_TO_HL: dict[str, str] = {
     "ne": "ne",
 }
 
+# ---------------------------------------------------------------------------
+# Non-India publisher names to exclude from results.
+#
+# These are US/international weather outlets whose articles regularly appear
+# in India-targeted Google News RSS results for heat-related queries (e.g.
+# "Phoenix heatwave" from FOX Weather matching a search for "heatwave
+# Rajasthan").  Filtering at the source level prevents wasted extraction
+# and LLM budget on clearly irrelevant articles.
+# ---------------------------------------------------------------------------
+
+_EXCLUDED_SOURCES: frozenset[str] = frozenset({
+    # US TV / weather outlets -- these almost never cover India heat news
+    "FOX Weather",
+    "Fox Weather",
+    "The Weather Channel",
+    "Weather Channel",
+    "AccuWeather",
+    "Weather.com",
+    "USA TODAY",
+    "USA Today",
+    # US local TV stations
+    "KUSA",
+    "KUSA.com",
+    "WFAA",
+    "KHOU",
+    "KVUE",
+    "WFLA",
+    "12News",
+    "azcentral",
+    "AZCentral",
+    # US TV networks (rarely cover India-specific heat)
+    "Fox News",
+    "CBS News",
+    "NBC News",
+    "ABC News",
+    "MSNBC",
+    # US newspapers
+    "New York Post",
+    "Chicago Tribune",
+    "Los Angeles Times",
+})
+
 
 # ---------------------------------------------------------------------------
 # Internal helpers
 # ---------------------------------------------------------------------------
 
 
-def _build_url(query: str, language: str, country: str) -> str:
+def _build_url(query: str, language: str, country: str, *, when: str = "7d") -> str:
     """Build a Google News RSS search URL.
 
-    URL format::
+    Mirrors the URL format used by pygooglenews, including the ``when:``
+    temporal filter that restricts results to the specified time window::
 
-        https://news.google.com/rss/search?q={query}&hl={hl}&gl={country}&ceid={country}:{hl}
+        https://news.google.com/rss/search?q={query}+when:7d&ceid={country}:{lang}&hl={lang}&gl={country}
+
+    The ``when`` parameter is appended directly to the query string (not as
+    a URL parameter) — this is how Google News RSS interprets temporal
+    filters.
 
     Uses :func:`urllib.parse.quote_plus` for proper Unicode encoding of
     non-Latin search terms (Devanagari, Tamil, etc.).
     """
-    encoded_query = quote_plus(query)
+    # Append temporal filter to query before encoding, matching pygooglenews
+    full_query = f"{query} when:{when}" if when else query
+    encoded_query = quote_plus(full_query)
     hl = _LANG_TO_HL.get(language, language)
-    # ceid uses the base language code (e.g. "en"), not the regional hl
-    # variant (e.g. "en-IN").  Google News redirects if these disagree.
     return (
         f"{_BASE_URL}"
         f"?q={encoded_query}"
+        f"&ceid={country}:{hl}"
         f"&hl={hl}"
         f"&gl={country}"
-        f"&ceid={country}:{language}"
     )
 
 
@@ -251,13 +299,25 @@ class GoogleNewsSource:
 
         articles: list[ArticleRef] = []
         skipped = 0
+        source_filtered = 0
         for entry in feed.entries:
             ref = _entry_to_article_ref(entry, language, state, search_term)
-            if ref is not None:
-                articles.append(ref)
-            else:
+            if ref is None:
                 skipped += 1
+                continue
+            # Drop articles from known non-India publishers
+            if ref.source in _EXCLUDED_SOURCES:
+                source_filtered += 1
+                continue
+            articles.append(ref)
 
+        if source_filtered:
+            logger.info(
+                "Google News query=%r lang=%s: filtered %d non-India source articles",
+                query,
+                language,
+                source_filtered,
+            )
         logger.info(
             "Google News query=%r lang=%s: %d articles parsed, %d entries skipped",
             query,

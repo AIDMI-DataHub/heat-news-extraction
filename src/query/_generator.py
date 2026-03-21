@@ -196,7 +196,8 @@ class QueryGenerator:
 
                 # Batch districts into queries within char limit
                 batched_queries = batch_districts(
-                    district_names, heat_term, max_chars
+                    district_names, heat_term, max_chars,
+                    state_name=region.name,
                 )
 
                 for bq in batched_queries:

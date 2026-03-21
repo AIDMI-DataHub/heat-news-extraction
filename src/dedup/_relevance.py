@@ -16,7 +16,7 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-from src.data.heat_terms_loader import TERM_CATEGORIES, get_terms_by_category
+from src.data.heat_terms_loader import TERM_CATEGORIES, get_terms_by_category, get_all_term_languages
 from src.models.article import Article
 
 logger = logging.getLogger(__name__)
@@ -96,12 +96,17 @@ def score_relevance(article: Article) -> float:
     matched_terms: set[str] = set()
     matched_categories: set[str] = set()
 
-    for category in sorted(TERM_CATEGORIES):
-        terms = get_terms_by_category("en", category)
-        for term in terms:
-            if term.lower() in text:
-                matched_terms.add(term.lower())
-                matched_categories.add(category)
+    # Check terms in the article's own language AND English (fallback).
+    # Previously hard-coded to "en" only, which caused all non-English
+    # articles to score 0.0 — a critical recall bug.
+    langs_to_check = {article.language, "en"} if article.language else {"en"}
+    for lang in langs_to_check:
+        for category in sorted(TERM_CATEGORIES):
+            terms = get_terms_by_category(lang, category)
+            for term in terms:
+                if re.search(r"(?<!\w)" + re.escape(term.lower()) + r"(?!\w)", text):
+                    matched_terms.add(term.lower())
+                    matched_categories.add(category)
 
     if not matched_terms:
         return 0.0

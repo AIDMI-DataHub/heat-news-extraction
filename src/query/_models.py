@@ -128,12 +128,17 @@ def build_broad_query(terms: list[str], location: str, max_chars: int) -> str:
 
 
 def batch_districts(
-    districts: list[str], heat_term: str, max_chars: int
+    districts: list[str], heat_term: str, max_chars: int, *, state_name: str = ""
 ) -> list[str]:
     """Batch district names into query strings within a character limit.
 
     Each batch produces a query string of the form:
-    ``heat_term ("District1" OR "District2" OR District3)``
+    ``heat_term ("District1" OR "District2" OR District3) StateName``
+
+    The state name provides geographic context so that "Jaipur" is
+    disambiguated to Rajasthan rather than matching unrelated content.
+    This mirrors the monsoon pipeline's approach of always including the
+    region name.
 
     Multi-word district names are double-quoted.
 
@@ -141,6 +146,7 @@ def batch_districts(
         districts: List of district name strings.
         heat_term: The heat term to prepend (e.g. "heatwave").
         max_chars: Maximum allowed length for each query string.
+        state_name: State/UT name to append for geographic context.
 
     Returns:
         List of query strings, each within *max_chars*.
@@ -148,8 +154,9 @@ def batch_districts(
     if not districts:
         return []
 
-    # Overhead: heat_term + " (" + district_part + ")"
-    overhead = len(heat_term) + 3  # " (" prefix + ")" suffix
+    # Overhead: heat_term + " (" + district_part + ")" + " " + state_name
+    state_suffix = f" {state_name}" if state_name else ""
+    overhead = len(heat_term) + 3 + len(state_suffix)  # " (" prefix + ")" suffix + state
     budget = max_chars - overhead
 
     queries: list[str] = []
@@ -161,7 +168,7 @@ def batch_districts(
         cost = len(name) + (4 if batch else 0)  # " OR " separator
         if used + cost > budget and batch:
             # Flush current batch
-            query = f'{heat_term} ({" OR ".join(batch)})'
+            query = f'{heat_term} ({" OR ".join(batch)}){state_suffix}'
             queries.append(query)
             batch = [name]
             used = len(name)
@@ -170,7 +177,7 @@ def batch_districts(
             used += cost
 
     if batch:
-        query = f'{heat_term} ({" OR ".join(batch)})'
+        query = f'{heat_term} ({" OR ".join(batch)}){state_suffix}'
         queries.append(query)
 
     return queries

@@ -5,7 +5,7 @@
     {"pattern": "\\bcricket\\b.*\\b(score|scorecard|innings|wicket|runs)\\b", "category": "sports", "description": "Cricket match scores and scorecards"},
     {"pattern": "\\bIPL\\b.*\\b(match|final|semi|qualifier|auction)\\b", "category": "sports", "description": "IPL cricket events"},
     {"pattern": "\\b(football|soccer|tennis|badminton)\\b.*\\b(score|match|final|tournament)\\b", "category": "sports", "description": "Other sports scores"},
-    {"pattern": "\\bweather\\s+forecast\\b.*\\b(tomorrow|next\\s+week|weekend|today|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b", "category": "weather_forecast", "description": "Generic day-specific weather forecasts"},
+    {"pattern": "\\bweather\\s+forecast\\b.*\\b(rain|snow|wind|cloud|storm|fog|humidity|shower)\\b", "category": "weather_forecast", "description": "Non-heat weather forecasts (rain/snow/wind). Heat forecasts are kept."},
     {"pattern": "\\bsummer\\s+(fashion|style|recipe|vacation|getaway|travel|destination|outfit)\\b", "category": "lifestyle", "description": "Summer lifestyle content"},
     {"pattern": "\\bhoroscope\\b", "category": "astrology", "description": "Horoscope/astrology content"},
     {"pattern": "\\b(hot|heat)\\s+(deal|sale|offer|discount|price)\\b", "category": "marketing", "description": "Marketing using heat terminology"},

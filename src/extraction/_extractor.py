@@ -150,7 +150,7 @@ def _is_non_india(title: str, text: str | None) -> bool:
     """Return True if article is clearly about a non-India location."""
     combined = title
     if text is not None:
-        combined += " " + text[:500]
+        combined += " " + text[:1500]
     return bool(_NON_INDIA_RE.search(combined))
 
 
