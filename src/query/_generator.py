@@ -4,13 +4,14 @@ Generates API-ready search queries for all three news sources (Google News,
 NewsData.io, GNews) at both state and district levels. Each source gets a
 different query strategy:
 
-- Google News: 4 category-based OR-combined queries per state-language pair
-  (weather, health, temperature, governance -- other categories are too
-  generic and return mostly irrelevant articles)
+- Google News: 4 category-based OR-combined queries + 2 phrase queries per
+  state-language pair. Categories: weather, health, temperature, governance.
+  Phrase queries use exact-match for the top weather and health terms
+  (e.g. ``"heatwave" Rajasthan``), catching articles the OR-chains miss.
 - NewsData.io: 1 broad query per state-language pair (512 char limit),
   using only terms from core categories
-- GNews: 1 broad query per state-language pair (200 char limit, 8 languages only),
-  using only terms from core categories
+- GNews: 1 broad query per state-language pair (200 char limit). Falls
+  back to English for unsupported languages (gu, kn, or, ur, as, ne).
 """
 
 from __future__ import annotations
@@ -109,6 +110,29 @@ class QueryGenerator:
                         )
                     )
 
+                # --- Google News: phrase queries for top terms ---
+                # Exact-match phrase queries (e.g. "heatwave" Rajasthan)
+                # catch articles that OR-chain queries miss. Mirrors the
+                # monsoon pipeline's approach of using individual high-impact
+                # terms for precision.
+                for phrase_cat in ("weather", "health"):
+                    phrase_terms = get_terms_by_category(lang, phrase_cat)
+                    if phrase_terms:
+                        # Use the first (highest-priority) term as an exact phrase
+                        phrase = phrase_terms[0]
+                        query_string = f'"{phrase}" {region.name}'
+                        google_queries.append(
+                            Query(
+                                query_string=query_string,
+                                language=lang,
+                                state=region.name,
+                                state_slug=region.slug,
+                                level="state",
+                                category=f"{phrase_cat}_phrase",
+                                source_hint="google",
+                            )
+                        )
+
                 # --- NewsData.io: one broad query per state-language pair ---
                 # Only use terms from core categories to avoid generic matches.
                 all_terms = _get_core_terms(lang)
@@ -126,24 +150,26 @@ class QueryGenerator:
                         )
                     )
 
-                # --- GNews: one broad query per state-language pair (8 langs only) ---
-                if lang in GNEWS_SUPPORTED_LANGUAGES:
-                    all_terms = _get_core_terms(lang)
-                    if all_terms:
-                        query_string = build_broad_query(
-                            all_terms, region.name, 200
+                # --- GNews: one broad query per state-language pair ---
+                # GNews supports 8 languages natively; for unsupported
+                # languages the source adapter falls back to English.
+                gnews_lang = lang if lang in GNEWS_SUPPORTED_LANGUAGES else "en"
+                all_terms = _get_core_terms(gnews_lang)
+                if all_terms:
+                    query_string = build_broad_query(
+                        all_terms, region.name, 200
+                    )
+                    gnews_queries.append(
+                        Query(
+                            query_string=query_string,
+                            language=gnews_lang,
+                            state=region.name,
+                            state_slug=region.slug,
+                            level="state",
+                            category=None,
+                            source_hint="gnews",
                         )
-                        gnews_queries.append(
-                            Query(
-                                query_string=query_string,
-                                language=lang,
-                                state=region.name,
-                                state_slug=region.slug,
-                                level="state",
-                                category=None,
-                                source_hint="gnews",
-                            )
-                        )
+                    )
 
         return {
             "google": google_queries,

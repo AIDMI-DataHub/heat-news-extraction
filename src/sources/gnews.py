@@ -160,8 +160,8 @@ class GNewsSource:
             return []
 
         if language not in self._SUPPORTED_LANGUAGES:
-            logger.debug("GNews does not support language %r, skipping", language)
-            return []
+            logger.info("GNews: falling back to English for unsupported language %r", language)
+            language = "en"
 
         if self._daily_count >= self._daily_limit:
             logger.debug(
