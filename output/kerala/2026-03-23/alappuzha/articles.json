@@ -1,0 +1,20 @@
+{
+  "state": "Kerala",
+  "district": "Alappuzha",
+  "date": "2026-03-23",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "Temperature soars in Kerala; yellow alert in 12 districts",
+      "url": "https://www.onmanorama.com/news/kerala/2026/03/23/imd-kerala-temperature-yellow-alert.html",
+      "source": "Malayala Manorama",
+      "date": "2026-03-23T17:08:08+05:30",
+      "language": "en",
+      "state": "Kerala",
+      "district": "Alappuzha",
+      "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\") Kerala",
+      "full_text": "Temperature soars in Kerala; yellow alert in 12 districts\nThe India Meteorological Department (IMD) on Monday issued a yellow alert in 12 districts across Kerala as temperatures climbed above 36 degrees in several parts of the state.\nAll districts except Wayanad and Idukki have been placed under yellow alert. Even in these hilly districts, maximum temperatures have touched around 34 degrees.\nAccording to the IMD, Palakkad and Kollam recorded the highest temperatures, nearing 38 degrees. Pathanamthitta, Alappuzha, Kottayam, Thrissur and Ernakulam experienced temperatures around 37 degrees.\nMeanwhile, Thiruvananthapuram, Malappuram, Kozhikode, Kannur and Kasaragod recorded highs of around 36 degrees.\nThe IMD has also warned that hot and humid conditions are very likely to prevail across these districts, except in hilly areas, from March 23 to 26.",
+      "relevance_score": 1.0
+    }
+  ]
+}
