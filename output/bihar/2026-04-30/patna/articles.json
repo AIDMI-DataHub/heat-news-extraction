@@ -2,30 +2,18 @@
   "state": "Bihar",
   "district": "Patna",
   "date": "2026-04-30",
-  "article_count": 2,
+  "article_count": 1,
   "articles": [
     {
       "title": "AIIMS Patna Identifies Key Brain Injury Pattern in Heat Stroke Deaths - The Indian Practitioner",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWUtkdnEwZzZxTVJrQzNTdTVTZXF2UFBzdm43cm04MTRJNzktS3ctaURrLV9OOHlMZXJNdFdiNDdRM3QtUUFKejhGLUplLW4xbUVteXZ6RmNUeEV3ZXQ3aGdYSzRzejhCbXJ3QU5SbkktdFNYVzlkeVNRY1JjM2RSMG0zTzhyRVQtcXdIQzYyd2FuaXc3cDVUVEwyU1dRX21WZjhUSTJZUQ?oc=5",
       "source": "The Indian Practitioner",
-      "date": "2026-04-30T12:19:03+05:30",
+      "date": "2026-04-30T17:46:09+05:30",
       "language": "en",
       "state": "Bihar",
       "district": "Patna",
       "search_term": "(heatstroke OR \"heat stroke\" OR sunstroke OR \"heat exhaustion\" OR \"heat-related death\" OR \"heat casualty\" OR \"heat fatality\" OR \"suspected heat death\" OR dehydration OR \"heat cramps\" OR \"heat illness\") Bihar",
       "full_text": "Researchers at All India Institute of Medical Sciences, Patna have identified a distinct brain centre and vascular injury pattern linked to heat stroke deaths. This breakthrough addresses a long-standing medico-legal challenge related to compensation, insurance, and death benefits for victims’ families.\nAccording to an official press release issued on Tuesday, the findings appear in the latest issue of the Medico-Legal Journal. The paper is titled “A hypothalamus-centred pathogenesis of heat stroke deaths – A post-mortem-based human study.”\nStudy Design and Environmental Context\nAs reported by TOI, the Department of Forensic Medicine at AIIMS Patna conducted the study in collaboration with the departments of anatomy and pathology. Researchers based their findings on detailed post-mortem investigations of individuals exposed to extreme environmental conditions in the Patna region during 2024.\nNotably, the study examined cases involving temperatures reaching 48°C, humidity levels as high as 95%, and prolonged heat exposure lasting five to eight hours. These conditions provided a critical framework for understanding the physiological impact of severe heat stress.\nHypothalamus Identified as Central to Fatal Outcomes\nThe researchers found that the anterior hypothalamus—the brain’s primary temperature-regulating centre—suffers significant structural damage during heat stroke. As a result, this region plays a decisive role in fatal outcomes.\nDr. Ashok Kumar Rastogi, the lead author and forensic expert, emphasized that this damage can serve as definitive forensic evidence. He stated that the structural injury to the hypothalamus provides a reliable marker for diagnosing heat stroke-related deaths during post-mortem examinations.\nAdvancing Forensic Diagnosis\nFurthermore, the study establishes a scientific basis for identifying heat stroke as a cause of death through autopsy. Traditionally, forensic experts have struggled to confirm such cases due to the lack of clear diagnostic markers.\nHowever, this research bridges that gap by offering measurable and reproducible indicators, thereby improving the accuracy of forensic investigations.\nIdentification of Vascular Injury Patterns\nIn addition to brain damage, the researchers outlined a distinct vascular injury pattern associated with fatal heat stroke. This finding helps build a more comprehensive pathological profile of the condition under extreme heat exposure.\nConsequently, experts believe these insights will strengthen medico-legal investigations and enable more scientifically grounded death certification in suspected cases.\nImplications for Compensation and Legal Claims\nImportantly, the study carries significant implications for families of heat stroke victims. Clearer forensic markers can simplify the process of obtaining official confirmation of cause of death.\nAs a result, families may find it easier to secure compensation, insurance settlements, and government employee death benefits, particularly during severe heatwave conditions.",
-      "relevance_score": 1.0
-    },
-    {
-      "title": "AIIMS Patna Study Unravels Brain’s Critical Link In Heatstroke Deaths - Health and Me",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTkk4dXJkOUt5MnhfamxzclczdFl4NWVwWGlhUXNSVVl4cHFfTGxLODlhSERrSjI1alVCQzhyaVpVVjhFTUtGMk1XcHU3Tk1WeTY1SnJ1SkVqcmJxaDZjTE5jd0IzZzJkZk5rVDRpNnJJR2E3aHJJT3dncVlHd3VfX0lobENkdU9zYUJKRHlQUkJ1WlRQVzc0Uk9yS3h2enZaUnZaT2t5anRQLVFjckR6SEJRanpCTnNZZkRFUm9rN05seTdObzdNZHZ3?oc=5",
-      "source": "Health and Me",
-      "date": "2026-04-30T10:30:00+05:30",
-      "language": "en",
-      "state": "Bihar",
-      "district": "Patna",
-      "search_term": "(heatstroke OR \"heat stroke\" OR sunstroke OR \"heat exhaustion\" OR \"heat-related death\" OR \"heat casualty\" OR \"heat fatality\" OR \"suspected heat death\" OR dehydration OR \"heat cramps\" OR \"heat illness\") Bihar",
-      "full_text": "SummaryThe finding can be a major step forward in the scientific basis for diagnosing heat stroke deaths through post-mortem examination, an area that has often posed challenges for autopsy surgeons in establishing a definitive cause of death, the researchers said.",
       "relevance_score": 1.0
     }
   ]
