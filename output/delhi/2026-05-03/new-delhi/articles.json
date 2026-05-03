@@ -1,0 +1,20 @@
+{
+  "state": "Delhi",
+  "district": "New Delhi",
+  "date": "2026-05-03",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "Delhi heatwave reaches 44.5°C; doctors urge hydration and care - The News Mill",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQckhUMWhwcUZLS2tyMF9ScDRoajk2WDB2TjNDZnFaWWN0cU01dkFqZXFZU0VxZUU4VkxsZ1Q5bWxRQ21YUmdSLUVZbUFxa2RUY0pEU21Jc1RaRGNFM3JUbjQzY2RUQ2VXQ2ZYdUg5OVFxM1ViSXFTYnRJR0tKaTAzamF4WnZlaXNfUFBmUFpDRk0xMUdaWjVFODc3aUtWU1pBcjR4WTl2OWVwcGEwQmIzc3gwMG8?oc=5",
+      "source": "The News Mill",
+      "date": "2026-05-03T05:52:10+05:30",
+      "language": "en",
+      "state": "Delhi",
+      "district": "New Delhi",
+      "search_term": "\"heatstroke\" Delhi",
+      "full_text": "New Delhi is experiencing a heatwave with temperatures reaching 44.5 degrees Celsius, according to the India Meteorological Department. Dr L Shyam Singh, director of Atal Bihari Vajpayee Institute of Medical Sciences and Dr Ram Manohar Lohia Hospital, has advised residents to maintain proper hydration and seek medical assistance if needed.",
+      "relevance_score": 0.8333333333333333
+    }
+  ]
+}
