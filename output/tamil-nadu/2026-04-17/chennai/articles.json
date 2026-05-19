@@ -2,7 +2,7 @@
   "state": "Tamil Nadu",
   "district": "Chennai",
   "date": "2026-04-17",
-  "article_count": 3,
+  "article_count": 4,
   "articles": [
     {
       "title": "Heatwave survival: Apollo expert reveals 4 hydration tips that you shouldn’t ignore - theweek.in",
@@ -39,6 +39,18 @@
       "search_term": "(வெப்பநிலை OR \"வெப்பநிலை உயர்வு\" OR \"டிகிரி செல்சியஸ்\" OR \"உச்சபட்ச வெப்பநிலை\" OR \"சாதனை வெப்பநிலை\") Tamil Nadu",
       "full_text": "தமிழகத்தில் வெப்பநிலை இயல்பை விட அதிகரிக்கும்- சென்னை வானிலை மையம்\nதமிழகத்தில் வெப்ப நிலை இயல்பை விட அதிகரிக்கக் கூடும் என சென்னை வானிலை ஆய்வு மையம் எச்சரித்துள்ளது.\nவானிலை மையம் கூறுகையில்..,\nமேற்கு தொடர்ச்சி மலை மாவட்டங்கள் மற்றும் டெல்டா மாவட்டங்களின் கடலோர பகுதிகள், ராமநாதபுரம், காரைக்கால் பகுதிகளில் 5 நாட்களுக்கு லேசான மழை பெய்யக்கூடும்.\nஅதேநேரம் உள்தமிழக மாவட்டங்களில் அதிகபட்ச வெப்ப நிலை இயல்பை விட 3 டிகிரி செல்சியஸ் அளவுக்கு படிப்படியாக உயரக்கூடும்.\nமேலும், அதிக வெப்பநிலையும் அதிக ஈரப்பதமும் இருக்கும் நிலையில் அசவுகரியமான சூழல் ஏற்படலாம்.\nசென்னையை பொறுத்தவரை 2 நாட்களுக்கு வானம் ஓரளவு மேகமூட்டத்துடன் காணப்படும். அதிகபட்ச வெப்ப நிலையில் 100 டிகிரி பாரன்ஹீட்டை தாண்டும்.\nசென்னையில் 2 நாட்களுக்கு அதிகபட்ச வெப்பநிலையும் அதிக ஈரப்பதமும் நிலவும் என்பதால் அசௌகரியமாக இருக்கலாம் என வானிலை மையம் கணித்துள்ளது.",
       "relevance_score": 0.6833333333333333
+    },
+    {
+      "title": "Tamil Nadu Heatwave: 3 Districts Hit 104°F, High Temperatures Continue - LiveChennai",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9Edm9BRFlLYm5yejJzZ0RyWFFWM1k0TEVTWkk5ZnJRd3R1dW5sdUdTNFR0OTBBTkhCWDRCUlJiMEp5QW1QUUlsS1JqVlVYOVJ2MlBxdjk2STRERjNhdUZzTTd1ZEgzZw?oc=5",
+      "source": "LiveChennai",
+      "date": "2026-04-17T12:30:00+05:30",
+      "language": "en",
+      "state": "Tamil Nadu",
+      "district": "Chennai",
+      "search_term": "heatwave (Ariyalur OR Chennai OR Coimbatore OR Cuddalore OR Dharmapuri OR Dindigul OR Erode OR Kanchipuram OR Kanyakumari OR Karur OR Krishnagiri OR Madurai OR Nagapattinam OR Namakkal OR Nilgiris OR Perambalur OR Pudukkottai OR Ramanathapuram OR Salem OR Sivaganga OR Thanjavur OR Theni OR \"Thoothukudi (Tuticorin)\" OR Tiruchirappalli OR Tirunelveli OR Tiruppur OR Tiruvallur OR Tiruvannamalai OR Tiruvarur OR Vellore OR Viluppuram OR Virudhunagar) Tamil Nadu",
+      "full_text": "Try weather conditions continued across Tamil Nadu and Puducherry, with several districts experiencing intense heat. Notably, Erode, Karur, and Madurai recorded a scorching 104°F (around 40°C) on Thursday.\nWeather officials stated that while there has been no major change in maximum temperatures overall, some regions have recorded temperatures 2°C to 4°C above normal levels.\nThe current heatwave conditions are expected to persist across interior districts of Tamil Nadu until April 18, with no significant variation in temperature. Similarly, coastal areas, including Chennai, along with Puducherry and Karaikal, are also likely to witness stable but high temperatures.\nFrom April 20, temperatures may rise further by 2°C to 3°C above normal in a few places. Due to the combination of high temperature and humidity, discomfort levels are expected to increase, especially in coastal regions.\nIn Chennai, the maximum temperature is expected to hover around 100°F (approximately 38°C), with chances of discomfort in certain areas due to humid conditions.",
+      "relevance_score": 1.0
     }
   ]
 }
