@@ -1,0 +1,20 @@
+{
+  "state": "Rajasthan",
+  "district": "Sirohi",
+  "date": "2026-05-22",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "Rajasthan braces for severe heatwave after brief weather relief",
+      "url": "https://economictimes.indiatimes.com/news/india/rajasthan-braces-for-severe-heatwave-after-brief-weather-relief/articleshow/131260470.cms",
+      "source": "The Economic Times",
+      "date": "2026-05-22T14:29:00+05:30",
+      "language": "en",
+      "state": "Rajasthan",
+      "district": "Sirohi",
+      "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\") Rajasthan",
+      "full_text": "Sri Ganganagar recorded the highest maximum temperature in the state at 45.1 degrees Celsius during 24 hour period ending Friday morning, while Sirohi registered the lowest minimum temperature at 20 degrees Celsius.\nAccording to the Met office, most parts of the state are likely to witness mainly dry weather over the next week.\nHowever, under the influence of a fresh western disturbance, northwestern and northern Rajasthan may witness thunderstorm activity, light rainfall, and gusty winds with speeds of 40-50 kmph during the afternoon hours of May 22 and 23.\nThe department said temperatures could dip by 1-2 degrees Celsius in some areas over the next 48 hours due to strong dust-laden winds blowing at speeds of 20-30 kmph.\nFrom May 24 onwards, temperatures are expected to rise again by 2-3 degrees Celsius with heatwave to severe heatwave likely at isolated places in the state.",
+      "relevance_score": 1.0
+    }
+  ]
+}
