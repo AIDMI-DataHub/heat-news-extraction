@@ -13,6 +13,9 @@ from src.relevance._prompt import build_prompt
 logger = logging.getLogger(__name__)
 
 
+_CIRCUIT_BREAKER_THRESHOLD = 10  # consecutive failures before giving up
+
+
 class RelevanceChecker(ABC):
     """Base class for LLM-based relevance checking.
 
@@ -22,6 +25,10 @@ class RelevanceChecker(ABC):
     The primary entry point is :meth:`filter_refs` which checks article
     titles BEFORE extraction to avoid wasting time extracting irrelevant
     articles.
+
+    Includes a circuit breaker: after ``_CIRCUIT_BREAKER_THRESHOLD``
+    consecutive LLM failures, all further checks are skipped (fail-open)
+    to prevent the pipeline from spinning for hours on a dead API.
 
     Parameters
     ----------
@@ -35,6 +42,8 @@ class RelevanceChecker(ABC):
         self._semaphore = asyncio.Semaphore(max_concurrent)
         self._min_interval = min_interval
         self._last_call = 0.0
+        self._consecutive_failures = 0
+        self._circuit_open = False
 
     @abstractmethod
     async def _call_llm(self, system: str, user: str) -> str:
@@ -52,6 +61,9 @@ class RelevanceChecker(ABC):
         district: str | None = None,
     ) -> bool:
         """Check if an article with this title (and optional text) is relevant."""
+        if self._circuit_open:
+            return True  # fail-open: keep article when LLM is down
+
         from src.relevance._prompt import SYSTEM_PROMPT
 
         prompt = build_prompt(title, text, state=state, district=district)
@@ -66,14 +78,24 @@ class RelevanceChecker(ABC):
 
             try:
                 response = await self._call_llm(SYSTEM_PROMPT, prompt)
+                self._consecutive_failures = 0
                 answer = response.strip().lower()
                 return answer.startswith("yes")
             except Exception:
-                logger.warning(
-                    "LLM relevance check failed for '%s', keeping article",
-                    title[:60],
-                    exc_info=True,
-                )
+                self._consecutive_failures += 1
+                if self._consecutive_failures >= _CIRCUIT_BREAKER_THRESHOLD:
+                    logger.error(
+                        "LLM circuit breaker tripped after %d consecutive failures. "
+                        "Skipping LLM checks for remaining articles (fail-open).",
+                        self._consecutive_failures,
+                    )
+                    self._circuit_open = True
+                else:
+                    logger.warning(
+                        "LLM relevance check failed for '%s', keeping article",
+                        title[:60],
+                        exc_info=True,
+                    )
                 # On failure, keep the article (fail-open)
                 return True
 
@@ -120,6 +142,9 @@ class RelevanceChecker(ABC):
 
         On any LLM error, returns None (fail-safe: article stays at state level).
         """
+        if self._circuit_open:
+            return None  # fail-safe: keep at state level when LLM is down
+
         district_list = ", ".join(districts)
         system = (
             "You extract geographic information from Indian news articles. "
@@ -146,6 +171,7 @@ class RelevanceChecker(ABC):
 
             try:
                 response = await self._call_llm(system, user)
+                self._consecutive_failures = 0
                 answer = response.strip().strip('"').strip("'")
                 if answer.lower() == "none":
                     return None
@@ -159,11 +185,20 @@ class RelevanceChecker(ABC):
                         return d
                 return None
             except Exception:
-                logger.warning(
-                    "LLM district extraction failed for '%s'",
-                    title[:60],
-                    exc_info=True,
-                )
+                self._consecutive_failures += 1
+                if self._consecutive_failures >= _CIRCUIT_BREAKER_THRESHOLD:
+                    logger.error(
+                        "LLM circuit breaker tripped after %d consecutive failures. "
+                        "Skipping LLM calls for remaining articles.",
+                        self._consecutive_failures,
+                    )
+                    self._circuit_open = True
+                else:
+                    logger.warning(
+                        "LLM district extraction failed for '%s'",
+                        title[:60],
+                        exc_info=True,
+                    )
                 return None
 
     async def close(self) -> None:
