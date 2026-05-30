@@ -12,7 +12,7 @@
       "language": "en",
       "state": "Jammu and Kashmir",
       "district": "Rajouri",
-      "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\" OR heat OR \"weather forecast\" OR \"weather update\" OR \"weather alert\" OR \"IMD forecast\" OR \"IMD prediction\" OR \"IMD alert\" OR IMD OR \"rising temperatures\" OR \"temperatures expected to rise\" OR \"relief from heat\" OR \"respite from heat\" OR \"heat respite\" OR \"respite from scorching heat\") Jammu and Kashmir",
+      "search_term": "heatwave (Anantnag OR Bandipore OR Baramulla OR Budgam OR Doda OR Ganderbal OR Jammu OR Kathua OR Kishtwar OR Kulgam OR Kupwara OR Poonch OR Pulwama OR Rajouri OR Ramban OR Reasi OR Samba OR Shopian OR Srinagar OR Udhampur) Jammu and Kashmir",
       "full_text": "Published: May 29, 2026, 14:16 IST | Updated: May 29, 2026, 14:16 IST\nUnrelenting heatwave conditions across India have triggered devastating wildfires in the forests of Rajouri. As temperatures soar to extreme levels, tinder-dry conditions are fueling the rapid spread of flames, threatening local biodiversity and residential areas. Local authorities and emergency response teams are battling the inferno, but the intense heat is hampering containment efforts.",
       "relevance_score": 0.8500000000000001
     }
