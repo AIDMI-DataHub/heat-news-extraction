@@ -2,19 +2,31 @@
   "state": "West Bengal",
   "district": null,
   "date": "2026-06-04",
-  "article_count": 1,
+  "article_count": 2,
   "articles": [
     {
-      "title": "Weather Update: তীব্র গরমের দিন শেষ, ঘূর্ণাবর্তের জোড়া ফলায় ভাসবে বাংলা, সতর্ক করল হাওয়া অফিস - Asianet News Bangla",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQODEySEgzZEN0c1BzZnVxSVh1OHhzTkRlZ0ppUG1OWFpmZ2xBRW85OFl6Ni02SThLcVNwblh0UnZPVHc1ald0YWg5dkdHckRQNkJKb1pBbld4WTVJWHk3RnpLczUwZ05ZdzlVYWRUdzFicGk4VllKeTZEN1BYS1NfelBYM3JnOEZhbXNnenhGLUswNFVsb3BNdTM5R0RHaUJnTmFoZV94aWp2MHNJc29QWWpSNXVpM29tTDJqbHpnSV9PYzFJQVJ5U3IxY0QyeEFfb0NUV1RSWW1EVUNRS2s5MnRWYzRIZWplYW5VONIB7AFBVV95cUxQODEySEgzZEN0c1BzZnVxSVh1OHhzTkRlZ0ppUG1OWFpmZ2xBRW85OFl6Ni02SThLcVNwblh0UnZPVHc1ald0YWg5dkdHckRQNkJKb1pBbld4WTVJWHk3RnpLczUwZ05ZdzlVYWRUdzFicGk4VllKeTZEN1BYS1NfelBYM3JnOEZhbXNnenhGLUswNFVsb3BNdTM5R0RHaUJnTmFoZV94aWp2MHNJc29QWWpSNXVpM29tTDJqbHpnSV9PYzFJQVJ5U3IxY0QyeEFfb0NUV1RSWW1EVUNRS2s5MnRWYzRIZWplYW5VOA?oc=5",
-      "source": "Asianet News Bangla",
-      "date": "2026-06-04T10:24:30+05:30",
+      "title": "IMD predicts severe heatwave conditions over East, South Peninsular India for next 5 days - News On AIR",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaVZRZmJRV2ctZjBOS2VTdG5OczczeDUyMEZtUUVPUGdvLXZDOEc2dmdIVW1TenpCa1kzWkNjRVhzUE5ZTlZrSlhZU2F1Z2ZzMHlTZUxRZk9PRVJ6WEdJMU1HQ1ZsV0wyZm1OYXBnMmptYmFCN2VIeTRjU1ZnaWktdlZjMnVjZHY4U2FIc2tuNXluYmUtVmpOaHBteUNZeGZBM2ZJYncyRDlzVDcxNEtlLWJpOW8?oc=5",
+      "source": "News On AIR",
+      "date": "2026-06-04T22:35:54+05:30",
+      "language": "en",
+      "state": "West Bengal",
+      "district": null,
+      "search_term": "\"heatwave\" West Bengal",
+      "full_text": "India Meteorological Department (IMD) has forecast that heat wave to severe heat wave conditions are likely to continue over East and south Peninsular India during the next five days. The severe heatwave conditions are likely to prevail over Gangetic West Bengal, some parts over Odisha and over Sub-Himalayan West Bengal. Heat wave conditions are also likely over Bihar, Jharkhand, Interior Karnataka, Tamil Nadu, Kerala and Coastal Andhra Pradesh. IMD said, the maximum temperatures will rise by two to three degrees Celsius over East India, Maharashtra and many parts of south peninsular India.\nOn the other hand, the weather office has forecast heavy rainfall over Northeast India during next four days. Light to moderate rainfall and snowfall is also likely over Jammu, Kashmir, Ladakh, Gilgit, Baltistan, Muzaffarabad, Himachal Pradesh and Uttarakhand.",
+      "relevance_score": 1.0
+    },
+    {
+      "title": "তাপপ্রবাহের মাঝেই স্বস্তির খবর! দক্ষিণবঙ্গে বাড়ছে বৃষ্টির সম্ভাবনা, জেনে নিন আগামীকালের আবহাওয়া - Bharatbarta",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBMWmxJUXlBR3RTWG1EdUY3MGdQdDZKV2Y4bHFuMzhVZ1gtZk41bDh4Qm11VzJGa2JyUkxUWW5HWTdGTGtNeERiZzIyZmM0U185WlRfWUtVR3N4MkJOMmY4Vk0teTdWMzNGdkVveW0yX18zUHQweEN3bXln0gF_QVVfeXFMTk9iS3FON05ZZGFueEhoQWhMeWp5T2dmRmJ2NlFtcFotN2hEd0xnQUNCY2UyalB0WDA2eFZocjJJWXQ5QXRQb3BnZVViakZrZkk4Y043LVVEUUpsbnozOHNNc2ZadWFiQm9qc0Z4WDIwdWJkSU5VRlAtbVY4bHhMVQ?oc=5",
+      "source": "Bharatbarta",
+      "date": "2026-06-04T20:14:01+05:30",
       "language": "bn",
       "state": "West Bengal",
       "district": null,
       "search_term": "(দাবদাহ OR তাপপ্রবাহ OR \"প্রচণ্ড গরম\" OR \"তীব্র গরম\" OR \"ঝলসানো গরম\" OR \"লু হাওয়া\" OR \"গরমের দাপট\" OR দাবানল OR \"অসহ্য গরম\" OR \"হিট ওয়েভ\" OR \"অত্যধিক গরম\" OR \"ভয়াবহ গরম\") West Bengal",
-      "full_text": "আলিপুর আবহাওয়া দফতর জানিয়েছে যে জোড়া ঘূর্ণাবর্তের প্রভাবে রাজ্যে স্বস্তি ফিরতে চলেছে। আগামী বৃহস্পতিবার থেকে উত্তর ও দক্ষিণবঙ্গের বিভিন্ন জেলায় বজ্রবিদ্যুৎ-সহ ভারী বৃষ্টির সম্ভাবনা রয়েছে, যা তীব্র গরমের হাত থেকে রেহাই দেবে।\nতীব্র গরম আর ভ্যাপসা আর্দ্রতার জেরে নাজেহাল অবস্থা সকলের। তবে, এবার মিলবে স্বস্তি। সদ্য রাজ্যবাসীর জন্য স্বস্তির বার্তা শোনাল আলিপুর আবহাওয়া দফতর। জোড়া ঘূর্ণাবর্তের প্রভাবে আগামী বৃহস্পতিবার থেকে উত্তর ও দক্ষিণবঙ্গ উভয় প্রান্তেই বজ্রবিদ্যুৎ-সহ ভারী বৃষ্টির সম্ভাবনা আছে।\nআবহাওয়া বিজ্ঞানীদের মতে, এই জোড়া ফলার জেরে সপ্তাহান্তে এক ধাক্কায় কমতে পারে গরম। গত কয়েকদিনের অস্বস্তিকর গরম থেকে স্বস্তি মিলবে আমজনতার।\nআবহাওয়া দফতরের তথ্য অনুসারে, এই মুহূর্তে পশ্চিমবঙ্গ রাজ্য ঝাড়খণ্ড ও ওড়িসার ওপর একটি ঘূর্ণাবর্ত অবস্থান করছে। এর পাশাপাশি উত্তর পূর্ব ও পূর্ব মধ্য বঙ্গোপসাগরের ওপর আরও একটি শক্তিশালী ঘূর্ণাবর্ত সক্রিয় রয়েছে। এই দুয়ের সম্মিলিত টানেই সমুদ্র থেকে বিপুল পরিমাণেজলীয় বাষ্প রাজ্যের বায়ুমণ্ডলে প্রবেশ করছে। যা মূলত কালবৈশাখীতে পরিণত হচ্ছে।\nএর জেরে বৃহস্পতিবার থেকে উত্তর ও দক্ষিণ ২৪ পরগনা, পূর্ব মেদিনীপুর, পুরুলিয়া, বাঁকুড়া, পশ্চিম বর্ধমান, বীরভূম, মুর্শিদাবাদ এবং নদিয়া জেলায় ঘন্টায় ৪০ থেকে ৫০ কিমি বেগে ঝোড়ো হাওয়া বইবে।\nউত্তরবঙ্গে জেলাগুলোতেও আসছে বদল। আজ থেকে সেখানে ভারী বৃষ্টির পূর্বাভাস আছে। আবহায়ার দফতরের অনুমান এর জেরে কমবে গরমের দাপট।\nWest Bengal News (পশ্চিমবঙ্গের খবর): Read In depth coverage of West Bengal News Today in Bengali including West Bengal Political, Education, Crime, Weather and Common man issues news at Asianet News Bangla.",
-      "relevance_score": 0.8500000000000001
+      "full_text": "গত কয়েকদিন ধরে তীব্র গরম ও ভ্যাপসা আবহাওয়ায় নাজেহাল দক্ষিণবঙ্গের মানুষ। দিনের বেলায় চড়া রোদ আর রাতেও অস্বস্তিকর গরমে স্বস্তি মিলছে না কোথাও। যদিও বিকেলের দিকে কয়েকটি জেলায় বিক্ষিপ্ত বৃষ্টিপাত হয়েছে, তবুও তাপমাত্রার খুব একটা পরিবর্তন দেখা যায়নি। তবে আবহাওয়া দফতরের সাম্প্রতিক পূর্বাভাস কিছুটা স্বস্তির বার্তা নিয়ে এসেছে। আগামীকাল শুক্রবার থেকে দক্ষিণবঙ্গের বেশ কয়েকটি জেলায় ঝড়-বৃষ্টির সম্ভাবনা বাড়ছে।\nআলিপুর আবহাওয়া দফতর জানিয়েছে, শুক্রবার সকাল থেকেই আকাশ মূলত পরিষ্কার থাকবে এবং রোদের তেজও বজায় থাকবে। ফলে দিনের বেলায় গরম ও অস্বস্তি আগের মতোই অনুভূত হবে। তবে দুপুরের পর থেকে আবহাওয়ার পরিবর্তন হতে পারে। দক্ষিণবঙ্গের বীরভূম, মুর্শিদাবাদ, নদিয়া, উত্তর ২৪ পরগনা, দক্ষিণ ২৪ পরগনা এবং পূর্ব মেদিনীপুর জেলায় বজ্রবিদ্যুৎ-সহ ঝড়বৃষ্টির সম্ভাবনা রয়েছে। আবহাওয়াবিদদের মতে, এই জেলাগুলিতে ঘণ্টায় ৩০ থেকে ৫০ কিলোমিটার বেগে দমকা হাওয়া বইতে পারে। কোথাও কোথাও মাঝারি বৃষ্টিও হতে পারে। তবে এই বৃষ্টি সাময়িক স্বস্তি দিলেও তাপমাত্রায় বড় কোনও পরিবর্তন হওয়ার সম্ভাবনা নেই বলে জানানো হয়েছে।\nঅন্যদিকে উত্তরবঙ্গেও বৃষ্টির অনুকূল পরিস্থিতি বজায় রয়েছে। গত কয়েক সপ্তাহ ধরেই উত্তরবঙ্গের একাধিক জেলায় নিয়মিত বৃষ্টি হচ্ছে। আগামীকালও দার্জিলিং, কালিম্পং, জলপাইগুড়ি, আলিপুরদুয়ার এবং কোচবিহারে বিক্ষিপ্তভাবে ভারী বৃষ্টির সম্ভাবনা রয়েছে। আবহাওয়া দফতর জানিয়েছে, আগামী মঙ্গলবার পর্যন্ত উত্তরবঙ্গের বিভিন্ন জেলায় এই ধরনের আবহাওয়া অব্যাহত থাকতে পারে। এছাড়াও উত্তরবঙ্গের প্রায় সব জেলাতেই বজ্রবিদ্যুৎ-সহ হালকা থেকে মাঝারি বৃষ্টির সম্ভাবনা রয়েছে। সেই সঙ্গে ঘণ্টায় ৪০ থেকে ৫০ কিলোমিটার বেগে দমকা হাওয়াও বইতে পারে। ফলে পাহাড় ও ডুয়ার্স অঞ্চলে বসবাসকারী মানুষদের সতর্ক থাকার পরামর্শ দেওয়া হয়েছে।\nএদিকে দক্ষিণ-পশ্চিম মৌসুমি বায়ু অবশেষে কেরলে প্রবেশ করেছে। এর ফলে দেশে বর্ষার অগ্রগতি শুরু হলেও পশ্চিমবঙ্গে কবে বর্ষা প্রবেশ করবে তা নিয়ে এখনও নিশ্চিত কোনও ঘোষণা করা হয়নি। তবে আবহাওয়াবিদদের মতে, আগামী কয়েকদিনের মধ্যে পরিস্থিতি আরও অনুকূল হতে পারে। সব মিলিয়ে বলা যায়, তীব্র গরমের মাঝেই দক্ষিণবঙ্গের মানুষের জন্য কিছুটা স্বস্তির বার্তা নিয়ে আসছে ঝড়-বৃষ্টির পূর্বাভাস। যদিও গরম পুরোপুরি কমবে না, তবুও বৃষ্টির ছোঁয়ায় অস্বস্তি কিছুটা কমার আশা করা হচ্ছে।",
+      "relevance_score": 0.6833333333333333
     }
   ]
 }
