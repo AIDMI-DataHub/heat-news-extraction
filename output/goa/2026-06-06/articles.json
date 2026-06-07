@@ -1,0 +1,20 @@
+{
+  "state": "Goa",
+  "district": null,
+  "date": "2026-06-06",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "IMD issues yellow alert for Goa till June 9 - digitalgoa",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9vdUZUckotZmtwUTBxdTVfYkYzN1dhQTZaWDhyVHNiSHBweEw4dzU0OWRnc0pVNUYxRzNNQ0poYlczV1k3ZThSbUlHSzhVV1F1elYxTEdKRXF6TkZlWmY4N1hMc1cwNEthY2ZJZ251RXdVYWNveUE?oc=5",
+      "source": "digitalgoa",
+      "date": "2026-06-06T15:21:46+05:30",
+      "language": "en",
+      "state": "Goa",
+      "district": null,
+      "search_term": "(\"heat advisory\" OR \"heat action plan\" OR \"heat alert\" OR \"IMD warning\" OR \"IMD alert\" OR \"red alert\" OR \"orange alert\" OR \"yellow alert\" OR \"NDMA advisory\" OR \"cooling shelter\" OR \"relief measures\" OR \"heat compensation\" OR \"severe weather warning\") Goa",
+      "full_text": "Digital Goa, June 5 – IMD, Goa, has forecast heavy rainfall at isolated places across Goa from June 5 to June 11, as monsoon conditions strengthen over the state. According to warning issued on today, thunderstorms accompanied by lightning and gusty winds of 40-50 kmph are also likely at isolated places in both districts throughout the seven-day period. IMD has alos issues yellow alert for Goa from June 5 to June 9.",
+      "relevance_score": 0.8333333333333333
+    }
+  ]
+}
