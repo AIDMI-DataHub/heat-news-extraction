@@ -1,0 +1,44 @@
+{
+  "state": "Maharashtra",
+  "district": null,
+  "date": "2026-06-19",
+  "article_count": 3,
+  "articles": [
+    {
+      "title": "May heatwave boosts retail sales - Drapers",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jaFIzeHM1WXVYVERzN2k5MWdHWWRGZDVwM3BNXzV0Y0pnbkUwaHZISE9tdi1fLXpXc00zZ3JHU2pEdGFZLUYwQnlUZEs0UE1jbld2ME9mdHVubDVYbkNOUWkyREFLV3FQcEZTbjhCZDR6OVBabmc?oc=5",
+      "source": "Drapers",
+      "date": "2026-06-19T12:11:37+05:30",
+      "language": "en",
+      "state": "Maharashtra",
+      "district": null,
+      "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\" OR \"intense heat\" OR \"unbearable heat\" OR \"deadly heat\" OR heat OR \"weather forecast\" OR \"weather update\" OR \"weather alert\" OR \"IMD forecast\" OR \"IMD prediction\" OR \"IMD alert\" OR IMD OR \"rising temperatures\" OR \"temperatures expected to rise\" OR \"relief from heat\" OR \"respite from heat\" OR \"heat respite\" OR \"respite from scorching heat\") Maharashtra",
+      "full_text": "Total retail sales volumes rose 0.4% in the three months to May compared with the previous three-month period, and were up 1.4% year on year.\nNon-food store volumes increased by 1.2% over the same period, with department stores reporting their strongest three-month growth since September 2024.\nThe ONS said improved weather conditions in May helped drive demand, with retailers reporting higher sales of seasonal products.",
+      "relevance_score": 0.5166666666666666
+    },
+    {
+      "title": "Covering Your Health: Heat Exhaustion Dangers - KADN News 15",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOE1lN05pcS1FOHNsdHdOaUxxa1hrTWQ5NFhTU3A2djZBR0hSZTZMNS1IR1c4dUFoV1JCRGJoSHZ5blpEODNEbGJLLVdfSkFZZWNFckZoS2Q5aXdVVnRpY0lBR0RUQ0tvLVBSay1aX0NqQmNPMW5Kc3FtMVQ0cGxvaHUxVG9aX0JaazV6MU45Q2RPUmF3cGdLYWRxYXM1bFV0NWZ2VDFReGtYWjdXUUdna3ljdVZqeTFDOUVOeXI2WWFqV0dIOWc?oc=5",
+      "source": "KADN News 15",
+      "date": "2026-06-19T07:34:01+05:30",
+      "language": "en",
+      "state": "Maharashtra",
+      "district": null,
+      "search_term": "(heatstroke OR \"heat stroke\" OR sunstroke OR \"heat exhaustion\" OR \"heat-related death\" OR \"heat casualty\" OR \"heat fatality\" OR \"suspected heat death\" OR dehydration OR \"heat cramps\" OR \"heat illness\") Maharashtra",
+      "full_text": "LAFAYETTE, La. (NEWS 15) — A Heat Advisory has been issued by the National Weather Service for Acadiana on Friday from noon to 7 p.m. as rising heat and humidity increase the risk of heat-related illness.\nLast year at this time, heat-related illness accounted for about 13% of all emergency room visits in Acadiana, according to local health data.\nWhen temperatures rise, the body increases blood flow to the skin to radiate excess heat. At about 89 degrees, sweating begins in an attempt to cool the skin. At 100 degrees, blood flow to the skin reaches maximum levels while significant fluid loss occurs through sweating. Blood pressure drops and heart rate increases as the body attempts to compensate.\nThe body can only tolerate external temperatures up to about 112 degrees. At that point, heat exhaustion becomes inevitable depending on time and conditioning.\nHigh temperatures are hovering around 90 degrees with 80% relative humidity, creating a feels-like temperature of 113 degrees.\nSeveral warning signs of heat exhaustion include feeling faint or dizzy due to low blood pressure, a racing heart, muscle cramps, headaches, fatigue, and nausea.\nAnyone experiencing these symptoms is advised to stop any strenuous activity, move to a cooler place, lay flat with legs elevated, and immediately rehydrate.\nMore information about heat-related illness, including the science of rehydration, will be shared as summer continues.\nCopyright 2026 KADN. All rights reserved.",
+      "relevance_score": 1.0
+    },
+    {
+      "title": "Maharashtra Weather Update: राज्यात उष्ण हवामानाचा अंदाज - Agrowon",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcmhiX0FISU9meW5kWkZOajZSUkxQbVpLTm5EbDlqWkZ4RF9xdjBGMXZGUl9aMklGMmFEV0FpSmw2X3daVG91MmZjTHJ1RkplLUd5MW9ySTFzeXNpR084VEJ0dzVEd18wUVhPNHVZVmpGbzVQMW9zeERHNjV5bEI4bzB0UW9jY2NTU0NsR21rSDZ3LTJRWE5yN3pQZFRGOU5odnpsVUx3MlkzQQ?oc=5",
+      "source": "Agrowon",
+      "date": "2026-06-19T06:00:00+05:30",
+      "language": "mr",
+      "state": "Maharashtra",
+      "district": null,
+      "search_term": "(\"तापमान वाढ\" OR \"अंश सेल्सिअस\" OR \"पारा चढला\" OR \"कमाल तापमान\" OR \"विक्रमी तापमान\") Maharashtra",
+      "full_text": "Maharashtra Weather Update: राज्यात उष्ण हवामानाचा अंदाज\nIMD Forecast: राज्यात मॉन्सूनच्या पावसाची प्रतीक्षा कायम आहे. पावसाने दडी मारल्याने उन्हाचा चटका तापदायक ठरत आहे. वाढत्या उकाड्याने घामटा निघत आहे. आज (ता. १९) राज्यात उष्ण हवामानाचा अंदाज कायम आहे.\nHot and Humid Weather Continues Across MaharashtraAgrowon",
+      "relevance_score": 0.8500000000000001
+    }
+  ]
+}
