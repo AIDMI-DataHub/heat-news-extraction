@@ -2,19 +2,31 @@
   "state": "Delhi",
   "district": "New Delhi",
   "date": "2026-07-01",
-  "article_count": 1,
+  "article_count": 2,
   "articles": [
     {
-      "title": "Prior planning, transmission infra upgrades helped Delhi meet peak power demand: Officials",
-      "url": "https://indianexpress.com/article/cities/delhi/prior-planning-transmission-infra-upgrades-helped-delhi-meet-peak-power-demand-officials-10765443/",
-      "source": "The Indian Express",
-      "date": "2026-07-01T03:40:29+05:30",
+      "title": "Delhi gets respite from heat",
+      "url": "https://timesofindia.indiatimes.com/city/delhi/delhi-gets-respite-from-heat/articleshow/132120725.cms",
+      "source": "Times of India",
+      "date": "2026-07-01T22:57:00+05:30",
       "language": "en",
       "state": "Delhi",
       "district": "New Delhi",
       "search_term": "(heatwave OR \"heat wave\" OR \"severe heatwave\" OR \"extreme heat\" OR \"heat spell\" OR \"scorching heat\" OR \"blistering heat\" OR \"sweltering heat\" OR \"hot winds\" OR loo OR \"hot loo winds\") Delhi",
-      "full_text": "Devansh Mittal is a Correspondent at The Indian Express, based in the New Delhi City bureau. He reports on urban policy, civic governance, and infrastructure in the National Capital Region, with a growing focus on housing, land policy, transport, and the disruption economy and its social implications. Professional Background Education: He studied Political Science at Ashoka University. Core Beats: His reporting focuses on policy and governance in the National Capital Region, one of the largest urban agglomerations in the world. He covers housing and land policy, municipal governance, urban transport, and the interface between infrastructure, regulation, and everyday life in the city. Recent Notable Work His recent reporting includes in-depth examinations of urban policy and its on-ground consequences: An investigation into subvention-linked home loans that documented how homebuyers were drawn into under-construction projects through a “builder–bank” nexus, often leaving them financially exposed when delivery stalled. A detailed report on why Delhi’s land-pooling policy has remained stalled since 2007, tracing how fragmented land ownership, policy design flaws, and mistrust among stakeholders have kept one of the capital’s flagship urban reforms in limbo. A reported piece examining the collapse of an electric mobility startup and what it meant for women drivers dependent on the platform for livelihoods. Reporting Approach Devansh’s work combines on-ground reporting with analysis of government data, court records, and academic research. He regularly reports from neighbourhoods, government offices, and courtrooms to explain how decisions on housing, transport, and the disruption economy shape everyday life in the city. Contact X (Twitter): @devanshmittal_ Email: devansh.mittal@expressindia.com ... Read More\nStay updated with the latest - Click here to follow us on Instagram",
-      "relevance_score": 0.0
+      "full_text": "New Delhi: The city got a much needed respite from extreme heat Wednesday.\nThe maximum temperature at Safdarjung was 34.8 degrees Celsius, 2.6 notches below normal and significantly lower than 40.5 degrees Celsius a day earlier.\nThe day saw less humid weather. The feels-like temperature was 43.6 degrees Celsius at 5.30 pm against 53.5 degrees a day earlier.\nThe Met has issued a yellow alert for rain and thunderstorm for Wednesday and Thursday. However, no rain happened till late Wednesday afternoon.\n“\n“Conditions are favourable for a further advance of the southwest monsoon into parts of Gujarat, Madhya Pradesh, Uttar Pradesh Haryana-Chandigarh-Delhi and Punjab, and some parts of Rajasthan during next 2 days,” IMD said.\nThe maximum is likely to be 32-34 degrees Celsius Thursday and Friday.",
+      "relevance_score": 1.0
+    },
+    {
+      "title": "Delhi weather is testing everyone’s patience: Tips to beat humidity when it feels like 53°C - News9live",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5hVEJoVXFsbVlMTEpnOEp1LWRWVDZDOXgzeG1lV0NkVzQ2MHhfajZwRXRhZzdnMEFyWGZSUV9wMDFLa0FUN0x4MnhUM3d4VmFfRzZ2bnI0YlUydzhFWkxqRUNENDdFTW1sdl9KQy04cXNVVmx3ZE9kU0pEYU7SAYIBQVVfeXFMUG5vVjdkUnJ4VzNjZXY4UmtZclg4bjFuYXZfcG1BUmZRMmFSSXhZYkNTajI3SEF4cXdpellnVm9IbEdsS0tBMExMMmFYRzlQczVIbEd4M2hoclR5VzVEdmFFZHE0QlltNmx3aENqRkU5akZlSGJnUVljb05hSUNMZzQtZw?oc=5",
+      "source": "News9live",
+      "date": "2026-07-01T18:48:39+05:30",
+      "language": "en",
+      "state": "Delhi",
+      "district": "New Delhi",
+      "search_term": "\"heatstroke\" Delhi",
+      "full_text": "Delhi weather is testing everyone’s patience: Tips to beat humidity when it feels like 53°C\nDelhi's 'feels like' temperature has touched nearly 53°C due to extreme humidity. Discover 10 doctor-backed tips to beat Delhi's humid weather, prevent heat exhaustion, stay hydrated and protect yourself during dangerous heat index conditions.\nNew Delhi: Delhi’s weather has taken an uncomfortable turn, with many residents feeling as though they are living inside a steam room. While the actual temperature may hover around 35–40°C, the ‘feels like’ temperature, also known as the heat index, has recently climbed beyond 51°C and even touched nearly 53°C because of extremely high humidity. This happens when moisture in the air prevents sweat from evaporating efficiently, making it much harder for the body to cool itself naturally. Meteorologists explain that humid air, high dew points and rising wet-bulb temperatures combine to create dangerous conditions, increasing the risk of dehydration, heat exhaustion and heatstroke. With monsoon moisture arriving before widespread rainfall, Delhiites are experiencing sticky, oppressive weather that feels significantly hotter than the thermometer suggests.",
+      "relevance_score": 0.8
     }
   ]
 }
