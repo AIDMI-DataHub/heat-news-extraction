@@ -1,0 +1,20 @@
+{
+  "state": "West Bengal",
+  "district": null,
+  "date": "2026-07-15",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "Hottest day of the year and smoky skies building - WBAY",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcVk4WjB2b3ZuNE5RaGc5bzZIRHEzMVN6a0h1Slc3S3dLZkROa2t4ZkxlXzNoYUFQanBUNWtQSkNNVDFVRUhFSExfRlZ4aEFSTHpmZW1DNjZJMUpldV9obmZRdlhCRlcycFhjc0xTX0dvZWh2enh5eDJFU3NzWEVFbFZB?oc=5",
+      "source": "WBAY",
+      "date": "2026-07-15T02:06:00+05:30",
+      "language": "en",
+      "state": "West Bengal",
+      "district": null,
+      "search_term": "(\"mercury soars\" OR \"mercury crosses\" OR \"temperature soars\" OR \"record temperature\" OR \"all-time high\" OR \"degrees Celsius\" OR \"maximum temperature\" OR \"hottest day\" OR \"temperature crosses 40\" OR \"temperature crosses 45\" OR \"temperature likely to rise\") West Bengal",
+      "full_text": "Updated: Jul. 13, 2026 at 12:09 PM CDT\nA dangerous heat wave is moving in, and we’ve declared First Alert Weather Days through tomorrow as heat index values climb to, and above 100 degrees.",
+      "relevance_score": 1.0
+    }
+  ]
+}
