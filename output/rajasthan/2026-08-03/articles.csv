@@ -1,0 +1,32 @@
+title,url,source,date,language,state,district,search_term,full_text,relevance_score
+"RPSC पोर्टल में सेंध के बाद राजस्थान पुलिस अलर्ट, एडवाइजरी जारी - ABP News",https://news.google.com/rss/articles/CBMi1gFBVV95cUxPNlFETHBzSVpuSmJrR2xlVVl5V3ppcmZtYmY0NURJSTZVdU0wX2N1RGUzYmNjWm92Y2dtZVBpNDZ1Z25xVDlWYVBUQVNSWGlraElUVFpQZ3NZWHVPekJJNWN5NFFyT05hNEJpTGJtLW5pbEEzZW4ya2ZCVzJaQVhWaV93cHhkLWRUMXBTeFhCcG1SdnZ6aHNDYkJEWlI3OE9SQm4xVE0yWnpzNzZQNExwaVRzbUJZZW1KeDFHVGhtVVRuTktaVkxhZXZ5TEYwWkhGNEkzcmhB0gHbAUFVX3lxTFB5UFF0LVQtZzF5bFpkdTZyYUc4NG9XTTlUV1ZkLU1XeWVVY0FUb3ZMaDVoU3dHcVg5WnNYMjhHclBEOUR6LTV4VEdTM1kzY2RJOVp6aU1VVGgyc05Td2ZvMk4xSVNCWUdHTEVTVW5JWnpsUy1WYjgxcXBhUjFzd3dnMzlPT3JwZkMxVWJsQjg1REdweFdZQld1a3BTS3pTcDF4TUk2ajdGemxOR1R2aXJPX3Nkb0JVanltWGVyaTZMUlpfZjhWZi1uU0dIdzVjZlk3UXFZejc2ZmFSRQ?oc=5,ABP News,2026-08-03T10:36:04+05:30,hi,Rajasthan,,"(""हीट एक्शन प्लान"" OR ""गर्मी से राहत"" OR चेतावनी OR ""रेड अलर्ट"" OR ""ऑरेंज अलर्ट"" OR ""येलो अलर्ट"" OR एडवाइजरी OR ""राहत सामग्री"" OR ""राहत शिविर"" OR मुआवजा) Rajasthan","RPSC पोर्टल में सेंध के बाद राजस्थान पुलिस अलर्ट, एडवाइजरी जारी
+Rajasthan News: ADG साइबर क्राइम वीके सिंह ने बताया कि RPSC भर्ती पोर्टल में अनधिकृत एंट्री कर परीक्षा परिणाम, मेरिट लिस्ट और अभ्यर्थियों के रिकॉर्ड से छेड़छाड़ का मामला सामने आया था
+राजस्थान पब्लिक सर्विस कमीशन (RPSC) के भर्ती पोर्टल में सेंधमारी मामले के बाद अब राजस्थान पुलिस पूरी तरह अलर्ट मोड में है. साइबर क्राइम शाखा ने सभी विश्वविद्यालयों, शैक्षणिक संस्थानों, सरकारी और निजी संगठनों के लिए खास एडवाइजरी जारी करते हुए साफ कहा है कि अगर वेब पोर्टल की सुरक्षा मजबूत नहीं की गई तो संवेदनशील डेटा कभी भी साइबर अपराधियों के निशाने पर आ सकता है.
+राजस्थान पुलिस के अतिरिक्त पुलिस महानिदेशक (ADG) साइबर क्राइम वीके सिंह ने बताया कि RPSC भर्ती पोर्टल में अनधिकृत एंट्री कर परीक्षा परिणाम, मेरिट लिस्ट और अभ्यर्थियों के रिकॉर्ड से छेड़छाड़ का मामला सामने आया था. हालांकि, अजमेर पुलिस ने आरोपियों को गिरफ्तार कर लिया, लेकिन इस घटना ने सभी संस्थानों की डिजिटल सुरक्षा पर गंभीर सवाल खड़े कर दिए हैं.
+तकनीकी खामियों का फायदा उठा सकते हैं अपराधी
+पुलिस के मुताबिक कई पोर्टलों में ऐसी तकनीकी खामियां हैं, जिनका फायदा उठाकर साइबर अपराधी दूसरे यूजर का डेटा देख सकते हैं, डेटाबेस में बदलाव कर सकते हैं, पासवर्ड सिस्टम को बायपास कर सकते हैं और लाखों बार पासवर्ड ट्राई करके अकाउंट तक पहुंच बना सकते हैं.
+एडवाइजरी में बताया गया है कि अपराधी सबसे पहले वेबसाइट के URL और HTTP रिक्वेस्ट में कमजोरियां तलाशते हैं. इसके बाद ऑटोमेटेड बॉट्स और स्क्रिप्ट्स के जरिए सिस्टम को टेस्ट करते हैं. जहां भी सुरक्षा में चूक मिलती है, वहां से डेटा चोरी, रिकॉर्ड में बदलाव और सिस्टम से छेड़छाड़ शुरू हो जाती है.
+पुलिस ने साइबर सुरक्षा को लेकर की अपील
+राजस्थान पुलिस ने सभी संस्थानों से हर रिक्वेस्ट पर सर्वर-साइड ऑथराइजेशन लागू करने, रैंडम आईडी (UUID/GUID) का इस्तेमाल करने, सभी इनपुट की सख्त वैलिडेशन करने, पासवर्ड बदलने से पहले री-वेरिफिकेशन अनिवार्य करने, मल्टी-फैक्टर ऑथेंटिकेशन (MFA) लागू करने और लॉगिन व OTP पर सीमित प्रयासों की व्यवस्था करने की अपील की है.
+पुलिस ने साफ कहा है कि साइबर सुरक्षा में लापरवाही अब भारी पड़ सकती है. अगर किसी भी संस्थान के पोर्टल में सेंधमारी, डेटा चोरी या साइबर धोखाधड़ी की आशंका हो तो तुरंत नजदीकी साइबर पुलिस स्टेशन, राष्ट्रीय साइबर क्राइम पोर्टल और हेल्पलाइन 1930 पर शिकायत दर्ज कराएं. डिजिटल दौर में मजबूत साइबर सिक्योरिटी ही सबसे बड़ा सुरक्षा कवच है.",0.5166666666666666
+"गर्मी से राहत, राजस्थान में फिर सक्रिय होगा मानसून, कई जिलों में बारिश के आसार - Amar Ujala",https://news.google.com/rss/articles/CBMi5wFBVV95cUxNQWlKUFlwajUzVHZPMDZLS3hnMWRWYkdhMzdlclN3bkhacmk4LWEyMHhwQmdtY2FHbjBhdFVOdUI5aGN6djhVUWhnMzIxVjl0WlN4dG45SURReGZRbDIxdkw5ZVhIdloxU0ZfTmVFem9NTkhpOFcyMEtjRnMxMG9lMnl3S2RUWEJHWXcxRjV4OHJxeHBxeGtGZXlpcHhYbmc1cXZLU1hZY2NYX05VcTJVeWpnSWNMVWhBcEhvSHY1dkJ4bzh5RV81aGxBX05xRjB0YUJoT0s0UEJ1V3ZIdndYYmpRZUhGMjjSAewBQVVfeXFMUDBXLW1lbTVBMnQwdWNjYURDaURmcmtsSl9zOGpxX3FUMEtDWlozUWZ4NHFScF90dG84Q1VoeFA4NnJLZC04ejNyWEFSazA5ZWhGTzNwRGh3Q2NlekpScTQxVEtZY0dLYm04Z0tyOElQUUdBa1M3QVRrYzJwdEh4NVJORnh0UWQ0Yy1vdEdrZEZRejk0U2NaMkV6bXVXUXczVzZSSy11Tm9nLW5xR0Y0MmJ0UlBacDhVRy1OVUVPMnIzMW1kWXp5OHJ3OFA4WndaMlNPLVNmUXNKblBKeUtTWGZDS3ZUVmFrUXo1bWE?oc=5,Amar Ujala,2026-08-03T09:10:56+05:30,hi,Rajasthan,,"(""हीट एक्शन प्लान"" OR ""गर्मी से राहत"" OR चेतावनी OR ""रेड अलर्ट"" OR ""ऑरेंज अलर्ट"" OR ""येलो अलर्ट"" OR एडवाइजरी OR ""राहत सामग्री"" OR ""राहत शिविर"" OR मुआवजा) Rajasthan","Hindi News
+›
+Video
+›
+Rajasthan
+›
+Relief from the heat: Monsoon to become active again in Rajasthan; rain expected in several districts.
+{""_id"":""6a700dc8d1fa65f6b007b70f"",""slug"":""relief-from-the-heat-monsoon-to-become-active-again-in-rajasthan-rain-expected-in-several-districts-2026-08-03"",""type"":""video"",""status"":""publish"",""title_hn"":""गर्मी से राहत, राजस्थान में फिर सक्रिय होगा मानसून, कई जिलों में बारिश के आसार"",""category"":{""title"":""City & states"",""title_hn"":""शहर और राज्य"",""slug"":""city-and-states""}}
+गर्मी से राहत, राजस्थान में फिर सक्रिय होगा मानसून, कई जिलों में बारिश के आसार
+Video सोनम मिश्रा Updated Mon, 03 Aug 2026 09:10 AM IST
+Link Copied
+गर्मी से राहत, राजस्थान में फिर सक्रिय होगा मानसून, कई जिलों में बारिश के आसार
+एड फ्री अनुभव के लिए अमर उजाला प्रीमियम सब्सक्राइब करें
+अमर उजाला प्रीमियम वीडियो सिर्फ सब्सक्राइबर्स के लिए उपलब्ध है
+प्रीमियम वीडियो
+सभी विशेष आलेख
+फ्री इ-पेपर
+सब्सक्राइब करें
+Next Article
+Disclaimer
+हम डाटा संग्रह टूल्स, जैसे की कुकीज के माध्यम से आपकी जानकारी एकत्र करते हैं ताकि आपको बेहतर और व्यक्तिगत अनुभव प्रदान कर सकें और लक्षित विज्ञापन पेश कर सकें। अगर आप साइन-अप करते हैं, तो हम आपका ईमेल पता, फोन नंबर और अन्य विवरण पूरी तरह सुरक्षित तरीके से स्टोर करते हैं। आप कुकीज नीति पृष्ठ से अपनी कुकीज हटा सकते है और रजिस्टर्ड यूजर अपने प्रोफाइल पेज से अपना व्यक्तिगत डाटा हटा या एक्सपोर्ट कर सकते हैं। हमारी Cookies Policy, Privacy Policy और Terms & Conditions के बारे में पढ़ें और अपनी सहमति देने के लिए Agree पर क्लिक करें।",0.8333333333333333
