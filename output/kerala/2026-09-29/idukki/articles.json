@@ -1,0 +1,20 @@
+{
+  "state": "Kerala",
+  "district": "Idukki",
+  "date": "2026-09-29",
+  "article_count": 1,
+  "articles": [
+    {
+      "title": "സംസ്ഥാനത്ത് നാളെ മുതൽ ഇടിമിന്നലോട് കൂടിയ മഴയ്ക്ക് സാധ്യത: വിവിധ ജില്ലകളിൽ യെല്ലോ അലർട്ട് | Kerala Heavy Rain - timeskerala.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR0Y1QWZnRl9sSXFvZE5fUXdsWVpZY3RlSWZOcEtoUlg1M0V2cHJLdzRuUV9GczFaUTJsT28yTUo0ZlFnN1JyVWFRYTdrNFV3UlZTV2dlODZtS0xkYUFTOWl4Q1BOZXVMbENhQlFwWmRrUVZDQTJoVERzRlhob20tOUZ1SEo2QnFtMWpHdG1NU2NvVDBfUkNYUWgteUV1MlplOUpCcjQxT2g?oc=5",
+      "source": "timeskerala.com",
+      "date": "2026-09-29T10:54:46+05:30",
+      "language": "ml",
+      "state": "Kerala",
+      "district": "Idukki",
+      "search_term": "(ദുരിതാശ്വാസം OR മുന്നറിയിപ്പ് OR \"റെഡ് അലര്‍ട്ട്\" OR \"ഓറഞ്ച് അലര്‍ട്ട്\" OR \"യെല്ലോ അലര്‍ട്ട്\" OR \"ദുരിതാശ്വാസ ക്യാമ്പ്\" OR നഷ്ടപരിഹാരം) Kerala",
+      "full_text": "തിരുവനന്തപുരം: സംസ്ഥാനത്ത് നാളെ മുതൽ ഒക്ടോബർ മൂന്ന് വരെ ഒറ്റപ്പെട്ടയിടങ്ങളിൽ ഇടിമിന്നലോട് കൂടിയ ശക്തമായ മഴയ്ക്ക് സാധ്യതയുണ്ടെന്ന് കേന്ദ്ര കാലാവസ്ഥാ വകുപ്പ് അറിയിച്ചു. മണിക്കൂറിൽ 40 മുതൽ 50 കിലോമീറ്റർ വരെ വേഗതയിൽ ശക്തമായ കാറ്റും വീശിയടിച്ചേക്കാം.(Kerala Heavy Rain Alert Yellow Alert Pathanamthitta Idukki Fishing Banned)\nപ്രതികൂല കാലാവസ്ഥ കണക്കിലെടുത്ത് പത്തനംതിട്ട, ഇടുക്കി ജില്ലകളിൽ നാളെ യെല്ലോ അലർട്ട് പ്രഖ്യാപിച്ചു. 24 മണിക്കൂറിൽ 64.5 മില്ലിമീറ്റർ മുതൽ 115.5 മില്ലിമീറ്റർ വരെ മഴ ലഭിക്കാനാണ് സാധ്യത. ശക്തമായ കാറ്റിനും മോശം കാലാവസ്ഥയ്ക്കും സാധ്യതയുള്ളതിനാൽ ഈ ദിവസങ്ങളിൽ കേരള തീരത്ത് മത്സ്യബന്ധനത്തിന് വിലക്ക് ഏർപ്പെടുത്തിയിട്ടുണ്ട്.\nമധ്യ കിഴക്കൻ ബംഗാൾ ഉൾക്കടലിൽ മണിക്കൂറിൽ 45 മുതൽ 65 കിലോമീറ്റർ വരെ വേഗതയിൽ കാറ്റടിക്കാൻ സാധ്യതയുള്ളതിനാൽ കടലിൽ പോകുന്നവർ ജാഗ്രത പാലിക്കണമെന്നും ഈ പ്രദേശങ്ങളിലേക്ക് പോകരുതെന്നും കാലാവസ്ഥാ വകുപ്പ് മുന്നറിയിപ്പ് നൽകി.\nStory Summary\nThe Central Meteorological Department has issued a heavy rainfall alert for Kerala from tomorrow until October 3, with yellow alerts in Pathanamthitta and Idukki. Fishermen have been advised not to venture into the sea due to strong winds and rough weather conditions.\n/* Importing Noto Serif Malayalam from Google Fonts */\n@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600;700&display=swap');\n/* Container to handle centering */\n.tk-btn-wrapper {\ndisplay: flex;\njustify-content: center;\nalign-items: center;\nwidth: 100%;\npadding: 20px 0;\n}\n.google-pref-btn {\ndisplay: inline-flex;\nalign-items: center;\nbackground-color: #000000;\nborder-radius: 50px;\npadding: 12px 28px;\ntext-decoration: none;\ntransition: transform 0.2s ease, background-color 0.2s ease;\nborder: 1px solid #333;\n}\n.google-pref-btn:hover {\nbackground-color: #1a1a1a;\ntransform: scale(1.05);\n}\n.g-icon-svg {\nwidth: 22px;\nheight: 22px;\nmargin-right: 14px;\ndisplay: block;\nflex-shrink: 0;\n}\n.tk-btn-text {\ncolor: #FBBC05;\n/* Prioritizing Noto Serif Malayalam for the Malayalam script */\nfont-family: 'Noto Serif Malayalam', -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif;\nfont-size: 17px;\nfont-weight: 600;\nletter-spacing: 0.1px;\nline-height: 1.5;\n}\n/* Mobile optimization */\n@media (max-width: 480px) {\n.tk-btn-text {\nfont-size: 15px;\n}\n.google-pref-btn {\npadding: 10px 20px;\n}\n}",
+      "relevance_score": 0.4833333333333333
+    }
+  ]
+}
